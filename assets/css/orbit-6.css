@@ -101,10 +101,14 @@ p {
 }
 
 .sidebar-wrapper .profile-container {
-  padding: 30px;
   background: rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #fff;
+  padding-bottom: 15px
+}
+.sidebar-wrapper .profile {
+  margin-bottom: 15px;
+  max-width: 100%;
 }
 
 .sidebar-wrapper .name {
@@ -122,9 +126,6 @@ p {
   margin-bottom: 0;
 }
 
-.sidebar-wrapper .profile {
-  margin-bottom: 15px;
-}
 
 .sidebar-wrapper .contact-list .svg-inline--fa {
   margin-right: 5px;

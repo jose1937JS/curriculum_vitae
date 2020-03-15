@@ -4,7 +4,7 @@ $(() => {
 
 	let imagenes = [
 		{
-			src: ['Software_Educativo-Login.png', 'Software_Educativo_Inicio_profesor.png', 'Software_Educativo_Contenido_Profesor.png', 'Software_Educativo_Profesor_Crear_Evaluaciones.png', 'Software_Educativo_Profesor_Evaluaciones.png', 'Software_Educativo_Docente_Asignaciones.png', 'Software_Educativo_Docente_Chat.png']
+			src: ['SE_Login.png', 'SE_Inicio.png', 'SE_Profesor_Contenido.png', 'SE_Profesor_Crear_Evaluacion.png', 'SE_Profesor_Evaluaciones.png', 'SE_Estudiante_Evaluacion.png', 'SE_Estudiante_Evaluacion_Resultado.png', 'SE_Profesor_Asignaciones.png', 'SE_Chat.png', 'SE_Perfil.png']
 		},
 		{
 			src: ['Aula_Virtual_Login.png', 'Aula_Virtual_Inicio.png', 'Aula_Virtual_Notas.png']
