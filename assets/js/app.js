@@ -25,16 +25,39 @@ $(() => {
 
 	$('.btn-dark').click(function(){
 		let pos = $(this).data('pos');
+		let i = 0;
 
 		$('#imagenes').html('');
+		$('#indicators').html('')
 
 		for (let img of imagenes[pos].src) {
-			$('#imagenes').append(`
-				<div class="d-flex justify-content-center mb-5 shadow-sm view overlay zoom">
-					<img src="assets/images/${img}" class="img-fluid img-thumbnail" alt="login">
-				</div>
-			`);
+			
+			if (i == 0) {
+				$('#indicators').append(`
+					<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>
+				`)
+
+				$('#imagenes').append(`
+					<div class="carousel-item active">
+						<img src="./assets/images/${img}" class="d-block w-100" alt="...">
+					</div>
+				`);
+			}
+			else {
+				$('#indicators').append(`
+					<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
+				`)
+
+				$('#imagenes').append(`
+					<div class="carousel-item">
+						<img src="./assets/images/${img}" class="d-block w-100" alt="...">
+					</div>
+				`);
+			}
+			
+			i++
 		}
+
 
 	});
 
