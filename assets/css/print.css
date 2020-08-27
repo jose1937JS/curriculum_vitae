@@ -1,0 +1,44 @@
+@media print {
+
+	html, body {
+		background-color: #fff !important;
+	}
+
+	a {
+		text-decoration: underline darkgrey solid !important
+	}
+
+	.main-wrapper .section-title .icon-holder{
+		font-size: 14px;
+		top: -2px;
+	}
+
+	.badge {
+ 		border: 1px solid #c1c1c1;
+	}
+
+	.badge-dark {
+  		color: #343a40;
+		background-color: #d9d9d9;
+	}
+
+	button, footer, #cv_btn {
+		display: none !important
+	}
+	.wrapper {
+		background-color: #fff !important;
+		margin-top: 0px !important;
+	}
+
+	.main-wrapper {
+		padding: 0px 300px 0px 0px !important;
+	}
+
+	.main-wrapper section {
+		margin-bottom: 30px !important
+	}
+
+	.sidebar-wrapper .container-block {
+		padding-bottom: 0px !important;
+	}
+}
