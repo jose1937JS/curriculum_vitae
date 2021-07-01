@@ -172,7 +172,7 @@ p {
 }
 
 .sidebar-wrapper .education-container .meta {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   margin-bottom: 0px;
   margin-top: 0;
@@ -392,4 +392,18 @@ p {
 
 .shadow-sm {
   box-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4), 0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.4) !important;
+}
+
+
+.section-lang {
+  margin-top: -29px;
+  text-align: right;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 21px;
+}
+
+#lang {
+  width: 144px;
 }

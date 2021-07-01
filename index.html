@@ -31,7 +31,7 @@
 			</div><!--//profile-container-->
 
 			<div class="contact-container container-block">
-				<h2 class="container-block-title">Contactos</h2>
+				<h2 class="container-block-title" data-translate="contact">Contacto</h2>
 				<ul class="list-unstyled contact-list">
 					<li class="phone"><i class="fab fa-telegram mr-2"></i><a target="_blank" href="https://t.me/josepher">@josepher</a></li>
 					<li class="phone"><i class="fab fa-whatsapp mr-2"></i><a target="_blank" href="https://api.whatsapp.com/send?phone=584120345008">+58(412)034-5008</a></li>
@@ -41,7 +41,7 @@
 			</div><!--//contact-container-->
 			
 			<div class="contact-container container-block">
-				<h2 class="container-block-title">Perfiles</h2>
+				<h2 class="container-block-title" data-translate="profiles">Perfiles</h2>
 				<ul class="list-unstyled contact-list">
 					<li class="linkedin"><i class="fab fa-linkedin-in mr-2"></i><a href="https://www.linkedin.com/in/jose-lopez-14a63119a/" target="_blank">LinkedIn</a></li>
 					<li class="github"><i class="fab fa-github mr-2"></i><a href="https://github.com/jose1937js" target="_blank">Github</a></li>
@@ -49,58 +49,87 @@
 			</div><!--//contact-container-->
 			
 			<div class="education-container container-block">
-				<h2 class="container-block-title">Educación</h2>
+				<h2 class="container-block-title" data-translate="education">Educación</h2>
 				<div class="item">
-					<h4 class="degree">Ingeniería en Informática</h4>
-					<h5 class="meta">Universidad Nacional Experimental Rómulo Gallegos</h5>
-					<div class="time">2014 - 2020</div>
+					<h4 class="degree" data-traanslate="career">Ingeniería en Informática</h4>
+					<h5 class="meta" data-traanslate="college">Universidad Nacional Experimental Rómulo Gallegos</h5>
+					<div class="time" data-translate="time">2014 - actualidad</div>
 				</div><!--//item-->
 				<div class="item">
-					<h4 class="degree">Bachiller Mención Ciencias</h4>
-					<h5 class="meta">Liceo José Félix Ribas</h5>
+					<h4 class="degree" data-translate="bachelor">Bachiller Mención Ciencias</h4>
+					<h5 class="meta" data-translate="liceo">Liceo José Félix Ribas</h5>
 					<div class="time">2009 - 2014</div>
 				</div><!--//item-->
 			</div><!--//education-container-->
 
 			<div class="languages-container container-block">
-				<h2 class="container-block-title">Lenguajes</h2>
+				<h2 class="container-block-title" data-translate="languages">Lenguajes</h2>
 				<ul class="list-unstyled interests-list">
-					<li>Español <span class="lang-desc">Nativo</span></li>
-					<li>Inglés <span class="lang-desc">A2 según <abbr title="Common European Framework of Reference">CEFR</abbr></span></li>
+					<li><span data-translate="spanish">Español</span> <span class="lang-desc" data-translate="native">Nativo</span></li>
+					<li><span data-translate="english">Inglés</span> <span class="lang-desc"><span data-translate="a2">A2 según</span> <abbr title="Common European Framework of Reference">CEFR</abbr></span></li>
 				</ul>
 			</div><!--//interests-->
 
 			<div class="interests-container container-block">
-				<h2 class="container-block-title">Intereses</h2>
+				<h2 class="container-block-title" data-translate="intereses">Intereses</h2>
 				<ul class="list-unstyled interests-list">
-					<li>Finanzas</li>
-					<li>Neuro Marketing</li>
-					<li>Programación Neurolinguistica</li>
-					<li>Psicología Conductual</li>
-					<li>Desarrollo Personal</li>
+					<li data-translate="finanzas">Finanzas</li>
+					<li data-translate="nm">Neuro Marketing</li>
+					<li data-translate="pnl">Programación Neurolinguistica</li>
+					<li data-translate="psicologia">Psicología Conductual</li>
+					<li data-translate="desarrollo">Desarrollo Personal</li>
 				</ul>
 			</div><!--//interests-->
 
 			<div class="interests-container container-block" id="cv_btn">
-				<h2 class="container-block-title">Curriculum</h2>
+				<h2 class="container-block-title" data-translate="cv">Currículo</h2>
 				<!-- <a target="_blank" href="https://drive.google.com/file/d/1CHQrlYjoNFsCaF_8jCpmCsGrMrHBNOYF/view?usp=sharing" class="btn btn-md btn-danger"><i class="fas fa-file-pdf mr-2"></i>Ver en Google Drive</a> -->
-				<a href="#" onclick="print()" class="btn btn-sm btn-danger"><i class="fas fa-file-pdf mr-2"></i>Formato de impresión</a>
+				<a href="#" onclick="print()" class="btn btn-sm btn-danger">
+					<i class="fas fa-file-pdf mr-2"></i>
+					<span data-translate="pdf">Formato de impresión</span>
+				</a>
 			</div><!--//interests-->
 		</div><!--//sidebar-wrapper-->
 
 		<div class="main-wrapper">
 
+			<div class="section-lang">
+				<select class="form-control custom-select" id="lang">
+					<option value="en">🇺🇸 English</option>
+					<option value="es">🇪🇸 Español</option>
+				</select>
+			</div>
+
 			<section class="section">
 				<h2 class="section-title">
-					<span class="icon-holder"><i class="fas fa-user mt-2"></i></span>Perfil
+					<span class="icon-holder"><i class="fas fa-user mt-2"></i></span>
+					<span data-translate="profile">Perfil</span>
 				</h2>
-				<div class="summary">
+				<div class="summary" data-translate="profile_text">
 					Desarrollador Web Full-Stack con más de 3 años de experiencia, actualmente desempeñándome más como desarrollador móvil con react native y backend con laravel, completamente autodidacta, comprometido y responsable con su labor de crear soluciones informáticas multiplataformas, con una gran curiosidad por aprender tecnologías que faciliten el desarrollo de las mismas, teniendo en mente siempre el estar actualizado a las herramientas con más utilidad en el mercado.
 				</div><!--//summary-->
 			</section><!--//section-->
 
 			<section class="section experiences-section">
-				<h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase mt-2"></i></span>EXPERIENCIAS</h2>
+				<h2 class="section-title">
+					<span class="icon-holder"><i class="fas fa-briefcase mt-2"></i></span>
+					<span data-translate="experiences">EXPERIENCIAS</span>
+				</h2>
+
+				<div class="item">
+					<div class="meta">
+						<div class="upper-row">
+							<h3 class="job-title">Backend - React Native Developer</h3>
+							<div class="time">09-2020</div>
+						</div><!--//upper-row-->
+						<div class="company">San Juan de los Morros, Venezuela</div>
+					</div><!--//meta-->
+					<div class="details">
+						<p>
+							<span data-translate="exp6">He trabajado en distintos proyectos desempeñando cargos de frontend, backend y programador Móvil para la empresa</span> <a href="https://nextstation.cl/">Nextstation Chile</a>
+						</p>
+					</div><!--//details-->
+				</div><!--//item-->
 
 				<div class="item">
 					<div class="meta">
@@ -111,33 +140,27 @@
 						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div><!--//meta-->
 					<div class="details">
-						<p>Programador Móvil freelancer en la empresa <a href="https://www.dmblocks.com/es/">DMblocks</a></p>
+						<p> 
+							<span data-translate="exp5">Programador Móvil freelancer en la empresa </span>
+							<a href="https://www.dmblocks.com/es/">DMblocks</a>
+						</p>
 					</div><!--//details-->
 				</div><!--//item-->
 				
-				<div class="item">
-					<div class="meta">
-						<div class="upper-row">
-							<h3 class="job-title">Full-Stack y React Native Developer</h3>
-							<div class="time">09-2020</div>
-						</div><!--//upper-row-->
-						<div class="company">San Juan de los Morros, Venezuela</div>
-					</div><!--//meta-->
-					<div class="details">
-						<p>He trabajado en distintos proyectos desempeñando cargos de frontend, backend y programador Móvil para la empresa <a href="https://nextstation.cl/">Nextstation Chile</a></p>
-					</div><!--//details-->
-				</div><!--//item-->
 
 				<div class="item">
 					<div class="meta">
 						<div class="upper-row">
-							<h3 class="job-title">Web Developer</h3>
+							<h3 class="job-title">Full-Stack Web Developer</h3>
 							<div class="time">2020</div>
 						</div><!--//upper-row-->
 						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div><!--//meta-->
 					<div class="details">
-						<p>Uno de los desarrolladores del sito web para la empresa argentina <a href="http://tiendaindustrial.com/">IndustrialShop</a>.</p>
+						<p>
+							<span data-translate="exp4">Uno de los desarrolladores freelance del sito web para la empresa argentina </span>
+							<a href="http://tiendaindustrial.com/">IndustrialShop</a>.
+						</p>
 					</div><!--//details-->
 				</div><!--//item-->
 				
@@ -150,7 +173,7 @@
 						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div><!--//meta-->
 					<div class="details">
-						<p>Desarrollador de aplicaciones móviles híbridas con react native en la empresa argentina Trop como freelancer.</p>
+						<p data-translate="exp3">Desarrollador de una aplicacion móvil híbrida con react native para la empresa argentina Trop como freelancer.</p>
 					</div><!--//details-->
 				</div><!--//item-->
 
@@ -163,7 +186,7 @@
 						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div><!--//meta-->
 					<div class="details">
-						<p>Trabajé como programador frontend (y ocasionalmente como backend) en conjunto con un equipo para un proyecto de emprendimiento dirigido principalmente a Italia. Trataba de un "Robo Advisor" un asistente económico que te calculaba el riesgo de algún instrumento financiero con el pasar del tiempo.</p>
+						<p data-translate="exp2">Trabajé como programador frontend (y ocasionalmente como backend) en conjunto con un equipo para un proyecto de emprendimiento dirigido principalmente a Italia. Trataba de un "Robo Advisor" un asistente económico que te calculaba el riesgo de algún instrumento financiero con el pasar del tiempo.</p>
 					</div><!--//details-->
 				</div><!--//item-->
 
@@ -176,19 +199,22 @@
 						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div><!--//meta-->
 					<div class="details">
-						<p>Ofrezco mis servicios de programador a diferentes personas para proyectos puntuales, especialmente de carácter académico.</p>
+						<p data-translate="exp1">Ofrecia mis servicios de programador a diferentes personas para proyectos puntuales, especialmente de carácter académico.</p>
 					</div><!--//details-->
 				</div><!--//item-->
 			</section><!--//section-->
 
 			<section class="section projects-section">
-				<h2 class="section-title"><span class="icon-holder"><i class="fas fa-code mt-2"></i></span>Proyectos</h2>
+				<h2 class="section-title">
+					<span class="icon-holder"><i class="fas fa-code mt-2"></i></span>
+					<span data-translate="projects">Proyectos</span>
+				</h2>
 				<div class="intro">
-					<p>Estos son algunas de las herramientas en las que he trabajado, la mayoría son los proyectos finales de grado de estudiantes universitarios.</p>
+					<p data-translate="projects_description">Estos son algunas de las herramientas en las que he trabajado, la mayoría son los proyectos finales de grado de estudiantes universitarios de mi primera experiencia.</p>
 				</div><!--//intro-->
 
 				<div class="item">
-					<p class="project-title">Software Educativo</p>
+					<p class="project-title" data-translate="Software_Educativo">Software Educativo</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Codeigniter</span>
 					<span class="badge badge-dark">Javascript</span>
@@ -197,16 +223,19 @@
 					<span class="badge badge-dark">ckeditor</span>
 					<span class="badge badge-dark">DOMPDF</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones.</p>
+					<p class="project-tagline mt-3" data-translate="Software_Educativo_desc">Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="0" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="0" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
 				<hr class="mb-4">
 
 				<div class="item">
-					<p class="project-title">Aula Virtual</p>
+					<p class="project-title" data-translate="aula_virtual">Aula Virtual</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Laravel</span>
 					<span class="badge badge-dark">Javascript</span>
@@ -215,32 +244,38 @@
 					<span class="badge badge-dark">Google Form</span>
 					<span class="badge badge-dark">DOMPDF</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Software desarrolado para que los estudiantes y profesores de una materia estén en contacto mediante publicaciones al estilo de edmodo las cuales se pueden filtrar por el tema de la misma y subir archivos para los estudiantes. El profesor tiene la posibilidad de manejar las notas de sus estudiantes, descargar un reporte de dichas notas y publicar exámenes usando la herramienta Google Form. En cuanto al estudiante a parte de las publicaciones, el puede ver el progreso de sus notas y descargar un certificado de aprobación en PDF que el docente habilita.</p>
+					<p class="project-tagline mt-3" data-translate="aula_virtual_desc">Software desarrolado para que los estudiantes y profesores de una materia estén en contacto mediante publicaciones al estilo de edmodo las cuales se pueden filtrar por el tema de la misma y subir archivos para los estudiantes. El profesor tiene la posibilidad de manejar las notas de sus estudiantes, descargar un reporte de dichas notas y publicar exámenes usando la herramienta Google Form. En cuanto al estudiante a parte de las publicaciones, el puede ver el progreso de sus notas y descargar un certificado de aprobación en PDF que el docente habilita.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="1" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="1" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
 				<hr class="mb-4">
 
 				<div class="item">
-					<p class="project-title">Sistema de Administracion y API</p>
+					<p class="project-title" data-translate="admin_system_api">Sistema de Administracion y API</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Laravel</span>
 					<span class="badge badge-dark">Javascript</span>
 					<span class="badge badge-dark">jQuery</span>
 					<span class="badge badge-dark">Material Design Bootstrap</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Herramienta administrativa que controla la información enviada a una aplicación movil informativa. La información es provista mediante respuestas en formato JSON que se hacen a endpoints de la API desde la app movil.</p>
+					<p class="project-tagline mt-3" data-translate="admin_system_api_desc">Herramienta administrativa que controla la información enviada a una aplicación movil informativa. La información es provista mediante respuestas en formato JSON que se hacen a endpoints de la API desde la app movil.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="2" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="2" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
 				<hr class="mb-4">
 
 				<div class="item">
-					<p class="project-title">Sistema Administrativo y E-Commerce Simple</p>
+					<p class="project-title" data-translate="ecommerce">Sistema Administrativo y E-Commerce Simple</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Laravel</span>
 					<span class="badge badge-dark">Javascript</span>
@@ -249,16 +284,19 @@
 					<span class="badge badge-dark">Laravel Shopping Cart</span>
 					<span class="badge badge-dark">DOMPDF</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Sistema de administracion de ventas y productos para la floristeria Rosas de América.</p>
+					<p class="project-tagline mt-3" data-translate="ecommerce_desc">Sistema de administracion de ventas y productos para la floristeria Rosas de América.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="3" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="3" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
 				<hr class="mb-4">
 
 				<div class="item">
-					<p class="project-title">Software Educativo II</p>
+					<p class="project-title" data-translate="se2">Software Educativo II</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Laravel</span>
 					<span class="badge badge-dark">Javascript</span>
@@ -266,24 +304,30 @@
 					<span class="badge badge-dark">Material Design Bootstrap</span>
 					<span class="badge badge-dark">DOMPDF</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Software Educativo sencillo donde el docente sube información de su materia para que el estudiate lo vea.</p>
+					<p class="project-tagline mt-3" data-translate="se2_desc">Software Educativo sencillo donde el docente sube información de su materia para que el estudiate lo vea.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="4" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="4" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
 				<hr class="mb-4">
 
 				<div class="item">
-					<p class="project-title">Sistema de gestión</p>
+					<p class="project-title" data-translate="gestion">Sistema de gestión</p>
 					<span class="badge badge-dark">PHP</span>
 					<span class="badge badge-dark">Javascript</span>
 					<span class="badge badge-dark">jQuery</span>
 					<span class="badge badge-dark">Materialize</span>
 					<span class="badge badge-dark">MySQL</span>
-					<p class="project-tagline mt-3">Herramienta diseñada para la administración de las transferencias, comunicados y comentarios de los beneficiados por las bolsas del CLAP y administradores de un sector en particular.</p>
+					<p class="project-tagline mt-3" data-translate="gestion_desc">Herramienta diseñada para la administración de las transferencias, comunicados y comentarios de los beneficiados por las bolsas del CLAP y administradores de un sector en particular.</p>
 					<div class="d-flex justify-content-center mt-3">
-						<button class="btn btn-md btn-dark" data-pos="5" data-toggle="modal" data-target="#galeria"><i class="fas fa-file-image mr-2"></i>Ver Galeria</button>
+						<button class="btn btn-md btn-dark" data-pos="5" data-toggle="modal" data-target="#galeria">
+							<i class="fas fa-file-image mr-2"></i>
+							<span data-translate="see_galery">Ver Galeria</span>
+						</button>
 					</div>
 				</div><!--//item-->
 
@@ -292,7 +336,10 @@
 			</section><!--//section-->
 
 			<section class="skills-section section">
-				<h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket mt-2"></i></span>Habilidades</h2>
+				<h2 class="section-title">
+					<span class="icon-holder"><i class="fas fa-rocket mt-2"></i></span>
+					<span data-translate="skills">Habilidades</span>
+				</h2>
 				<div class="skillset">
 
 					<div class="row mb-2">
@@ -300,7 +347,7 @@
 							<div class="item">
 								<h3 class="level-title">HTML5 & CSS3</h3>
 								<div class="progress level-bar">
-									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 90%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 100%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div><!--//item-->
 						</div>
@@ -355,9 +402,9 @@
 					<div class="row mb-2">
 						<div class="col">
 							<div class="item">
-								<h3 class="level-title">Vue.js</h3>
+								<h3 class="level-title">Vue.js 2</h3>
 								<div class="progress level-bar">
-									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 70%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div><!--//item-->
 						</div>
@@ -365,7 +412,7 @@
 							<div class="item">
 								<h3 class="level-title">Express.js</h3>
 								<div class="progress level-bar">
-									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 50%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 40%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div><!--//item-->	
 						</div>
@@ -401,9 +448,9 @@
 						</div>
 						<div class="col">
 							<div class="item">
-								<h3 class="level-title">Codeigniter</h3>
+								<h3 class="level-title">Codeigniter 3</h3>
 								<div class="progress level-bar">
-									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 80%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+									<div class="progress-bar theme-progress-bar" role="progressbar" style="width: 70%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div><!--//item-->
 						</div>
@@ -429,7 +476,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Galeria de imágenes</h5>
+					<h5 class="modal-title" id="exampleModalLabel" data-translate="image_galery">Galeria de imágenes</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -453,7 +500,7 @@
 
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" data-translate="close">Cerrar</button>
 				</div>
 			</div>
 		</div>
@@ -461,7 +508,29 @@
 
 	<script src="assets/plugins/jquery-3.3.1.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/plugins/jquery.multilang.min.js"></script>
 	<script src="assets/js/app.js"></script>
+	<script src="assets/js/langs.js"></script>
+	<script>
+		$(() => {
+
+			$('#lang').change(function(){
+				translate()
+			})
+
+			function translate(){
+				const current_lang = $('#lang').val()
+
+				$("[data-translate]").each(function() {
+					let key = $(this).data('translate');
+					$(this).html(dictionary[current_lang][key] || "N/A");
+				})
+			}
+
+			translate()
+		})
+
+	</script>
 
 </body>
 </html>

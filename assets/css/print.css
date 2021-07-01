@@ -41,4 +41,8 @@
 	.sidebar-wrapper .container-block {
 		padding-bottom: 0px !important;
 	}
+
+	.section-lang {
+		display: none;
+	}
 }
