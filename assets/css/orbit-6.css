@@ -53,16 +53,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #2e4049;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
+  color: #000000;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #10171a;
+  color: #016394;
 }
 
 a:focus {
@@ -104,7 +100,7 @@ p {
   background: rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #fff;
-  padding-bottom: 15px
+  padding: 40px 0;
 }
 .sidebar-wrapper .profile {
   margin-bottom: 15px;
@@ -366,7 +362,6 @@ p {
   }
 }
 
-
 /*** anmaciones y estilos propios *****/
 .view {
  position:relative;
@@ -393,7 +388,6 @@ p {
 .shadow-sm {
   box-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.4), 0.2rem -0.2rem 0.5rem rgba(0, 0, 0, 0.4) !important;
 }
-
 
 .section-lang {
   margin-top: -29px;
