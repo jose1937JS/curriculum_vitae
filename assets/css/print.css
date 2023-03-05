@@ -42,7 +42,7 @@
 		padding-bottom: 0px !important;
 	}
 
-	.section-lang {
+	.section-lang, .projects-section {
 		display: none;
 	}
 }
