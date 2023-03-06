@@ -1,6 +1,5 @@
-# curriculum_vitae
-Mi hoja de vida.
+# Curriculum y Portafolio
 
 
-### Portafolio
----> (https://portafolio.josepher.now.sh/) <---
+### Sitio Web
+======>>  https://joselopez.vercel.app/  <<======
