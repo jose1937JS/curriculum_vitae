@@ -9,7 +9,7 @@ const dictionary = {
 		exp1: 'Ofrecia mis servicios de programador a diferentes personas para proyectos puntuales, especialmente de carácter académico.',
 		projects: 'Proyectos Universitarios',
 		laboral_projects: 'Proyectos Laborales',
-		laboral_projects_description: 'Alguno de los proyectos en los que he trabajado mientras estaba en Nextstation Chile',
+		laboral_projects_description: 'Alguno de los proyectos en los que he trabajado durante los últimos años:',
 		projects_description: 'Estos son algunos de los sistemas durante mi epoca universitaria, dando así mis primeros pasos en la programación.',
 		Software_Educativo: 'Software Educativo',
 		Software_Educativo_desc: 'Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones.',
@@ -58,6 +58,9 @@ const dictionary = {
 		promartv_description: 'Aplicación bastante simple que integra un webview donde se muestra la transmisión en vivo del canal de noticias venezolano Promar TV.',
 		tierraxtierra: 'Tierra por Tierra',
 		tierraxtierra_description: 'Aplicación móvil netamente informativa que muestra el contenido de su web.',
+		exp7: 'Trabajé en varios proyectos desempeñando roles como frontend, backend y programador Móvil para la empresa española ',
+		metrovacesa: 'Metrovacesa - Málaga Towers (App, Frontend, Backend)',
+		metrovacesa_description: 'Es una app móvil y sistema web destinados a ser usados para administrar las viviendas departamentales, los espacios, reservas y servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en la ciudad de Málaga España.'
 	},
 	en: {
 		profile: 'Profile',
@@ -69,7 +72,7 @@ const dictionary = {
 		exp1: 'I offered my services as a programmer to different people for specific projects, especially of an academic nature.',
 		projects: 'University Projects',
 		laboral_projects: 'Laboral Projects',
-		laboral_projects_description: "Some of the projects I've worked on while at Nextstation Chile",
+		laboral_projects_description: "Some of the projects I've worked during this years:",
 		projects_description: 'These are some of the systems during my university days, thus taking my first steps in programming.',
 		Software_Educativo: 'Educational Software',
 		Software_Educativo_desc: 'Tool created for the teacher of a subject and his students, with the aim of uploading relevant information from face-to-face classes to the platform so that students can view it, take tests, have access to tools used by the teacher, interact with the teacher and other students in a group chat, answer assignments that the teacher sends them, among other functions.',
@@ -117,6 +120,9 @@ const dictionary = {
 		promartv: 'PromarTV',
 		promartv_description: 'Quite simple application that integrates a webview where the live broadcast of the Venezuelan news channel Promar TV is shown.',
 		tierraxtierra: 'Tierra por Tierra',
-		tierraxtierra_description: 'Purely informative mobile application that shows the content of your website',		
+		tierraxtierra_description: 'Purely informative mobile application that shows the content of your website',
+		exp7: 'I worked on several projects performing roles as frontend, backend and Mobile programmer for the Spanish company',
+		metrovacesa: 'Metrovacesa - Málaga Towers (App, Frontend, Backend)',
+		metrovacesa_description: 'It is a mobile app and web system intended to be used to manage the apartment homes, spaces, reservations and services offered by Málaga Towers, which is a luxury housing project in the city of Málaga Spain.'
 	}
 }
