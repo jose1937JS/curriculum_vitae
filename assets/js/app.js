@@ -119,7 +119,25 @@ $(() => {
 				'metrovacesa/web/8.png',
 				'metrovacesa/web/9.png'
 			]
-		}
+		},
+		{
+			src: [
+				'reservatum/1.png',
+				'reservatum/2.png',
+				'reservatum/3.png',
+				'reservatum/4.png',
+				'reservatum/5.png',
+				'reservatum/6.png',
+				'reservatum/7.png',
+				'reservatum/8.png',
+				'reservatum/9.png',
+				'reservatum/10.png',
+				'reservatum/11.png',
+				'reservatum/12.png',
+				'reservatum/13.png',
+				'reservatum/14.png',
+			]
+		},
 	];
 
 	$('.btn-dark').click(function(){

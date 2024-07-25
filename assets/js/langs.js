@@ -1,7 +1,7 @@
 const dictionary = {
 	es: {
 		profile: 'Perfil',
-		profile_text: 'Soy un Desarrollador Web Full-Stack con más de 3 años de experiencia, actualmente desempeñándome más como desarrollador móvil con react native y backend con laravel, completamente autodidacta, comprometido y responsable con su labor de crear soluciones informáticas multiplataformas, con una gran curiosidad por aprender tecnologías que faciliten el desarrollo de las mismas.',
+		profile_text: 'I am a Full-Stack developer with 4 years of professional experience. Completely self-taught, I am characterized by my commitment and responsibility when it comes to creating innovative IT solutions. I have a great curiosity to learn and adopt new technologies that facilitate application development, constantly keeping myself updated on the most effective tools and methodologies in the industry. In addition, I have 3 years of experience working with React Native, including publishing applications in app stores.',
 		experiences: 'Experiencias',
 		exp6: 'He trabajado en distintos proyectos de todos los tamaños a lo largo del tiempo, desempeñando cargos como frontend, backend y programador Móvil para la empresa chilena',
 		exp5: 'Programador móvil frelance para la empresa',
@@ -22,7 +22,7 @@ const dictionary = {
 		ecommerce_desc: 'Sistema de administracion de ventas y productos para la floristeria Rosas de América.',
 		gestion: 'Sistema de gestión',
 		gestion_desc: 'Herramienta diseñada para la administración de las transferencias, comunicados y comentarios de los beneficiados por las bolsas del CLAP y administradores de un sector en particular.',
-		skills: 'Habilidades',
+		skills: 'Herramientas',
 		image_galery: 'Galeria de imágenes del proyecto',
 		close: 'Close',
 		contact: 'Contacto',
@@ -60,7 +60,10 @@ const dictionary = {
 		tierraxtierra_description: 'Aplicación móvil netamente informativa que muestra el contenido de su web.',
 		exp7: 'Trabajé en varios proyectos desempeñando roles como frontend, backend y programador Móvil para la empresa española ',
 		metrovacesa: 'Metrovacesa - Málaga Towers (App, Frontend, Backend)',
-		metrovacesa_description: 'Es una app móvil y sistema web destinados a ser usados para administrar las viviendas departamentales, los espacios, reservas y servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en la ciudad de Málaga España.'
+		metrovacesa_description: 'Es una app móvil y sistema web destinados a ser usados para administrar las viviendas departamentales, los espacios, reservas y servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en la ciudad de Málaga España.',
+		reservatum: 'Reservatum',
+		reservatum_description: 'Es una herramienta que te facilita el reservar propiedades tales como fincas, casas vacacionales, villas de lujo y apartamentos en la ciudad de Mayorca en España. En este proyecto tuve la responsabilidad de diseñar el landing page, mejorar el módulo de blogs, terminar la interfaz para editar reservas, buscar y corregir varios bugs tanto a nivel de frontend como de backend y agregar validaciones a nivel de frontend en los formularios faltantes.',
+		agile: 'Metodologías Ágiles',
 	},
 	en: {
 		profile: 'Profile',
@@ -85,7 +88,7 @@ const dictionary = {
 		ecommerce_desc: 'Sales and product management system for the Rosas de América florist.',
 		gestion: 'Management system',
 		gestion_desc: 'Tool designed for the administration of transfers, communications and comments from the beneficiaries of the CLAP exchanges and administrators of a particular sector.',
-		skills: 'Skills',
+		skills: 'Tools',
 		image_galery: 'Project Image gallery',
 		close: 'Close',
 		contact: 'Contact',
@@ -123,6 +126,10 @@ const dictionary = {
 		tierraxtierra_description: 'Purely informative mobile application that shows the content of your website',
 		exp7: 'I worked on several projects performing roles as frontend, backend and Mobile programmer for the Spanish company',
 		metrovacesa: 'Metrovacesa - Málaga Towers (App, Frontend, Backend)',
-		metrovacesa_description: 'It is a mobile app and web system intended to be used to manage the apartment homes, spaces, reservations and services offered by Málaga Towers, which is a luxury housing project in the city of Málaga Spain.'
+		metrovacesa_description: 'It is a mobile app and web system intended to be used to manage the apartment homes, spaces, reservations and services offered by Málaga Towers, which is a luxury housing project in the city of Málaga Spain.',
+		reservatum: 'Reservatum',
+		reservatum_description: 'It is a tool that makes it easier for you to book properties such as farms, vacation homes, luxury villas, and apartments in the city of Mallorca in Spain. In this project, I had the responsibility of designing the landing page, improving the blog module, finishing the interface for editing reservations, searching for and fixing several bugs at both the frontend and backend level, and adding missing frontend form validations.',
+		agile: 'Agile Methodologies',
+
 	}
 }

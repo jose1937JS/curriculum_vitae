@@ -303,7 +303,7 @@ p {
 
 .skillset .item {
   margin-bottom: 15px;
-  overflow: hidden;
+  overflow: hidden;;
 }
 
 .skillset .level-title {
@@ -400,4 +400,10 @@ p {
 
 #lang {
   width: 144px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
