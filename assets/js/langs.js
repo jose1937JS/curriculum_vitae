@@ -1,7 +1,7 @@
 const dictionary = {
 	es: {
 		profile: 'Perfil',
-		profile_text: 'I am a Full-Stack developer with 4 years of professional experience. Completely self-taught, I am characterized by my commitment and responsibility when it comes to creating innovative IT solutions. I have a great curiosity to learn and adopt new technologies that facilitate application development, constantly keeping myself updated on the most effective tools and methodologies in the industry. In addition, I have 3 years of experience working with React Native, including publishing applications in app stores.',
+		profile_text: 'Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Completamente autodidacta, me caracterizo por mi compromiso y responsabilidad a la hora de crear soluciones innovadoras de TI. Tengo una gran curiosidad por aprender y adoptar nuevas tecnologías que faciliten el desarrollo de aplicaciones, manteniéndome constantemente actualizado sobre las herramientas y metodologías más efectivas de la industria. Además, tengo 3 años de experiencia trabajando con React Native, incluyendo la publicación de aplicaciones en las tiendas de aplicaciones.',
 		experiences: 'Experiencias',
 		exp6: 'He trabajado en distintos proyectos de todos los tamaños a lo largo del tiempo, desempeñando cargos como frontend, backend y programador Móvil para la empresa chilena',
 		exp5: 'Programador móvil frelance para la empresa',
@@ -67,7 +67,7 @@ const dictionary = {
 	},
 	en: {
 		profile: 'Profile',
-		profile_text: 'I am a Full-Stack Web Developer with more than 3 years of experience, currently working more as a mobile developer with react native and backend with laravel, completely self-taught, committed and responsible with his work to create multiplatform computing solutions, with a great curiosity to learn technologies that facilitate their development.',
+		profile_text: 'I am a Full-Stack developer with 4 years of professional experience. Completely self-taught, I am characterized by my commitment and responsibility when it comes to creating innovative IT solutions. I have a great curiosity to learn and adopt new technologies that facilitate application development, constantly keeping myself updated on the most effective tools and methodologies in the industry. In addition, I have 3 years of experience working with React Native, including publishing applications in app stores.',
 		experiences: 'Experiences',
 		exp6: 'I have worked on different projects of all sizes over time, holding positions as frontend, backend and Mobile programmer for the Chilean company',
 		exp5: 'Freelance Mobile Programmer at',
