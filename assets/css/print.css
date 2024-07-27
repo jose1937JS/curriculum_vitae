@@ -4,6 +4,10 @@
 		background-color: #fff !important;
 	}
 
+	p, li {
+		font-size: 12px;
+	}
+
 	a {
 		text-decoration: underline darkgrey solid !important
 	}
@@ -18,20 +22,33 @@
 	}
 
 	.badge-dark {
-  		color: #343a40;
+  	color: #343a40;
 		background-color: #d9d9d9;
 	}
 
-	button, footer, #cv_btn {
+	button, footer, #cv_btn, .interests-container {
 		display: none !important
 	}
+
 	.wrapper {
 		background-color: #fff !important;
 		margin-top: 0px !important;
+		width: 100%;
+	}
+
+	.sidebar-wrapper {
+		width: 25%;
+		height: 1500px;
+		float: right;
 	}
 
 	.main-wrapper {
-		padding: 0px 300px 0px 0px !important;
+		width: 75%;
+	}
+
+	.upper-row {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.main-wrapper section {
@@ -44,5 +61,43 @@
 
 	.section-lang, .projects-section {
 		display: none;
+	}
+
+	.main-wrapper .projects-section .item {
+		margin-bottom: 0px !important;
+	}
+
+	.main-wrapper .experiences-section .item {
+		margin-bottom: 0px !important;
+	}
+
+	.skillset .item {
+		margin-bottom: 0px;
+	}
+
+	.main-wrapper .section-title {
+		font-size: 16px !important;
+		margin-bottom: 15px;
+	}
+
+	.main-wrapper .section-title .icon-holder {
+		display: none;
+	}
+
+	.main-wrapper .job-title {
+		font-size: 14px;
+		font-weight: 400;
+	}
+	.skillset .level-title {
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+
+	.skillset .icon {
+		width: 18px;
+		height: 18px;
+	}
+	hr {
+		display: block;
 	}
 }

@@ -37,9 +37,10 @@
 			<div class="contact-container container-block">
 				<h2 class="container-block-title" data-translate="contact">Contacto</h2>
 				<ul class="list-unstyled contact-list">
-					<li class="phone"><i class="fab fa-telegram mr-2"></i><a target="_blank" href="https://t.me/josepher97">@josepher97</a></li>
+					<!-- <li class="phone"><i class="fab fa-telegram mr-2"></i><a target="_blank" href="https://t.me/josepher97">@josepher97</a></li> -->
 					<li class="phone"><i class="fab fa-whatsapp mr-2"></i><a target="_blank" href="https://api.whatsapp.com/send?phone=584120345008">+58(412)034-5008</a></li>
-					<li class="email"><i class="fas fa-envelope mr-2"></i><a href="mailto: jflo1937@gmail.com">jflo1937@gmail.com</a></li>
+					<!-- <li class="email"><i class="fas fa-envelope mr-2"></i><a href="mailto: jflo1937@gmail.com">jflo1937@gmail.com</a></li> -->
+					<li class="email"><i class="fas fa-envelope mr-2"></i><a href="mailto: jflo1937@gmail.com">dev.lopezjose@gmail.com</a></li>
 				</ul>
 			</div>
 
@@ -47,8 +48,16 @@
 			<div class="contact-container container-block">
 				<h2 class="container-block-title" data-translate="profiles">Perfiles</h2>
 				<ul class="list-unstyled contact-list">
-					<li class="linkedin"><i class="fab fa-linkedin-in mr-2"></i><a href="https://linkedin.com/in/joselopez-dev" target="_blank">LinkedIn</a></li>
-					<li class="github"><i class="fab fa-github mr-2"></i><a href="https://github.com/jose1937js" target="_blank">Github</a></li>
+					<li class="linkedin">
+						<i class="fab fa-linkedin-in mr-2"></i>
+						<a href="https://linkedin.com/in/joselopez-dev" target="_blank">LinkedIn</a>
+						<small class="text-muted d-block">https://linkedin.com/in/joselopez-dev</small>
+					</li>
+					<li class="github">
+						<i class="fab fa-github mr-2"></i>
+						<a href="https://github.com/jose1937js" target="_blank">Github</a>
+						<small class="text-muted d-block">https://github.com/jose1937JS</small>
+					</li>
 				</ul>
 			</div>
 
@@ -57,13 +66,15 @@
 				<h2 class="container-block-title" data-translate="education">Educación</h2>
 				<div class="item">
 					<h4 class="degree" data-translate="career">Ingeniería en Informática</h4>
-					<h5 class="meta" data-translate="college">Universidad Nacional Experimental Rómulo Gallegos</h5>
+					<h6 class="meta" data-translate="college">Universidad Nacional Experimental Rómulo Gallegos</h6>
 					<div class="time" data-translate="time">2014 - 20020</div>
 				</div>
 				<div class="item">
 					<h4 class="degree" data-translate="bachelor">Bachiller Mención Ciencias</h4>
-					<h5 class="meta" data-translate="liceo">Liceo José Félix Ribas</h5>
-					<div class="time">2009 - 2014</div>
+					<h6 class="meta" data-translate="liceo">Liceo José Félix Ribas</h6>
+					<div class="time">
+						<span>2009 - 2014</span>
+					</div>
 				</div>
 			</div>
 
@@ -111,73 +122,125 @@
 			<section class="section">
 				<h2 class="section-title">
 					<span class="icon-holder"><i class="fas fa-user mt-2"></i></span>
-					<span data-translate="profile">Perfil</span>
+					<span data-translate="profile">Sobre mi</span>
+					<hr>
 				</h2>
-				<div class="summary text-justify" data-translate="profile_text">
+				<p class="text-justify" data-translate="profile_text">
 					Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Completamente autodidacta, me caracterizo por mi compromiso y responsabilidad a la hora de crear soluciones informáticas innovadoras. Poseo una gran curiosidad por aprender y adoptar nuevas tecnologías que faciliten el desarrollo de aplicaciones, manteniéndome constantemente actualizado sobre las herramientas y metodologías más efectivas en la industria. Además, cuento con 3 años de experiencia trabajando con React Native, incluyendo la publicación de aplicaciones en las tiendas de apps.
-				</div>
+				</p>
 			</section>
 
 			<!-- Experiencias -->
 			<section class="section experiences-section">
 				<h2 class="section-title">
 					<span class="icon-holder"><i class="fas fa-briefcase mt-2"></i></span>
-					<span data-translate="experiences">EXPERIENCIAS</span>
+					<span data-translate="working_history">Historial de trabajo</span>
+					<hr>
 				</h2>
 
-				<div class="item mb-5">
+				<div class="item">
 					<div class="meta">
 						<div class="upper-row">
-							<h3 class="job-title">Mobile - Full Stack Web Developer</h3>
-							<div class="time">08-2023 - 06-2024</div>
+							<h3 class="job-title" data-translate="expTitle1"></h3>
+							<div class="time">
+								<span>08-2023 - 06-2024</span>
+							</div>
 						</div>
-						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div>
-					<div class="details">
+					<div>
 						<p>
-							<span data-translate="exp7">Trabajé en varios proyectos desempeñando roles como frontend, backend y programador Móvil para la empresa española </span> <a href="https://10code.es//">10Code Software Design.</a>
+							<span data-translate="exp7">Trabajé en varios proyectos desempeñando roles como frontend, backend y programador Móvil para la empresa española </span>
+							<a href="https://10code.es//">10Code Software Design. </a>
+							<span data-translate="goals_title">Durante mi estadia trabajando cumpli con los siguientes objetivos</span>
 						</p>
+						<div class="row ml-4">
+							<ul class="col">
+								<li data-translate="goal1">Colaboré con el equipo de backend para integrar endpoints y bibliotecas a las aplicaciones web y móviles, lo que permitió agregar funcionalidades clave a la plataforma en menos tiempo.</li>
+								<li data-translate="goal2">Maqueté interfaces de usuario responsivas y accesibles para aplicaciones web utilizando Tailwind CSS y Vuetify, mejorando la experiencia del usuario.</li>
+							</ul>
+							<ul class="col">
+								<li data-translate="goal3">Participé en la resolución de problemas y el aseguramiento de la calidad del producto final, ayudando al equipo a completar nuevas funcionalidades en menos tiempo.</li>
+								<li data-translate="goal4">Lideré el diseño de la interfaz de usuario de una aplicación de gestión de apartamentos de lujo en Málaga España, cumpliendo con los altos estándares y requerimientos solicitados por el cliente.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
-				<div class="item mb-5">
+				<div class="item">
 					<div class="meta">
 						<div class="upper-row">
-							<h3 class="job-title">Backend - Mobile Developer</h3>
-							<div class="time">09-2020 - 07-2023</div>
+							<h3 class="job-title" data-translate="expTitle2">Backend Developer - Mobile Developer</h3>
+							<div class="time">
+								<span>09-2020 - 07-2023</span>
+							</div>
 						</div>
-						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div>
-					<div class="details">
+					<div>
 						<p>
-							<span data-translate="exp6">He trabajado en distintos proyectos desempeñando cargos de frontend, backend y programador Móvil para la empresa</span> <a href="https://nextstation.cl/">Nextstation Chile</a>
+							<span data-translate="exp6">A lo largo de mi trayectoria, he participado en diversos proyectos de diferentes magnitudes, desempeñándome en roles como desarrollador frontend, backend y móvil para la empresa chilena Nextstation</span>
+							<a href="https://nextstation.cl/">Nextstation.</a>
+							<span data-translate="goals_title">Durante mi estadia trabajando cumpli con los siguientes objetivos</span>
 						</p>
+						<div class="row ml-4">
+							<ul class="col">
+								<li data-translate="goal5">Lideré el desarrollo a nivel de backed y móvil de una app innovadora para el mercado suizo, pudiendo así conseguir inversionistas minoritarios.</li>
+								<li data-translate="goal6">Integré métodos de pago en línea, incluyendo procesadores de pago y pasarelas en una app móvil.</li>
+								<li data-translate="goal7">Identifiqué y corregí bugs y errores en diferentes apps y sistemas web, mejorando la estabilidad y confiabilidad de las plataformas.</li>
+							</ul>
+							<ul class="col">
+								<li data-translate="goal8">Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados.</li>
+								<li data-translate="goal9">Creé una plantilla básica de aplicación móvil con WebView integrado, que sirvió como base para múltiples proyectos y asi acelerar el desarrollo.</li>
+								<li data-translate="goal10">Migré con éxito una aplicación móvil de React Native a Flutter utilizando WebView, lo que permitió reducir el tiempo de desarrollo y mejorar la experiencia de usuario.</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
-				<div class="item mb-5">
+				<div class="item">
 					<div class="meta">
 						<div class="upper-row">
-							<h3 class="job-title">Frontend Developer</h3>
-							<div class="time">03-2019 - 09-2019</div>
+							<h3 class="job-title" data-translate="expTitle3">Frontend Developer</h3>
+							<div class="time">
+								<span>03-2019 - 09-2019</span>
+							</div>
 						</div>
-						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div>
-					<div class="details">
-						<p class="text-justify" data-translate="exp2">Trabajé como programador frontend (y ocasionalmente como backend) en conjunto con un equipo para un proyecto de emprendimiento dirigido principalmente a Italia. Trataba de un "Robo Advisor" un asistente económico que te calculaba el riesgo de algún instrumento financiero con el pasar del tiempo.</p>
+					<div>
+						<p>
+							<span class="text-justify" data-translate="exp2">Trabajé como desarrollador frontend (y ocasionalmente backend) como parte de un equipo en un proyecto de emprendimiento dirigido principalmente al mercado italiano. El proyecto era un 'Robo Advisor' - un asistente de inversiones que calcula el riesgo de los instrumentos financieros a lo largo del tiempo</span>
+							<span data-translate="goals_title">Durante mi estadia trabajando cumpli con los siguientes objetivos</span>
+						</p>
+						<div class="row ml-4">
+							<ul class="col">
+								<li data-translate="goal11">Diseñé una experiencia de usuario intuitiva y visual para la herramienta financiera</li>
+								<li data-translate="goal12">Trabajé en estrecha colaboración con el equipo de desarrollo backend para integrar sin problemas los cálculos de riesgo en la herramienta, asegurando que la experiencia de usuario fuera fluida y confiable</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 
-				<div class="item mb-5">
+				<div class="item">
 					<div class="meta">
 						<div class="upper-row">
-							<h3 class="job-title">Programador Individual</h3>
-							<div class="time">2017 - 2020</div>
+							<h3 class="job-title" data-translate="expTitle4">Programador Freelance</h3>
+							<div class="time">
+								<span>2017 - 2020</span>
+							</div>
 						</div>
-						<div class="company">San Juan de los Morros, Venezuela</div>
 					</div>
-					<div class="details">
-						<p data-translate="exp1">Ofrecia mis servicios de programador a diferentes personas para proyectos puntuales, especialmente de carácter académico.</p>
+					<div>
+						<p>
+							<span data-translate="exp1">Prestaba servicios de programador web freelance a diversos clientes, especialmente en el ámbito académico, para el desarrollo de proyectos específicos</span>
+							<span data-translate="goals_title">Durante mi estadia trabajando cumpli con los siguientes objetivos</span>
+						</p>
+
+						<div class="row ml-4">
+							<ul class="col">
+								<li data-translate="goal13">Desarrollé soluciones web a la medida para 10+ clientes del ámbito académico, incluyendo sitios web, aplicaciones web y sistemas de gestión, cumpliendo con los requisitos y plazos acordados</li>
+								<li data-translate="goal14">Participé activamente en la capacitación y transferencia de conocimientos al cliente, asegurando la autonomía en el uso de los sistemas.</li>
+								<li data-translate="goal15">Mantuve una excelente comunicación y gestión de expectativas con los clientes, logrando una tasa de recomendación del 100% y la obtención de nuevos proyectos por referencia</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -186,14 +249,9 @@
 			<section class="section projects-section">
 				<h2 class="section-title">
 					<span class="icon-holder"><i class="fas fa-code mt-2"></i></span>
-					<span data-translate="laboral_projects">Proyectos Laborales</span>
+					<span data-translate="laboral_projects">Proyectos</span>
+					<hr>
 				</h2>
-
-				<div class="intro">
-					<p data-translate="laboral_projects_description"></p>
-				</div>
-
-				<hr class="mb-4">
 
 				<div class="item">
 					<p class="project-title" data-translate="metrovacesa">Metrovacesa - Málaga Towers</p>
@@ -216,8 +274,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="reservatum">Reservatum</p>
 					<span class="badge badge-dark">Vuetify</span>
@@ -235,8 +291,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="m2m">Mouth 2 Mouth</p>
 					<span class="badge badge-dark">React Native</span>
@@ -244,11 +298,12 @@
 					<span class="badge badge-dark">React.js</span>
 					<span class="badge badge-dark">Laravel</span>
 					<span class="badge badge-dark">Node.js</span>
+					<span class="badge badge-dark">Expressjs</span>
 					<span class="badge badge-dark">Firebase Cloud Messaging</span>
 					<span class="badge badge-dark">MySQL</span>
 					<span class="badge badge-dark">PHP</span>
 					<p class="project-tagline mt-3" data-translate="m2m_description">...</p>
-					<a style="display: block;" target="_blank" href="https://www.mouth2mouth-app.com/">https://www.mouth2mouth-app.com/</a>
+					<a style="display: block;" target="_blank" href="https://www.m2m-app.ch/en">https://www.m2m-app.ch/en</a>
 					<a style="display: block;" target="_blank" href="https://play.google.com/store/apps/details?id=com.nextstation.mouth2mouth&hl=es&gl=US">Mírala en Googe Play Store</a>
 					<div class="d-flex justify-content-end mt-4">
 						<button class="btn btn-sm btn-dark" data-pos="0" data-toggle="modal" data-target="#galeria">
@@ -257,8 +312,6 @@
 						</button>
 					</div>
 				</div>
-
-				<hr class="mb-4">
 
 				<div class="item">
 					<p class="project-title" data-translate="halaken">Halaken</p>
@@ -282,8 +335,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="miekipo">Miekipo</p>
 					<span class="badge badge-dark">React Native</span>
@@ -305,8 +356,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="promartv">PromarTV</p>
 					<span class="badge badge-dark">React Native</span>
@@ -325,8 +374,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="tierraxtierra">Tierra por Tierra</p>
 					<span class="badge badge-dark">React Native</span>
@@ -343,8 +390,6 @@
 						</button>
 					</div>
 				</div>
-
-				<hr class="mb-4">
 			</section>
 
 			<!-- Proyectos Univesistarios -->
@@ -352,10 +397,8 @@
 				<h2 class="section-title">
 					<span class="icon-holder"><i class="fas fa-code mt-2"></i></span>
 					<span data-translate="projects">Proyectos Universitarios</span>
+					<hr>
 				</h2>
-				<div class="intro">
-					<p data-translate="projects_description"/p>
-				</div>
 
 				<div class="item">
 					<p class="project-title" data-translate="Software_Educativo">Software Educativo</p>
@@ -376,8 +419,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="aula_virtual">Aula Virtual</p>
 					<span class="badge badge-dark">PHP</span>
@@ -397,8 +438,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="admin_system_api">Sistema de Administracion y API</p>
 					<span class="badge badge-dark">PHP</span>
@@ -415,8 +454,6 @@
 						</button>
 					</div>
 				</div>
-
-				<hr class="mb-4">
 
 				<div class="item">
 					<p class="project-title" data-translate="ecommerce">Sistema Administrativo y E-Commerce Simple</p>
@@ -437,8 +474,6 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 				<div class="item">
 					<p class="project-title" data-translate="gestion">Sistema de gestión</p>
 					<span class="badge badge-dark">PHP</span>
@@ -455,159 +490,112 @@
 					</div>
 				</div>
 
-				<hr class="mb-4">
-
 			</section>
 
 			<section class="skills-section section">
 				<h2 class="section-title">
 					<span class="icon-holder"><i class="fas fa-rocket mt-2"></i></span>
-					<span data-translate="skills">Herramientas</span>
+					<span data-translate="skills">Habilidades</span>
+					<hr>
 				</h2>
 				<div class="skillset">
 
-					<div class="row mb-2">
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/html.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">HTML5 & CSS3</h3>
-							</div>
+					<div class="d-flex justify-content-md-around justify-content-sm-around justify-content-lg-between flex-wrap">
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/html.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">HTML5 & CSS3</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/bootstrap.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Bootstrap 4</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/bootstrap.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Bootstrap 4</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/javascript.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Javascript</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/javascript.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Javascript</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/react.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">React.js</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/react.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">React.js</h3>
+						</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/nodejs.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Node.js</h3>
 						</div>
 					</div>
 
-					<div class="row mb-2">
-
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/nodejs.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Node.js</h3>
-							</div>
+					<div class="d-flex justify-content-md-around justify-content-sm-around justify-content-lg-between flex-wrap">
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/reactnative.png" alt="svg image"/>
+							<h3 class="level-title mt-2">React Native</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/reactnative.png" alt="svg image"/>
-								<h3 class="level-title mt-2">React Native</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/vuejs.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Vue.js</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/vuejs.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Vue.js</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/expressjs.png" alt="svg image"/>
+							<h3 class="level-title mt-2">Express.js</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/expressjs.png" alt="svg image"/>
-								<h3 class="level-title mt-2">Express.js</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/adonis.png" alt="png image"/>
+							<h3 class="level-title mt-2">Adonis.js</h3>
+						</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/php.png" alt="svg image"/>
+							<h3 class="level-title mt-2">PHP</h3>
 						</div>
 					</div>
 
-					<div class="row mb-2">
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/adonis.png" alt="png image"/>
-								<h3 class="level-title mt-2">Adonis.js</h3>
-							</div>
+					<div class="d-flex justify-content-md-around justify-content-sm-around justify-content-lg-between flex-wrap">
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/laravel.png" alt="svg image"/>
+							<h3 class="level-title mt-2">Laravel</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/php.png" alt="svg image"/>
-								<h3 class="level-title mt-2">PHP</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/codeigniter.png" alt="svg image"/>
+							<h3 class="level-title mt-2">Codeigniter 3</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/laravel.png" alt="svg image"/>
-								<h3 class="level-title mt-2">Laravel</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/ts.png" alt="png image"/>
+							<h3 class="level-title mt-2">TypeScript</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/codeigniter.png" alt="svg image"/>
-								<h3 class="level-title mt-2">Codeigniter 3</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/bd.png" alt="png image"/>
+							<h3 class="level-title mt-2">MySQL / PostgreSQL</h3>
+						</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/git.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">GIT</h3>
 						</div>
 					</div>
 
-					<div class="row mb-2">
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/ts.png" alt="png image"/>
-								<h3 class="level-title mt-2">TypeScript</h3>
-							</div>
+					<div class="d-flex justify-content-md-around justify-content-sm-around justify-content-lg-between flex-wrap">
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/agile.png" alt="png image"/>
+							<h3 class="level-title mt-2" data-translate="agile">Metodologías ágiles</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/bd.png" alt="png image"/>
-								<h3 class="level-title mt-2">MySQL / PostgreSQL</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/tailwindcss.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Tailwindcss</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/git.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">GIT</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/vuetify.png" alt="png image"/>
+							<h3 class="level-title mt-2">Vuetify</h3>
 						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/agile.png" alt="png image"/>
-								<h3 class="level-title mt-2" data-translate="agile">Metodologías ágiles</h3>
-							</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/nextjs.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Next.js</h3>
+						</div>
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/redux.png" alt="png image"/>
+							<h3 class="level-title mt-2">Redux</h3>
 						</div>
 					</div>
 
-					<div class="row mb-2">
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/tailwindcss.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Tailwindcss</h3>
-							</div>
-						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/vuetify.png" alt="png image"/>
-								<h3 class="level-title mt-2">Vuetify</h3>
-							</div>
-						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/nextjs.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Next.js</h3>
-							</div>
-						</div>
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/redux.png" alt="png image"/>
-								<h3 class="level-title mt-2">Redux</h3>
-							</div>
-						</div>
-					</div>
-
-					<div class="row mb-2">
-						<div class="col">
-							<div class="item d-flex align-items-center">
-								<img class="icon" src="./assets/icons/firebase.svg" alt="svg image"/>
-								<h3 class="level-title mt-2">Firebase</h3>
-							</div>
+					<div class="d-flex justify-content-md-around justify-content-sm-around justify-content-lg-between flex-wrap">
+						<div class="item d-flex align-items-center">
+							<img class="icon" src="./assets/icons/firebase.svg" alt="svg image"/>
+							<h3 class="level-title mt-2">Firebase</h3>
 						</div>
 					</div>
 
