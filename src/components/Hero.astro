@@ -1,0 +1,236 @@
+---
+// Hero Section - Página de inicio con información personal principal
+---
+
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 pt-20 relative z-10">
+  <div class="container mx-auto px-4 py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Imagen de perfil -->
+      <div class="mb-8">
+        <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-1 shadow-2xl">
+          <div class="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+            <!-- Placeholder para imagen de perfil -->
+            <i class="ph ph-user text-4xl md:text-5xl text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saludo y nombre -->
+      <div class="mb-6">
+        <p class="text-lg md:text-xl text-gray-600 mb-2">
+          <span data-es="¡Hola! Soy" data-en="Hello! I'm">¡Hola! Soy</span>
+        </p>
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          José López
+        </h1>
+        <div class="text-xl md:text-2xl text-gray-700 font-medium">
+          <span class="typing-animation">
+            <span data-es="Desarrollador Full Stack" data-en="Full Stack Developer">Desarrollador Full Stack</span>
+          </span>
+        </div>
+        <div class="text-lg md:text-xl text-gray-600 mt-2">
+          <span data-es="& Desarrollador Móvil Híbrido" data-en="& Hybrid Mobile Developer">& Desarrollador Móvil Híbrido</span>
+        </div>
+      </div>
+
+      <!-- Descripción breve -->
+      <div class="mb-8 max-w-2xl mx-auto">
+        <p class="text-lg text-gray-600 leading-relaxed">
+          <span data-es="Apasionado por crear experiencias digitales innovadoras y soluciones tecnológicas que marcan la diferencia. Especializado en desarrollo web y aplicaciones móviles con más de [X] años de experiencia." 
+                data-en="Passionate about creating innovative digital experiences and technological solutions that make a difference. Specialized in web development and mobile applications with more than [X] years of experience.">
+            Apasionado por crear experiencias digitales innovadoras y soluciones tecnológicas que marcan la diferencia. Especializado en desarrollo web y aplicaciones móviles con más de [X] años de experiencia.
+          </span>
+        </p>
+      </div>
+
+      <!-- Estadísticas rápidas -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-3xl font-bold text-blue-600 mb-2">+4</div>
+          <div class="text-sm text-gray-600">
+            <span data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-3xl font-bold text-purple-600 mb-2">+10</div>
+          <div class="text-sm text-gray-600">
+            <span data-es="Proyectos Completados" data-en="Projects Completed">Proyectos Completados</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-3xl font-bold text-green-600 mb-2">+10</div>
+          <div class="text-sm text-gray-600">
+            <span data-es="Tecnologías Dominadas" data-en="Technologies Mastered">Tecnologías Dominadas</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="text-3xl font-bold text-orange-600 mb-2">+10</div>
+          <div class="text-sm text-gray-600">
+            <span data-es="Clientes Satisfechos" data-en="Happy Clients">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#projects" class="btn-primary group">
+          <span data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</span>
+          <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+        </a>
+        <a href="#contact" class="btn-secondary group">
+          <span data-es="Contáctame" data-en="Contact Me">Contáctame</span>
+          <i class="ph ph-chat-circle ml-2 group-hover:scale-110 transition-transform duration-300"></i>
+        </a>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="mt-10 flex justify-center space-x-6">
+        <a href="https://www.linkedin.com/in/joselopez-dev/" class="social-link group" aria-label="LinkedIn">
+          <i class="ph ph-linkedin-logo text-xl"></i>
+        </a>
+        <a href="https://github.com/jose1937js" class="social-link group" aria-label="GitHub">
+          <i class="ph ph-github-logo text-xl"></i>
+        </a>
+        <!-- <a href="#" class="social-link group" aria-label="Twitter">
+          <i class="ph ph-twitter-logo text-xl"></i>
+        </a> -->
+        <a href="mailto:jflo1937@gmail.com" class="social-link group" aria-label="Email">
+          <i class="ph ph-envelope text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Efecto de escritura para el título de rol
+  document.addEventListener('DOMContentLoaded', () => {
+    const roles = {
+      es: [
+        'Desarrollador Full Stack',
+        'Desarrollador Móvil Híbrido',
+        'Especialista en React/Vue',
+        'Desarrollador Backend',
+        'Creador de Soluciones'
+      ],
+      en: [
+        'Full Stack Developer',
+        'Hybrid Mobile Developer',
+        'React/Vue Specialist',
+        'Backend Developer',
+        'Solution Creator'
+      ]
+    };
+
+    let currentLang = 'es';
+    let currentRoleIndex = 0;
+    const typingElement = document.querySelector('.typing-animation span') as HTMLElement;
+
+    function typeWriter(text: string, callback: () => void) {
+      if (!typingElement) return;
+      
+      let i = 0;
+      typingElement.textContent = '';
+      
+      function type() {
+        if (i < text.length) {
+          typingElement.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 100);
+        } else if (callback) {
+          setTimeout(callback, 2000);
+        }
+      }
+      
+      type();
+    }
+
+    function eraseText(callback: () => void) {
+      if (!typingElement) return;
+      
+      const text = typingElement.textContent || '';
+      let i = text.length;
+      
+      function erase() {
+        if (i > 0) {
+          typingElement.textContent = text.substring(0, i - 1);
+          i--;
+          setTimeout(erase, 50);
+        } else if (callback) {
+          setTimeout(callback, 500);
+        }
+      }
+      
+      erase();
+    }
+
+    function cycleRoles() {
+      const currentRoles = roles[currentLang as keyof typeof roles];
+      const nextRole = currentRoles[currentRoleIndex];
+      
+      eraseText(() => {
+        typeWriter(nextRole, () => {
+          currentRoleIndex = (currentRoleIndex + 1) % currentRoles.length;
+          setTimeout(cycleRoles, 1000);
+        });
+      });
+    }
+
+    // Iniciar el ciclo de roles
+    setTimeout(cycleRoles, 1000);
+
+    // Escuchar cambios de idioma
+    document.addEventListener('languageChanged', (e: CustomEvent<{ lang: string }>) => {
+      currentLang = e.detail.lang;
+      currentRoleIndex = 0;
+    });
+  });
+
+  // Parallax effect para el hero
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.getElementById('home') as HTMLElement;
+    if (hero) {
+      hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+  });
+</script>
+
+<style>
+  .btn-primary {
+    @apply inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105;
+  }
+
+  .social-link {
+    @apply w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110;
+  }
+
+  .typing-animation {
+    @apply inline-block;
+  }
+
+  .typing-animation::after {
+    content: '|';
+    @apply animate-pulse text-blue-600;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

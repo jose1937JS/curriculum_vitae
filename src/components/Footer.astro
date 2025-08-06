@@ -1,0 +1,409 @@
+---
+// Footer Component - Contacto, redes sociales y descarga de CV
+---
+
+<footer id="contact" class="bg-gray-900 text-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Sección principal de contacto -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          <span data-es="¡Trabajemos Juntos!" data-en="Let's Work Together!">¡Trabajemos Juntos!</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          <span data-es="¿Tienes un proyecto en mente? Me encantaría conocer tus ideas y ayudarte a hacerlas realidad."
+                data-en="Do you have a project in mind? I'd love to hear your ideas and help you make them reality.">
+            ¿Tienes un proyecto en mente? Me encantaría conocer tus ideas y ayudarte a hacerlas realidad.
+          </span>
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 mb-16">
+        
+        <!-- Información de contacto -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-6">
+              <span data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</span>
+            </h3>
+            
+            <div class="space-y-6">
+              <!-- Email -->
+              <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('jflo1937@gmail.com')">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-700 transition-colors duration-300">
+                  <i class="ph ph-envelope text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-gray-400 text-sm">Email</div>
+                  <div class="text-lg font-medium group-hover:text-blue-400 transition-colors duration-300">jflo1937@gmail.com</div>
+                </div>
+                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <i class="ph ph-copy text-gray-400"></i>
+                </div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('https://wa.me/584120345008')">
+                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center group-hover:bg-green-700 transition-colors duration-300">
+                  <i class="ph ph-phone text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-gray-400 text-sm">
+                    <span data-es="Teléfono" data-en="Phone">Teléfono</span>
+                  </div>
+                  <div class="text-lg font-medium group-hover:text-green-400 transition-colors duration-300">WhatsApp</div>
+                </div>
+                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <i class="ph ph-copy text-gray-400"></i>
+                </div>
+              </div>
+
+              <!-- Ubicación -->
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                  <i class="ph ph-map-pin text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-gray-400 text-sm">
+                    <span data-es="Ubicación" data-en="Location">Ubicación</span>
+                  </div>
+                  <div class="text-lg font-medium">San Juan de los Morros, Venezuela</div>
+                </div>
+              </div>
+
+              <!-- Disponibilidad -->
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
+                  <i class="ph ph-clock text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-gray-400 text-sm">
+                    <span data-es="Disponibilidad" data-en="Availability">Disponibilidad</span>
+                  </div>
+                  <div class="text-lg font-medium">
+                    <span class="inline-flex items-center">
+                      <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                      <span data-es="Disponible para proyectos" data-en="Available for projects">Disponible para proyectos</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Descarga de CV -->
+          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <h4 class="text-xl font-bold mb-4">
+              <span data-es="Descarga Mi CV" data-en="Download My CV">Descarga Mi CV</span>
+            </h4>
+            <p class="text-gray-300 mb-6">
+              <span data-es="Obtén una copia completa de mi experiencia profesional y habilidades técnicas optimizada para sistemas ATS."
+                    data-en="Get a complete copy of my professional experience and technical skills optimized for ATS systems.">
+                Obtén una copia completa de mi experiencia profesional y habilidades técnicas optimizada para sistemas ATS.
+              </span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/cv-desarrollador-fullstack.pdf" download class="cv-download-btn group flex-1">
+                <i class="ph ph-download-simple mr-2 group-hover:animate-bounce"></i>
+                <span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>
+                <span class="ml-auto text-sm opacity-75">2.1 MB</span>
+              </a>
+              
+              <button onclick="shareCV()" class="share-cv-btn group">
+                <i class="ph ph-share mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
+                <span data-es="Compartir" data-en="Share">Compartir</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div>
+          <h3 class="text-2xl font-bold mb-6">
+            <span data-es="Envíame un Mensaje" data-en="Send Me a Message">Envíame un Mensaje</span>
+          </h3>
+          
+          <form id="contact-form" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                  <span data-es="Nombre" data-en="Name">Nombre</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  class="contact-input"
+                  placeholder="Tu nombre completo"
+                  data-placeholder-es="Tu nombre completo"
+                  data-placeholder-en="Your full name"
+                >
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  class="contact-input"
+                  placeholder="tu@email.com"
+                >
+              </div>
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">
+                <span data-es="Asunto" data-en="Subject">Asunto</span>
+              </label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                required 
+                class="contact-input"
+                placeholder="¿En qué puedo ayudarte?"
+                data-placeholder-es="¿En qué puedo ayudarte?"
+                data-placeholder-en="How can I help you?"
+              >
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+                <span data-es="Mensaje" data-en="Message">Mensaje</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                class="contact-input resize-none"
+                placeholder="Cuéntame sobre tu proyecto..."
+                data-placeholder-es="Cuéntame sobre tu proyecto..."
+                data-placeholder-en="Tell me about your project..."
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn group w-full">
+              <span class="submit-text">
+                <span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+              </span>
+              <span class="submit-loading hidden">
+                <i class="ph ph-spinner animate-spin mr-2"></i>
+                <span data-es="Enviando..." data-en="Sending...">Enviando...</span>
+              </span>
+              <i class="ph ph-paper-plane-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="text-center border-t border-gray-700 pt-12">
+        <h3 class="text-xl font-bold mb-8">
+          <span data-es="Sígueme en Redes Sociales" data-en="Follow Me on Social Media">Sígueme en Redes Sociales</span>
+        </h3>
+        
+        <div class="flex justify-center space-x-6 mb-8">
+          <a href="https://www.linkedin.com/in/joselopez-dev/" target="_blank" rel="noopener noreferrer" class="social-icon group" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+          </a>
+          <a href="https://github.com/jose1937js" target="_blank" rel="noopener noreferrer" class="social-icon group" aria-label="GitHub">
+            <i class="ph ph-github-logo text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+          </a>
+          <a href="mailto:jflo1937@gmail.com" class="social-icon group" aria-label="Email">
+            <i class="ph ph-envelope text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-gray-400 text-sm">
+          <p>&copy; 2025 José López. 
+            <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span>
+          </p>
+          <p class="mt-2">
+            <span data-es="Hecho con cursor" data-en="Made with cursor">Hecho con cursor</span> 
+            <span data-es="y mucho café" data-en="and lots of coffee">y mucho café</span> ☕
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="fixed top-4 right-0 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="flex items-center space-x-2">
+      <i class="ph ph-check-circle"></i>
+      <span id="toast-message"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  // Funcionalidad del formulario de contacto
+  document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = (e.target as HTMLElement).querySelector('.submit-btn');
+    const submitText = submitBtn?.querySelector('.submit-text');
+    const submitLoading = submitBtn?.querySelector('.submit-loading');
+    
+    // Mostrar estado de carga
+    submitText?.classList.add('hidden');
+    submitLoading?.classList.remove('hidden');
+    (submitBtn as HTMLButtonElement).disabled = true;
+    
+    try {
+      emailjs.send('service_8jqxbwj', 'template_f7kpqnk', {
+        name: (e.target as HTMLFormElement).name.value,
+        email: (e.target as HTMLFormElement).email.value,
+        time: new Date().toLocaleString('es-ES', { timeZone: 'America/Caracas' }),
+        subject: (e.target as HTMLFormElement).subject.value,
+        message: (e.target as HTMLFormElement).message.value,
+      }).then(
+        (response: any) => {
+          console.log('SUCCESS!', response);
+          // emviar mensaje de exito
+          // @ts-ignore
+          showToast('Mensaje enviado correctamente', 'success');
+        },
+        (error: any) => {
+          // @ts-ignore
+          showToast('Error al enviar el mensaje', 'error');
+        },
+      );
+    
+      (e.target as HTMLFormElement).reset();
+      
+    } catch (error) {
+      console.log('FAILED...', error);
+    } finally {
+      // Restaurar estado del botón
+      submitText?.classList.remove('hidden');
+      submitLoading?.classList.add('hidden');
+      (submitBtn as HTMLButtonElement).disabled = false;
+    }
+  });
+
+  // Actualizar placeholders según idioma
+  document.addEventListener('languageChanged', (e) => {
+    const lang = (e as CustomEvent<{ lang: string }>).detail.lang;
+    const inputs = document.querySelectorAll('[data-placeholder-es], [data-placeholder-en]');
+    
+    inputs.forEach(input => {
+      const placeholder = input.getAttribute(`data-placeholder-${lang}`);
+      if (placeholder) {
+        (input as HTMLInputElement).placeholder = placeholder;
+      }
+    });
+  });
+
+  // Animaciones de entrada
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        (entry.target as HTMLElement).style.opacity = '1';
+        (entry.target as HTMLElement).style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('#contact > div > div');
+    animatedElements.forEach(el => {
+      (el as HTMLElement).style.opacity = '0';
+      (el as HTMLElement).style.transform = 'translateY(30px)';
+      (el as HTMLElement).style.transition = 'all 0.8s ease-out';
+      observer.observe(el);
+    });
+  });
+</script>
+
+<style>
+  .contact-input {
+    @apply w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
+  }
+
+  .contact-input:focus {
+    @apply bg-gray-700 border-blue-500;
+  }
+
+  .submit-btn {
+    @apply flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .cv-download-btn {
+    @apply inline-flex items-center justify-between px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-medium rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .share-cv-btn {
+    @apply inline-flex items-center px-4 py-3 border-2 border-blue-600 text-blue-400 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105;
+  }
+
+  .social-icon {
+    @apply w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl;
+  }
+
+  /* Efectos de hover mejorados */
+  .group:hover .ph-download-simple {
+    animation: bounce 0.6s ease-in-out;
+  }
+
+  .group:hover .ph-paper-plane-right {
+    animation: fly 0.6s ease-in-out;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 60%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    80% { transform: translateY(-5px); }
+  }
+
+  @keyframes fly {
+    0% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(5px) rotate(10deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+  }
+
+  /* Gradiente animado para botones */
+  .cv-download-btn, .submit-btn {
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Loading spinner animation */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  /* Pulse animation for availability dot */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>

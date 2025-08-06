@@ -1,0 +1,346 @@
+---
+// Página principal del portafolio - Integración de todos los componentes
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Desarrollador Full Stack & Móvil | [Tu Nombre] - Portafolio Profesional"
+	description="Portafolio profesional de [Tu Nombre], desarrollador full stack especializado en aplicaciones web y móviles híbridas. Experiencia en React, Node.js, React Native, Vue.js, Python y más tecnologías modernas."
+>
+	<!-- Loader de página (opcional) -->
+	<div id="page-loader" class="page-loader">
+		<div class="loader-content">
+			<div class="loader-spinner"></div>
+			<p>Cargando portafolio...</p>
+		</div>
+	</div>
+
+	<!-- Header fijo con navegación -->
+	<Header />
+
+	<!-- Contenido principal -->
+	<main>
+		<!-- Sección Hero/Inicio -->
+		<Hero />
+
+		<!-- Sección Sobre mí -->
+		<About />
+
+		<!-- Sección Experiencia Profesional -->
+		<Experience />
+
+		<!-- Sección Proyectos -->
+		<Projects />
+
+		<!-- Sección Habilidades y Herramientas -->
+		<Skills />
+	</main>
+
+	<!-- Footer con contacto -->
+	<Footer />
+
+	<!-- Scripts adicionales para funcionalidad del portafolio -->
+	<script>
+		// Ocultar loader cuando la página esté completamente cargada
+		window.addEventListener('load', () => {
+			const loader = document.getElementById('page-loader');
+			if (loader) {
+				setTimeout(() => {
+					loader.classList.add('hidden');
+					// Remover del DOM después de la animación
+					setTimeout(() => {
+						loader.remove();
+					}, 500);
+				}, 500);
+			}
+		});
+
+		// Intersección Observer para animaciones en scroll
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const sectionObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animate-in');
+					
+					// Trigger específico para elementos con data-aos
+					const aosElements = entry.target.querySelectorAll('[data-aos]');
+					aosElements.forEach((el, index) => {
+						setTimeout(() => {
+							el.classList.add('aos-animate');
+						}, index * 100);
+					});
+				}
+			});
+		}, observerOptions);
+
+		// Observar todas las secciones principales
+		document.addEventListener('DOMContentLoaded', () => {
+			const sections = document.querySelectorAll('section');
+			sections.forEach(section => {
+				sectionObserver.observe(section);
+			});
+		});
+
+		// Actualizar la navegación activa basada en scroll
+		function updateActiveNavigation() {
+			const sections = document.querySelectorAll('section[id]');
+			const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+			
+			let current = '';
+			
+			sections.forEach((section) => {
+				const sectionElement = section as HTMLElement;
+				const sectionTop = sectionElement.offsetTop - 100;
+				const sectionHeight = sectionElement.clientHeight;
+				
+				if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+					current = section.getAttribute('id') ?? 'home';
+				}
+			});
+
+			navLinks.forEach(link => {
+				link.classList.remove('active');
+				if (link.getAttribute('href') === `#${current}`) {
+					link.classList.add('active');
+				}
+			});
+		}
+
+		// Throttle función para optimizar performance
+		function throttle(func: (...args: any[]) => void, wait: number) {
+			let timeout: NodeJS.Timeout | undefined;
+			return function executedFunction(...args: any[]) {
+				const later = () => {
+					clearTimeout(timeout);
+					func(...args);
+				};
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+			};
+		}
+
+		// Escuchar scroll para actualizar navegación
+		window.addEventListener('scroll', throttle(updateActiveNavigation, 100));
+
+		// Efecto parallax sutil para el hero
+		window.addEventListener('scroll', throttle(() => {
+			const scrolled = window.pageYOffset;
+			const hero = document.getElementById('home');
+			
+			if (hero && scrolled < window.innerHeight) {
+				hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+			}
+		}, 16));
+
+		// Funcionalidad de teclas de acceso rápido
+		document.addEventListener('keydown', (e) => {
+			// Alt + número para navegar a secciones
+			if (e.altKey && !isNaN(Number(e.key)) && Number(e.key) >= 1 && Number(e.key) <= 6) {
+				e.preventDefault();
+				const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+				const targetSection = sections[parseInt(e.key) - 1];
+				if (targetSection) {
+					window.smoothScrollTo(targetSection);
+				}
+			}
+			
+			// Escape para cerrar menú móvil
+			if (e.key === 'Escape') {
+				const mobileMenu = document.getElementById('mobile-menu');
+				if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+					mobileMenu.classList.add('hidden');
+				}
+			}
+		});
+
+		// Preload de imágenes importantes
+		const preloadImages: string[] = [
+			// Agregar aquí las URLs de imágenes importantes
+		];
+
+		preloadImages.forEach(src => {
+			const img = new Image();
+			img.src = src;
+		});
+
+		// Analytics y tracking (ejemplo)
+		function trackEvent(eventName: string, eventData: Record<string, any> = {}) {
+			// Aquí puedes integrar Google Analytics, Mixpanel, etc.
+			console.log('Event tracked:', eventName, eventData);
+			
+			// Ejemplo con Google Analytics 4
+			if (typeof gtag !== 'undefined') {
+				gtag('event', eventName, eventData);
+			}
+		}
+
+		// Trackear clics en proyectos
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+			if (target.closest('.project-card')) {
+				const projectTitle = target.closest('.project-card')?.querySelector('h3')?.textContent;
+				trackEvent('project_click', { project_name: projectTitle });
+			}
+			
+			if (e.target.closest('.cv-download-btn')) {
+				trackEvent('cv_download', { source: 'footer' });
+			}
+		});
+
+		// Detección de dispositivo para optimizaciones
+		const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		const isTablet = /(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(navigator.userAgent);
+
+		if (isMobile) {
+			document.body.classList.add('is-mobile');
+		}
+		if (isTablet) {
+			document.body.classList.add('is-tablet');
+		}
+
+		// Optimización de performance: lazy loading para elementos no críticos
+		if ('IntersectionObserver' in window) {
+			const lazyElements = document.querySelectorAll('[data-lazy]');
+			
+			const lazyObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const element = entry.target as HTMLElement;
+						
+						// Cargar imagen lazy
+						if (element.dataset.lazySrc) {
+							element.src = element.dataset.lazySrc;
+							element.removeAttribute('data-lazy-src');
+						}
+						
+						// Cargar componente lazy
+						if (element.dataset.lazyComponent) {
+							// Lógica para cargar componentes dinámicamente
+						}
+						
+						lazyObserver.unobserve(element);
+					}
+				});
+			});
+
+			lazyElements.forEach(el => lazyObserver.observe(el));
+		}
+
+		// PWA: Prompt para instalar app
+		let deferredPrompt: BeforeInstallPromptEvent | null = null;
+		
+		window.addEventListener('beforeinstallprompt', (e) => {
+			e.preventDefault();
+			deferredPrompt = e as BeforeInstallPromptEvent;
+			
+			// Mostrar botón de instalación personalizado
+			const installButton = document.createElement('button');
+			installButton.textContent = 'Instalar App';
+			installButton.className = 'install-btn';
+			installButton.onclick = () => {
+				deferredPrompt.prompt();
+				deferredPrompt.userChoice.then((choiceResult: { outcome: string }) => {
+					if (choiceResult.outcome === 'accepted') {
+						console.log('Usuario instaló la PWA');
+					}
+					deferredPrompt = null;
+					installButton.remove();
+				});
+			};
+			
+			// Agregar botón al header o footer según diseño
+			// document.querySelector('header').appendChild(installButton);
+		});
+	</script>
+</Layout>
+
+<style>
+	/* Estilos específicos para la página principal */
+	.animate-in {
+		animation: slideInUp 0.8s ease-out;
+	}
+
+	@keyframes slideInUp {
+		from {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Estilos para navegación activa */
+	.nav-link.active,
+	.mobile-nav-link.active {
+		color: #3b82f6 !important;
+		font-weight: 600;
+	}
+
+	.nav-link.active::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+		border-radius: 1px;
+	}
+
+	/* Estilos para dispositivos móviles */
+	.is-mobile .hover\:scale-105:hover {
+		transform: none;
+	}
+
+	.is-mobile .hover\:shadow-xl:hover {
+		box-shadow: none;
+	}
+
+	/* Botón de instalación PWA */
+	.install-btn {
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+		color: white;
+		border: none;
+		padding: 12px 24px;
+		border-radius: 50px;
+		font-weight: 600;
+		cursor: pointer;
+		box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+		z-index: 1000;
+		transition: all 0.3s ease;
+	}
+
+	.install-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+	}
+
+	/* Optimizaciones para rendimiento */
+	.gpu-accelerated {
+		transform: translateZ(0);
+		will-change: transform;
+	}
+
+	/* Estilos responsivos adicionales */
+	@media (max-width: 768px) {
+		.nav-link.active::after {
+			display: none;
+		}
+	}
+</style>

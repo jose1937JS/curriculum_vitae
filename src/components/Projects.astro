@@ -1,0 +1,518 @@
+---
+// Projects Section - Galería de proyectos del desarrollador
+---
+
+<section id="projects" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-7xl mx-auto">
+      <!-- Título de sección -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <span data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+        <p class="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
+          <span data-es="Una selección de proyectos que demuestran mis habilidades y experiencia" 
+                data-en="A selection of projects that demonstrate my skills and experience">
+            Una selección de proyectos que demuestran mis habilidades y experiencia
+          </span>
+        </p>
+      </div>
+
+      <!-- Filtros de proyectos -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn active" data-filter="all">
+          <span data-es="Todos" data-en="All">Todos</span>
+        </button>
+        <button class="filter-btn" data-filter="web">
+          <span data-es="Web Apps" data-en="Web Apps">Web Apps</span>
+        </button>
+        <button class="filter-btn" data-filter="mobile">
+          <span data-es="Apps Móviles" data-en="Mobile Apps">Apps Móviles</span>
+        </button>
+        <button class="filter-btn" data-filter="fullstack">
+          <span data-es="Full Stack" data-en="Full Stack">Full Stack</span>
+        </button>
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8" id="projects-grid">
+        
+        <!-- Proyecto 1: E-commerce Platform -->
+        <div class="project-card group" data-category="fullstack web" data-aos="fade-up">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <!-- Imagen del proyecto -->
+            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-storefront text-6xl text-blue-600"></i>
+              </div>
+              <!-- Overlay con botones de acción -->
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido del proyecto -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="Plataforma E-commerce" data-en="E-commerce Platform">Plataforma E-commerce</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Una plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos, panel administrativo y gestión de inventario en tiempo real."
+                      data-en="A complete e-commerce platform with shopping cart, payment gateway, admin panel and real-time inventory management.">
+                  Una plataforma completa de comercio electrónico con carrito de compras, pasarela de pagos, panel administrativo y gestión de inventario en tiempo real.
+                </span>
+              </p>
+              
+              <!-- Tecnologías utilizadas -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-blue-100 text-blue-700">React</span>
+                <span class="tech-tag bg-green-100 text-green-700">Node.js</span>
+                <span class="tech-tag bg-purple-100 text-purple-700">MongoDB</span>
+                <span class="tech-tag bg-yellow-100 text-yellow-700">Stripe</span>
+              </div>
+              
+              <!-- Métricas del proyecto -->
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-blue-600">50k+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Usuarios" data-en="Users">Usuarios</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-green-600">$1M+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Ventas" data-en="Sales">Ventas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Task Management App -->
+        <div class="project-card group" data-category="mobile fullstack" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-green-100 to-blue-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-check-square text-6xl text-green-600"></i>
+              </div>
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="App Gestión de Tareas" data-en="Task Management App">App Gestión de Tareas</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Aplicación móvil híbrida para gestión de proyectos y tareas en equipo, con notificaciones push, sincronización offline y reportes detallados."
+                      data-en="Hybrid mobile application for project and team task management, with push notifications, offline sync and detailed reports.">
+                  Aplicación móvil híbrida para gestión de proyectos y tareas en equipo, con notificaciones push, sincronización offline y reportes detallados.
+                </span>
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-cyan-100 text-cyan-700">React Native</span>
+                <span class="tech-tag bg-orange-100 text-orange-700">Firebase</span>
+                <span class="tech-tag bg-purple-100 text-purple-700">Redux</span>
+                <span class="tech-tag bg-pink-100 text-pink-700">Expo</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-green-600">10k+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Descargas" data-en="Downloads">Descargas</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-blue-600">4.8⭐</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Rating" data-en="Rating">Rating</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Dashboard Analytics -->
+        <div class="project-card group" data-category="web fullstack" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-chart-line text-6xl text-purple-600"></i>
+              </div>
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="Dashboard de Analytics" data-en="Analytics Dashboard">Dashboard de Analytics</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Panel de control avanzado para análisis de datos empresariales con gráficos interactivos, filtros dinámicos y exportación de reportes."
+                      data-en="Advanced control panel for business data analysis with interactive charts, dynamic filters and report export.">
+                  Panel de control avanzado para análisis de datos empresariales con gráficos interactivos, filtros dinámicos y exportación de reportes.
+                </span>
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-emerald-100 text-emerald-700">Vue.js</span>
+                <span class="tech-tag bg-indigo-100 text-indigo-700">D3.js</span>
+                <span class="tech-tag bg-gray-100 text-gray-700">PostgreSQL</span>
+                <span class="tech-tag bg-red-100 text-red-700">Docker</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-purple-600">500+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Empresas" data-en="Companies">Empresas</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-orange-600">2TB+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Datos" data-en="Data">Datos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 4: Social Media Platform -->
+        <div class="project-card group" data-category="fullstack mobile" data-aos="fade-up" data-aos-delay="600">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-pink-100 to-red-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-chat-circle text-6xl text-pink-600"></i>
+              </div>
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="Plataforma Social" data-en="Social Platform">Plataforma Social</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Red social especializada para profesionales del desarrollo con chat en tiempo real, compartir código y sistema de mentorías."
+                      data-en="Social network specialized for development professionals with real-time chat, code sharing and mentorship system.">
+                  Red social especializada para profesionales del desarrollo con chat en tiempo real, compartir código y sistema de mentorías.
+                </span>
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-sky-100 text-sky-700">Next.js</span>
+                <span class="tech-tag bg-teal-100 text-teal-700">Socket.io</span>
+                <span class="tech-tag bg-amber-100 text-amber-700">Prisma</span>
+                <span class="tech-tag bg-violet-100 text-violet-700">AWS</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-pink-600">25k+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Desarrolladores" data-en="Developers">Desarrolladores</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-blue-600">100k+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Código Compartido" data-en="Code Shared">Código Compartido</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 5: API Gateway -->
+        <div class="project-card group" data-category="web" data-aos="fade-up" data-aos-delay="800">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-orange-100 to-yellow-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-database text-6xl text-orange-600"></i>
+              </div>
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="API Gateway Enterprise" data-en="Enterprise API Gateway">API Gateway Enterprise</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Gateway de APIs escalable con balanceador de carga, autenticación JWT, rate limiting y monitoreo en tiempo real para microservicios."
+                      data-en="Scalable API gateway with load balancer, JWT authentication, rate limiting and real-time monitoring for microservices.">
+                  Gateway de APIs escalable con balanceador de carga, autenticación JWT, rate limiting y monitoreo en tiempo real para microservicios.
+                </span>
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-green-100 text-green-700">Node.js</span>
+                <span class="tech-tag bg-red-100 text-red-700">Redis</span>
+                <span class="tech-tag bg-blue-100 text-blue-700">Kubernetes</span>
+                <span class="tech-tag bg-gray-100 text-gray-700">Nginx</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-orange-600">1M+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Requests/día" data-en="Requests/day">Requests/día</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-green-600">99.9%</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Uptime" data-en="Uptime">Uptime</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 6: IoT Dashboard -->
+        <div class="project-card group" data-category="web mobile" data-aos="fade-up" data-aos-delay="1000">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-teal-100 to-cyan-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <i class="ph ph-device-mobile text-6xl text-teal-600"></i>
+              </div>
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Demo" data-en="Demo">Demo</span>
+                  </a>
+                  <a href="#" class="project-btn">
+                    <i class="ph ph-github-logo"></i>
+                    <span data-es="Código" data-en="Code">Código</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span data-es="Dashboard IoT Smart Home" data-en="IoT Smart Home Dashboard">Dashboard IoT Smart Home</span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Sistema de control para dispositivos inteligentes del hogar con monitoreo en tiempo real, automatizaciones y control remoto."
+                      data-en="Control system for smart home devices with real-time monitoring, automation and remote control.">
+                  Sistema de control para dispositivos inteligentes del hogar con monitoreo en tiempo real, automatizaciones y control remoto.
+                </span>
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-blue-100 text-blue-700">React</span>
+                <span class="tech-tag bg-purple-100 text-purple-700">MQTT</span>
+                <span class="tech-tag bg-green-100 text-green-700">InfluxDB</span>
+                <span class="tech-tag bg-orange-100 text-orange-700">Raspberry Pi</span>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div class="text-center">
+                  <div class="font-bold text-teal-600">150+</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Dispositivos" data-en="Devices">Dispositivos</span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="font-bold text-blue-600">95%</div>
+                  <div class="text-xs text-gray-500">
+                    <span data-es="Automatización" data-en="Automation">Automatización</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA final -->
+      <!-- <div class="text-center mt-16">
+        <div class="inline-flex items-center space-x-2 text-gray-600 mb-6">
+          <span data-es="¿Interesado en colaborar?" data-en="Interested in collaborating?">¿Interesado en colaborar?</span>
+        </div>
+        <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
+          <span data-es="Hablemos de tu Proyecto" data-en="Let's Talk About Your Project">Hablemos de tu Proyecto</span>
+          <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<script>
+  // Sistema de filtros para proyectos
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Actualizar botones activos
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        // Filtrar proyectos
+        projectCards.forEach((card: Element) => {
+          const categories = (card as HTMLElement).getAttribute('data-category')?.split(' ') ?? [];
+          
+          if (filter === 'all' || categories.includes(filter ?? '')) {
+            (card as HTMLElement).style.display = 'block';
+            (card as HTMLElement).style.opacity = '0';
+            (card as HTMLElement).style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+              (card as HTMLElement).style.opacity = '1';
+              (card as HTMLElement).style.transform = 'translateY(0)';
+            }, 100);
+          } else {
+            (card as HTMLElement).style.opacity = '0';
+            (card as HTMLElement).style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+              (card as HTMLElement).style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Animaciones de entrada
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate-fade-in-up');
+          }, index * 100);
+        }
+      });
+    }, observerOptions);
+
+    projectCards.forEach(card => observer.observe(card));
+  });
+</script>
+
+<style>
+  .filter-btn {
+    @apply px-6 py-3 rounded-full text-gray-600 font-medium transition-all duration-300 hover:bg-gray-100 hover:text-gray-900;
+  }
+
+  .filter-btn.active {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white transform scale-105;
+  }
+
+  .project-btn {
+    @apply inline-flex items-center space-x-2 px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm text-white font-medium rounded-lg hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .project-card {
+    transition: all 0.3s ease;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Efectos hover mejorados */
+  .project-card:hover .tech-tag {
+    transform: translateY(-2px);
+  }
+
+  /* Gradientes animados para las imágenes de fondo */
+  .project-card .relative::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .project-card:hover .relative::before {
+    transform: translateX(100%);
+  }
+</style>
