@@ -85,10 +85,10 @@
 
       <!-- Redes sociales -->
       <div class="mt-10 flex justify-center space-x-6">
-        <a href="https://www.linkedin.com/in/joselopez-dev/" class="social-link group" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/joselopez-dev/" target="_blank" class="social-link group" aria-label="LinkedIn">
           <i class="ph ph-linkedin-logo text-xl"></i>
         </a>
-        <a href="https://github.com/jose1937js" class="social-link group" aria-label="GitHub">
+        <a href="https://github.com/jose1937js" target="_blank" class="social-link group" aria-label="GitHub">
           <i class="ph ph-github-logo text-xl"></i>
         </a>
         <!-- <a href="#" class="social-link group" aria-label="Twitter">
@@ -101,11 +101,11 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <!-- <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
       <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
         <div class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -194,13 +194,13 @@
   });
 
   // Parallax effect para el hero
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.getElementById('home') as HTMLElement;
-    if (hero) {
-      hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-  });
+  // window.addEventListener('scroll', () => {
+  //   const scrolled = window.pageYOffset;
+  //   const hero = document.getElementById('home') as HTMLElement;
+  //   if (hero) {
+  //     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+  //   }
+  // });
 </script>
 
 <style>
