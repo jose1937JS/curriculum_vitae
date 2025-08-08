@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import profile from "../assets/file.jpg";
+
 // Hero Section - Página de inicio con información personal principal
 ---
 
@@ -10,7 +13,14 @@
         <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-1 shadow-2xl">
           <div class="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
             <!-- Placeholder para imagen de perfil -->
-            <i class="ph ph-user text-4xl md:text-5xl text-gray-500"></i>
+            <Image
+              src={profile}
+              alt="Foto de perfil de José López"
+              class="w-full h-full object-cover rounded-full"
+              width={160}
+              height={160}
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -36,21 +46,15 @@
       <!-- Descripción breve -->
       <div class="mb-8 max-w-2xl mx-auto">
         <p class="text-lg text-gray-600 leading-relaxed">
-          <span data-es="Apasionado por crear experiencias digitales innovadoras y soluciones tecnológicas que marcan la diferencia. Especializado en desarrollo web y aplicaciones móviles con más de [X] años de experiencia." 
-                data-en="Passionate about creating innovative digital experiences and technological solutions that make a difference. Specialized in web development and mobile applications with more than [X] years of experience.">
-            Apasionado por crear experiencias digitales innovadoras y soluciones tecnológicas que marcan la diferencia. Especializado en desarrollo web y aplicaciones móviles con más de [X] años de experiencia.
+          <span data-es="Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Aunque soy completamente autodidacta, me caracterizo por mi compromiso y sentido de la responsabilidad a la hora de crear soluciones informáticas. Poseo una gran curiosidad por aprender y adoptar tecnologías que faciliten el desarrollo de aplicaciones." 
+                data-en="I am a Full-Stack developer with 4 years of professional experience. Although I am completely self-taught, I am characterized by my commitment and sense of responsibility when creating software solutions. I have a great curiosity for learning and adopting technologies that facilitate application development.">
+            Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Aunque soy completamente autodidacta, me caracterizo por mi compromiso y sentido de la responsabilidad a la hora de crear soluciones informáticas. Poseo una gran curiosidad por aprender y adoptar tecnologías que faciliten el desarrollo de aplicaciones.
           </span>
         </p>
       </div>
 
       <!-- Estadísticas rápidas -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-        <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div class="text-3xl font-bold text-blue-600 mb-2">+4</div>
-          <div class="text-sm text-gray-600">
-            <span data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</span>
-          </div>
-        </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
         <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div class="text-3xl font-bold text-purple-600 mb-2">+10</div>
           <div class="text-sm text-gray-600">
