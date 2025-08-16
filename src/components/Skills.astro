@@ -285,22 +285,6 @@ import { Image } from 'astro:assets';
           </div>
           
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <!-- MongoDB -->
-            <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                <i class="ph ph-leaf text-2xl text-green-600"></i>
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">MongoDB</h4>
-            </div>
-
-            <!-- PostgreSQL -->
-            <div class="skill-card group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <i class="ph ph-database text-2xl text-blue-600"></i>
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">PostgreSQL</h4>
-            </div>
-
             <!-- MySQL -->
             <div class="skill-card group mx-auto">
               <div class="flex justify-center mb-4">
@@ -309,28 +293,36 @@ import { Image } from 'astro:assets';
               <h4 class="font-semibold text-gray-900 mb-2">MySQL</h4>
             </div>
 
-            <!-- AWS -->
+            <!-- PostgreSQL -->
             <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                <i class="ph ph-cloud text-2xl text-yellow-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/postgre.jpg" alt="postgre logo" width={70} height={70} class="rounded-full" />
               </div>
-              <h4 class="font-semibold text-gray-900 mb-2">AWS</h4>
+              <h4 class="font-semibold text-gray-900 mb-2">PostgreSQL</h4>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="skill-card group mx-auto">
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/mongodb.png" alt="mongodb logo" width={70} height={70} class="rounded-xl" />
+              </div>
+              <h4 class="font-semibold text-gray-900 mb-2">MongoDB</h4>
             </div>
 
             <!-- Firebase -->
             <div class="skill-card group mx-auto">
               <div class="flex justify-center mb-4">
-                <i class="ph ph-flame text-2xl text-orange-600"></i>
+                <Image src="/assets/icons/skills/firebase.png" alt="Firebase logo" width={70} height={70} class="rounded-xl" />
               </div>
               <h4 class="font-semibold text-gray-900 mb-2">Firebase</h4>
             </div>
 
-            <!-- Redis -->
+            <!-- Supabase -->
             <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors duration-300">
-                <i class="ph ph-lightning text-2xl text-red-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/supabase.png" alt="Supabase logo" width={70} height={70} class="rounded-xl" />
               </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Redis</h4>
+              <h4 class="font-semibold text-gray-900 mb-2">Supabase</h4>
             </div>
           </div>
         </div>
@@ -355,54 +347,50 @@ import { Image } from 'astro:assets';
           <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             <!-- Git -->
             <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                <i class="ph ph-git-branch text-2xl text-orange-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/git.png" alt="Git logo" width={70} height={70} class="rounded-xl" />
               </div>
               <h4 class="font-semibold text-gray-900 mb-2">Git</h4>
-              <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                <div class="bg-gradient-to-r from-orange-500 to-orange-600 h-2 rounded-full" style="width: 95%"></div>
-              </div>
-              <span class="text-sm text-gray-600">95%</span>
             </div>
 
             <!-- Docker -->
             <div class="skill-card group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <i class="ph ph-cube text-2xl text-blue-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/docker.png" alt="Docker logo" width={70} height={70} class="rounded-xl" />
               </div>
               <h4 class="font-semibold text-gray-900 mb-2">Docker</h4>
             </div>
 
-            <!-- Kubernetes -->
+            <!-- Cursor -->
             <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
-                <i class="ph ph-circles-three text-2xl text-indigo-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/cursor.png" alt="Cursor logo" width={70} height={70} class="rounded-xl" />
               </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Kubernetes</h4>
-            </div>
-
-            <!-- Jenkins -->
-            <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors duration-300">
-                <i class="ph ph-robot text-2xl text-red-600"></i>
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Jenkins</h4>
-            </div>
-
-            <!-- Webpack -->
-            <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-200 transition-colors duration-300">
-                <i class="ph ph-package text-2xl text-cyan-600"></i>
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Webpack</h4>
+              <h4 class="font-semibold text-gray-900 mb-2">Cursor</h4>
             </div>
 
             <!-- Vite -->
             <div class="skill-card group mx-auto">
-              <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                <i class="ph ph-lightning text-2xl text-purple-600"></i>
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/vite.png" alt="Vite logo" width={70} height={70} class="rounded-xl" />
               </div>
               <h4 class="font-semibold text-gray-900 mb-2">Vite</h4>
+            </div>
+
+            <!-- Kanban -->
+            <div class="skill-card group mx-auto">
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/kanban.png" alt="Kanban logo" width={70} height={70} class="rounded-xl" />
+              </div>
+              <h4 class="font-semibold text-gray-900 mb-2">Kanban</h4>
+            </div>
+
+            <!-- Scrum -->
+            <div class="skill-card group mx-auto">
+              <div class="flex justify-center mb-4">
+                <Image src="/assets/icons/skills/scrum.webp" alt="Scrum logo" width={70} height={70} class="rounded-xl" />
+              </div>
+              <h4 class="font-semibold text-gray-900 mb-2">Scrum</h4>
             </div>
           </div>
         </div>
