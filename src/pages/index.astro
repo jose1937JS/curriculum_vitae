@@ -64,7 +64,7 @@ import Footer from "../components/Footer.astro";
 
 		// Intersección Observer para animaciones en scroll
 		const observerOptions = {
-			threshold: 0.1,
+			threshold: 0.2,
 			rootMargin: "0px 0px -50px 0px",
 		};
 
@@ -74,8 +74,7 @@ import Footer from "../components/Footer.astro";
 					entry.target.classList.add("animate-in");
 
 					// Trigger específico para elementos con data-aos
-					const aosElements =
-						entry.target.querySelectorAll("[data-aos]");
+					const aosElements = entry.target.querySelectorAll("[data-aos]");
 					aosElements.forEach((el, index) => {
 						setTimeout(() => {
 							el.classList.add("aos-animate");
@@ -142,6 +141,14 @@ import Footer from "../components/Footer.astro";
 			throttle(updateActiveNavigation, 100),
 		);
 
+		// Definir smoothScrollTo en window para scroll suave a secciones
+		(window as any).smoothScrollTo = function (sectionId: string) {
+			const section = document.getElementById(sectionId);
+			if (section) {
+				section.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+		};
+
 		// Funcionalidad de teclas de acceso rápido
 		document.addEventListener("keydown", (e) => {
 			// Alt + número para navegar a secciones
@@ -162,7 +169,7 @@ import Footer from "../components/Footer.astro";
 				];
 				const targetSection = sections[parseInt(e.key) - 1];
 				if (targetSection) {
-					window.smoothScrollTo(targetSection);
+					(window as any).smoothScrollTo(targetSection);
 				}
 			}
 
@@ -175,17 +182,14 @@ import Footer from "../components/Footer.astro";
 			}
 		});
 
-		// Preload de imágenes importantes
-		const preloadImages: string[] = [
-			// Agregar aquí las URLs de imágenes importantes
-		];
-
-		preloadImages.forEach((src) => {
-			const img = new Image();
-			img.src = src;
-		});
-
 		// Analytics y tracking (ejemplo)
+		// Declarar gtag como global para TypeScript
+		declare global {
+			interface Window {
+				gtag?: (...args: any[]) => void;
+			}
+		}
+
 		function trackEvent(
 			eventName: string,
 			eventData: Record<string, any> = {},
@@ -194,8 +198,8 @@ import Footer from "../components/Footer.astro";
 			console.log("Event tracked:", eventName, eventData);
 
 			// Ejemplo con Google Analytics 4
-			if (typeof gtag !== "undefined") {
-				gtag("event", eventName, eventData);
+			if (typeof window.gtag !== "undefined") {
+				window.gtag("event", eventName, eventData);
 			}
 		}
 
@@ -209,7 +213,7 @@ import Footer from "../components/Footer.astro";
 				trackEvent("project_click", { project_name: projectTitle });
 			}
 
-			if (e.target.closest(".cv-download-btn")) {
+			if (e.target instanceof Element && e.target.closest(".cv-download-btn")) {
 				trackEvent("cv_download", { source: "footer" });
 			}
 		});
@@ -242,7 +246,7 @@ import Footer from "../components/Footer.astro";
 
 						// Cargar imagen lazy
 						if (element.dataset.lazySrc) {
-							element.src = element.dataset.lazySrc;
+							(element as HTMLImageElement).src = element.dataset.lazySrc!;
 							element.removeAttribute("data-lazy-src");
 						}
 
@@ -260,6 +264,11 @@ import Footer from "../components/Footer.astro";
 		}
 
 		// PWA: Prompt para instalar app
+		// Declarar tipo para BeforeInstallPromptEvent si no existe
+		type BeforeInstallPromptEvent = Event & {
+			prompt: () => Promise<void>;
+			userChoice: Promise<{ outcome: string }>;
+		};
 		let deferredPrompt: BeforeInstallPromptEvent | null = null;
 
 		window.addEventListener("beforeinstallprompt", (e) => {
@@ -271,16 +280,18 @@ import Footer from "../components/Footer.astro";
 			installButton.textContent = "Instalar App";
 			installButton.className = "install-btn";
 			installButton.onclick = () => {
-				deferredPrompt.prompt();
-				deferredPrompt.userChoice.then(
-					(choiceResult: { outcome: string }) => {
-						if (choiceResult.outcome === "accepted") {
-							console.log("Usuario instaló la PWA");
-						}
-						deferredPrompt = null;
-						installButton.remove();
-					},
-				);
+				if (deferredPrompt) {
+					deferredPrompt.prompt();
+					deferredPrompt.userChoice.then(
+						(choiceResult: { outcome: string }) => {
+							if (choiceResult.outcome === "accepted") {
+								console.log("Usuario instaló la PWA");
+							}
+							deferredPrompt = null;
+							installButton.remove();
+						},
+					);
+				}
 			};
 
 			// Agregar botón al header o footer según diseño
