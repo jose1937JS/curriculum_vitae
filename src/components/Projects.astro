@@ -110,10 +110,10 @@ import { Image } from 'astro:assets';
               </h3>
               <p class="text-gray-600 mb-4 leading-relaxed">
                 <span 
-                  data-es="Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API." 
-                  data-en="Backend developed in Node.js to obtain the official rate of the most used currencies in Venezuela (Dollar, Euro, and USDT). The rates are obtained through web scraping from the Central Bank of Venezuela's website and via a third-party API in the case of USDT. The values are automatically updated daily through a cron job and stored in a MongoDB database to avoid congesting the BCV website or the API."
+                  data-es="Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API, cuenta también con un limitador de peticiones por IP del cliente para que no excedan los recursos del servidor." 
+                  data-en="Backend developed in Node.js to obtain the official rate of the most used currencies in Venezuela (Dollar, Euro, and USDT). The rates are obtained through web scraping from the Central Bank of Venezuela's website and via a third-party API in the case of USDT. The values are automatically updated daily through a cron job and stored in a MongoDB database to avoid congesting the BCV website or the API, it also has a request limiter per client IP so that they do not exceed the server's resources."
                 >
-                  Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API.
+                  Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API, cuenta también con un limitador de peticiones por IP del cliente para que no excedan los recursos del servidor.
               </span>
               </p>
               <!-- Tecnologías utilizadas -->
@@ -1118,6 +1118,7 @@ import { Image } from 'astro:assets';
         '/assets/ratesapp/3.png',
         '/assets/ratesapp/4.png',
         '/assets/ratesapp/5.png',
+        '/assets/ratesapp/6.png',
       ]
     }
   ];
