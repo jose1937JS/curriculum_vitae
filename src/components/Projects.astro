@@ -46,7 +46,7 @@ import { Image } from 'astro:assets';
         <div class="project-card group" data-category="mobile" data-aos="fade-up">
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-red-400 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-yellow-300 to-red-300 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
               </div>
@@ -84,6 +84,45 @@ import { Image } from 'astro:assets';
                 <span class="tech-tag bg-[#8e586f] text-white">React Query</span>
                 <span class="tech-tag bg-green-100 text-green-700">Android</span>
                 <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rates backend -->
+        <div class="project-card group" data-category="backend" data-aos="fade-up">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <!-- Imagen del proyecto -->
+            <div class="relative h-48 bg-gradient-to-br from-yellow-100 to-red-100 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
+              </div>
+            </div>
+            <!-- Contenido del proyecto -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span 
+                  data-es="Rates API" 
+                  data-en="Rates API"
+                >
+                  Rates API
+              </span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span 
+                  data-es="Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API." 
+                  data-en="Backend developed in Node.js to obtain the official rate of the most used currencies in Venezuela (Dollar, Euro, and USDT). The rates are obtained through web scraping from the Central Bank of Venezuela's website and via a third-party API in the case of USDT. The values are automatically updated daily through a cron job and stored in a MongoDB database to avoid congesting the BCV website or the API."
+                >
+                  Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API.
+              </span>
+              </p>
+              <!-- Tecnologías utilizadas -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
+                <span class="tech-tag bg-green-700 text-green-100">Node.js</span>
+                <span class="tech-tag bg-gray-200 text-gray-700">Express</span>
+                <span class="tech-tag bg-green-400 text-green-100">MongoDB</span>
+                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
               </div>
             </div>
           </div>
