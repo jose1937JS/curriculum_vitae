@@ -42,6 +42,53 @@ import { Image } from 'astro:assets';
       <!-- Grid de proyectos -->
       <div class="container-masonry" id="projects-grid">
 
+        <!-- Rates app -->
+        <div class="project-card group" data-category="mobile" data-aos="fade-up">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <!-- Imagen del proyecto -->
+            <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-red-400 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
+              </div>
+              <!-- Overlay con botones de acción -->
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <button class="gallery-button project-btn" data-project-index="16">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Galería" data-en="Galery">Galería</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Contenido del proyecto -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                <span 
+                  data-es="Rates App" 
+                  data-en="Rates App"
+                >
+                  Rates App
+              </span>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Aplicación que sirve como referencia para ver el precio oficial del Dólar, del Euro y del USDT."
+                      data-en="An application that serves as a reference for viewing the official prices of the Dollar, the Euro, and USDT.">
+                  Aplicación que sirve como referencia para ver el precio oficial del Dólar, del Euro y del USDT.
+                </span>
+              </p>
+              <!-- Tecnologías utilizadas -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
+                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
+                <span class="tech-tag bg-cyan-500 text-white">React.js</span>
+                <span class="tech-tag bg-[#8e586f] text-white">React Query</span>
+                <span class="tech-tag bg-green-100 text-green-700">Android</span>
+                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Proyecto 0.1: Imago -->
         <div class="project-card group" data-category="frontend" data-aos="fade-up">
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
@@ -344,7 +391,7 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-cyan-500 text-white">React Native</span>
+                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
                 <span class="tech-tag bg-slate-950 text-slate-100">GlueStack UI</span>
                 <span class="tech-tag bg-green-100 text-green-700">Android</span>
                 <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
@@ -1023,6 +1070,15 @@ import { Image } from 'astro:assets';
         '/assets/lelevierLanding/7.png',
         '/assets/lelevierLanding/8.png',
         '/assets/lelevierLanding/9.png'
+      ]
+    },
+    {
+      src: [
+        '/assets/ratesapp/1.png',
+        '/assets/ratesapp/2.png',
+        '/assets/ratesapp/3.png',
+        '/assets/ratesapp/4.png',
+        '/assets/ratesapp/5.png',
       ]
     }
   ];
