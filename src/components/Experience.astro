@@ -1,5 +1,6 @@
 ---
 // Experience Section - Historial profesional y experiencia laboral
+import Badge from "./Badge.astro";
 ---
 
 <section id="experience" class="py-20 bg-gray-50">
@@ -10,7 +11,7 @@
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           <span data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded-full"></div>
         <p class="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
           <span data-es="Mi trayectoria profesional y los roles que han marcado mi carrera" 
                 data-en="My professional journey and the roles that have shaped my career">
@@ -22,20 +23,20 @@
       <!-- Timeline de experiencia -->
       <div class="relative">
         <!-- Línea vertical del timeline -->
-        <div class="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600 transform md:-translate-x-1/2"></div>
+        <div class="absolute left-8 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary-600 to-secondary-600 transform md:-translate-x-1/2"></div>
 
         <!-- Experiencias -->
         <div class="space-y-12">
           <!-- Experiencia 1 - Más reciente -->
           <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
             <!-- Marcador del timeline -->
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-primary-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
             
             <!-- Contenido (lado derecho en desktop) -->
             <div class="md:w-1/2 md:ml-auto pl-20 md:pl-8">
               <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 <!-- Fecha -->
-                <div class="text-sm text-blue-600 font-semibold mb-2">
+                <div class="text-sm text-primary-600 font-semibold mb-2">
                   <span data-es="2023 - Presente" data-en="2023 - Present">09/2024 - 07/2025</span>
                 </div>
                 
@@ -100,19 +101,17 @@
                   </ul>
                 </div>
                 
-                <!-- Tecnologías -->
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-orange-500 text-orange-100 rounded-full text-sm font-medium">Svelte</span>
-                  <span class="px-3 py-1 bg-green-700 text-green-100 rounded-full text-sm font-medium">Node.js</span>
-                  <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">Express.js</span>
-                  <span class="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-medium">Javascript</span>
-                  <span class="px-3 py-1 bg-indigo-400 text-indigo-100 rounded-full text-sm font-medium">PHP</span>
-                  <span class="px-3 py-1 bg-green-600 text-green-100 rounded-full text-sm font-medium">Supabase</span>
-                  <span class="px-3 py-1 bg-green-400 text-green-100 rounded-full text-sm font-medium">MongoDB</span>
-                  <span class="px-3 py-1 bg-sky-700 text-sky-100 rounded-full text-sm font-medium">MySQL</span>
-                  <span class="px-3 py-1 bg-sky-400 text-white rounded-full text-sm font-medium">Tailwindcss</span>
-                  <span class="px-3 py-1 bg-purple-700 text-white rounded-full text-sm font-medium">Astro</span>
-
+                  <Badge type="svelte" title="Svelte" />
+                  <Badge type="nodejs" title="Node.js" />
+                  <Badge type="expressjs" title="Express.js" />
+                  <Badge type="javascript" title="Javascript" />
+                  <Badge type="php" title="PHP" />
+                  <Badge type="supabase" title="Supabase" />
+                  <Badge type="mongodb" title="MongoDB" />
+                  <Badge type="mysql" title="MySQL" />
+                  <Badge type="tailwindcss" title="Tailwindcss" />
+                  <Badge type="astro" title="Astro" />
                 </div>
               </div>
             </div>
@@ -120,12 +119,12 @@
 
           <!-- Experiencia 2 -->
           <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-purple-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-charcoal-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
             
             <!-- Contenido (lado izquierdo en desktop) -->
             <div class="md:w-1/2 md:mr-auto pl-20 md:pl-0 md:pr-8">
               <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-purple-600 font-semibold mb-2">
+                <div class="text-sm text-primary-600 font-semibold mb-2">
                   <span data-es="2021 - 2023" data-en="2021 - 2023">08/2023 - 06/2024</span>
                 </div>
                 
@@ -179,13 +178,13 @@
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-medium">Javascript</span>
-                  <span class="px-3 py-1 bg-sky-400 text-white rounded-full text-sm font-medium">Tailwindcss</span>
-                  <span class="px-3 py-1 bg-cyan-500 text-white rounded-full text-sm font-medium">React Native</span>
-                  <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">React.js</span>
-                  <span class="px-3 py-1 bg-blue-500 text-blue-100 rounded-full text-sm font-medium">Vuetify</span>
-                  <span class="px-3 py-1 bg-green-500 text-green-100 rounded-full text-sm font-medium">Vue.js</span>
-                  <span class="px-3 py-1 bg-slate-950 text-white rounded-full text-sm font-medium">Next.js</span>
+                  <Badge type="javascript" title="Javascript" />
+                  <Badge type="tailwindcss" title="Tailwindcss" />
+                  <Badge type="reactnative" title="React Native" />
+                  <Badge type="react" title="React.js" />
+                  <Badge type="vuetify" title="Vuetify" />
+                  <Badge type="vue" title="Vue.js" />
+                  <Badge type="nextjs" title="Next.js" />
                 </div>
               </div>
             </div>
@@ -193,11 +192,11 @@
 
           <!-- Experiencia 3 -->
           <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="400">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-secondary-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
             
             <div class="md:w-1/2 md:ml-auto pl-20 md:pl-8">
               <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-green-600 font-semibold mb-2">
+                <div class="text-sm text-primary-600 font-semibold mb-2">
                   <span data-es="09/2020 - 07/2023" data-en="09/2020 - 07/2023">09/2020 - 07/2023</span>
                 </div>
                 
@@ -251,14 +250,14 @@
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">React.js</span>
-                  <span class="px-3 py-1 bg-cyan-500 text-white rounded-full text-sm font-medium">React Native</span>
-                  <span class="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-medium">Javascript</span>
-                  <span class="px-3 py-1 bg-green-700 text-green-100 rounded-full text-sm font-medium">Node.js</span>
-                  <span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">Express.js</span>
-                  <span class="px-3 py-1 bg-indigo-400 text-indigo-100 rounded-full text-sm font-medium">PHP</span>
-                  <span class="px-3 py-1 bg-red-500 text-white rounded-full text-sm font-medium">Laravel</span>
-                  <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">MySQL</span>
+                  <Badge type="react" title="React.js" />
+                  <Badge type="reactnative" title="React Native" />
+                  <Badge type="javascript" title="Javascript" />
+                  <Badge type="nodejs" title="Node.js" />
+                  <Badge type="expressjs" title="Express.js" />
+                  <Badge type="php" title="PHP" />
+                  <Badge type="laravel" title="Laravel" />
+                  <Badge type="mysql" title="MySQL" />
                 </div>
               </div>
             </div>
@@ -266,12 +265,12 @@
 
           <!-- Experiencia 4 -->
           <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="600">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-purple-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-charcoal-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
             
             <!-- Contenido (lado izquierdo en desktop) -->
             <div class="md:w-1/2 md:mr-auto pl-20 md:pl-0 md:pr-8">
               <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-purple-600 font-semibold mb-2">
+                <div class="text-sm text-primary-600 font-semibold mb-2">
                   <span data-es="2021 - 2023" data-en="2021 - 2023">2017 - 2020</span>
                 </div>
                 
@@ -324,13 +323,12 @@
                   </ul>
                 </div>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-yellow-400 text-white rounded-full text-sm font-medium">Javascript</span>
-                  <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm font-medium">Boostrapcss</span>
-                  <span class="px-3 py-1 bg-indigo-400 text-indigo-100 rounded-full text-sm font-medium">PHP</span>
-                  <span class="px-3 py-1 bg-orange-600 text-white rounded-full text-sm font-medium">CodeIgniter 3</span>
-                  <span class="px-3 py-1 bg-sky-700 text-sky-100 rounded-full text-sm font-medium">MySQL</span>
-                  <span class="px-3 py-1 bg-red-500 text-white rounded-full text-sm font-medium">Laravel</span>
-                  
+                  <Badge type="javascript" title="Javascript" />
+                  <Badge type="boostrapcss" title="Boostrapcss" />
+                  <Badge type="php" title="PHP" />
+                  <Badge type="codeigniter" title="CodeIgniter 3" />
+                  <Badge type="mysql" title="MySQL" />
+                  <Badge type="laravel" title="Laravel" />
                 </div>
               </div>
             </div>
@@ -342,13 +340,13 @@
       <!-- <div class="mt-20 bg-white rounded-2xl p-8 shadow-lg">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div class="space-y-2">
-            <div class="text-3xl font-bold text-blue-600">[X]+</div>
+            <div class="text-3xl font-bold text-primary-600">[X]+</div>
             <div class="text-gray-600">
               <span data-es="Años de Experiencia" data-en="Years of Experience">Años de Experiencia</span>
             </div>
           </div>
           <div class="space-y-2">
-            <div class="text-3xl font-bold text-purple-600">[X]+</div>
+            <div class="text-3xl font-bold text-charcoal-600">[X]+</div>
             <div class="text-gray-600">
               <span data-es="Proyectos Entregados" data-en="Projects Delivered">Proyectos Entregados</span>
             </div>
@@ -418,8 +416,8 @@
 
   /* Línea del timeline con gradiente animado */
   .absolute.w-0\.5 {
-    background: linear-gradient(180deg, #2563eb 0%, #7c3aed 100%);
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    background: linear-gradient(180deg, var(--brand-orange-600) 0%, var(--brand-yellow-600) 100%);
+    box-shadow: 0 0 20px rgba(254, 75, 0, 0.3);
   }
 
   /* Marcadores del timeline con animación */
@@ -429,7 +427,7 @@
 
   .experience-item:hover .absolute.w-4.h-4 {
     transform: translateX(-50%) scale(1.2);
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 15px rgba(254, 75, 0, 0.5);
   }
 
   /* Responsive adjustments */

@@ -96,6 +96,19 @@ const {
 				]
 			}
 		</script>
+		<!-- Theme initialization to prevent layout shifts/flashing -->
+		<script is:inline>
+			(function() {
+				const theme = localStorage.getItem("theme") || "dark";
+				if (theme === "light") {
+					document.documentElement.classList.add("light");
+					document.documentElement.classList.remove("dark");
+				} else {
+					document.documentElement.classList.add("dark");
+					document.documentElement.classList.remove("light");
+				}
+			})();
+		</script>
 	</head>
 	<body class="antialiased">
 		<slot />
@@ -125,6 +138,7 @@ const {
 			
 			// Smooth scrolling polyfill para navegadores más antiguos
 			if (!("scrollBehavior" in document.documentElement.style)) {
+				// @ts-ignore
 				import(
 					"https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
 				).then((module) => {
@@ -133,7 +147,7 @@ const {
 			}
 
 			// Función global para scroll suave
-			window.smoothScrollTo = function (elementId: string, offset = 80) {
+			(window as any).smoothScrollTo = function (elementId: string, offset = 80) {
 				const element = document.getElementById(elementId);
 				if (element) {
 					const targetPosition = element.offsetTop - offset;
@@ -144,13 +158,7 @@ const {
 				}
 			};
 
-			// Detectar preferencia de tema del sistema
-			if (
-				window.matchMedia &&
-				window.matchMedia("(prefers-color-scheme: dark)").matches
-			) {
-				document.documentElement.classList.add("dark-mode-system");
-			}
+			// El tema ya está inicializado en el <head> para evitar parpadeos visuales.
 
 			// Performance monitoring
 			window.addEventListener("load", () => {
@@ -231,7 +239,7 @@ const {
 
 	/* Focus visible para mejor accesibilidad */
 	:focus-visible {
-		outline: 2px solid #3b82f6;
+		outline: 2px solid var(--brand-orange-600);
 		outline-offset: 2px;
 	}
 
@@ -303,28 +311,16 @@ const {
 	}
 
 	::-webkit-scrollbar-track {
-		background: #f1f5f9;
+		background: var(--gray-100);
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+		background: linear-gradient(180deg, var(--brand-orange-600), var(--brand-yellow-600));
 		border-radius: 4px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-		background: linear-gradient(180deg, #2563eb, #7c3aed);
-	}
-
-	/* Modo oscuro del sistema */
-	@media (prefers-color-scheme: dark) {
-		.dark-mode-system {
-			background-color: #111827;
-			color: #f9fafb;
-		}
-
-		.dark-mode-system ::-webkit-scrollbar-track {
-			background: #374151;
-		}
+		background: linear-gradient(180deg, var(--brand-orange-700), var(--brand-yellow-700));
 	}
 
 	/* Animación de carga inicial */
@@ -334,7 +330,7 @@ const {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: linear-gradient(135deg, var(--brand-orange-600) 0%, var(--brand-yellow-600) 100%);
 		display: flex;
 		align-items: center;
 		justify-content: center;

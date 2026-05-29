@@ -1,5 +1,6 @@
 ---
 // About Section - Información personal y biografía del desarrollador
+import Button from "./Button.astro";
 ---
 
 <section id="about" class="py-20 bg-white relative z-20">
@@ -10,7 +11,7 @@
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           <span data-es="Sobre Mí" data-en="About Me">Sobre Mí</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded-full"></div>
         <p class="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
           <span data-es="Conoce mi historia, pasiones y enfoque en el desarrollo"
                 data-en="Learn about my story, passions and approach to development">
@@ -24,30 +25,27 @@
         <div class="space-y-8">
           <!-- Imagen principal -->
           <div class="relative">
-            <div class="w-full max-w-md mx-auto lg:mx-0">
-              <div class="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 p-8 shadow-2xl">
+            <div class="w-full mx-auto lg:mx-0">
+              <div class="aspect-square rounded-2xl bg-gradient-to-br from-primary-100 to-charcoal-100 p-8 shadow-2xl">
                 <!-- Placeholder para imagen profesional -->
                 <div class="w-full h-full rounded-xl bg-gray-200 flex items-center justify-center">
                   <i class="ph ph-user text-6xl text-gray-400"></i>
                 </div>
               </div>
-              <!-- Elementos decorativos -->
-              <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-500 rounded-full opacity-10 animate-pulse"></div>
-              <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500 rounded-full opacity-10 animate-pulse delay-1000"></div>
             </div>
           </div>
 
           <!-- Información personal rápida -->
           <div class="grid grid-cols-3 gap-6">
             <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors duration-300">
-              <i class="ph ph-map-pin text-2xl text-blue-600 mb-2"></i>
+              <i class="ph ph-map-pin text-2xl text-primary-600 mb-2"></i>
               <div class="text-sm text-gray-600">
                 <span data-es="Ubicación" data-en="Location">Ubicación</span>
               </div>
               <div class="font-semibold text-gray-900">San Juan de los Morros, Venezuela</div>
             </div>
             <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors duration-300">
-              <i class="ph ph-calendar text-2xl text-purple-600 mb-2"></i>
+              <i class="ph ph-calendar text-2xl text-primary-600 mb-2"></i>
               <div class="text-sm text-gray-600">
                 <span data-es="Experiencia" data-en="Experience">Experiencia</span>
               </div>
@@ -56,7 +54,7 @@
               </div>
             </div>
             <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-colors duration-300">
-              <i class="ph ph-code text-2xl text-purple-600 mb-2"></i>
+              <i class="ph ph-code text-2xl text-primary-600 mb-2"></i>
               <div class="text-sm text-gray-600">
                 <span data-es="Proyectos" data-en="Projects">Proyectos</span>
               </div>
@@ -90,26 +88,26 @@
               <span data-es="Mis Pasiones" data-en="My Passions">Mis Pasiones</span>
             </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-300">
-                <i class="ph ph-code text-xl text-blue-600"></i>
+              <div class="flex items-center space-x-3 p-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                <i class="ph ph-code text-xl text-primary-500"></i>
                 <span class="text-gray-800 font-medium">
                   <span data-es="Código Limpio" data-en="Clean Code">Código Limpio</span>
                 </span>
               </div>
-              <div class="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-300">
-                <i class="ph ph-database text-xl text-purple-600"></i>
+              <div class="flex items-center space-x-3 p-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                <i class="ph ph-database text-xl text-primary-500"></i>
                 <span class="text-gray-800 font-medium">
                   <span data-es="Desarrollo Backend" data-en="Backend Development">Desarrollo Backend</span>
                 </span>
               </div>
-              <div class="flex items-center space-x-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-300">
-                <i class="ph ph-device-mobile text-xl text-green-600"></i>
+              <div class="flex items-center space-x-3 p-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                <i class="ph ph-device-mobile text-xl text-primary-500"></i>
                 <span class="text-gray-800 font-medium">
                   <span data-es="Desarrollo Móvil" data-en="Mobile Developmemt">Desarrollo móvil</span>
                 </span>
               </div>
-              <div class="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors duration-300">
-                <i class="ph ph-users text-xl text-orange-600"></i>
+              <div class="flex items-center space-x-3 p-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                <i class="ph ph-users text-xl text-primary-500"></i>
                 <span class="text-gray-800 font-medium">
                   <span data-es="Trabajo en Equipo" data-en="Teamwork">Trabajo en Equipo</span>
                 </span>
@@ -124,7 +122,7 @@
             </h3>
             <div class="space-y-4">
               <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <i class="ph ph-check text-white text-sm"></i>
                 </div>
                 <div>
@@ -140,7 +138,7 @@
                 </div>
               </div>
               <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <i class="ph ph-check text-white text-sm"></i>
                 </div>
                 <div>
@@ -156,7 +154,7 @@
                 </div>
               </div>
               <div class="flex items-start space-x-4">
-                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <i class="ph ph-check text-white text-sm"></i>
                 </div>
                 <div>
@@ -176,10 +174,7 @@
 
           <!-- Call to action -->
           <div class="pt-6">
-            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
-              <span data-es="¡Trabajemos Juntos!" data-en="Let's Work Together!">¡Trabajemos Juntos!</span>
-              <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-            </a>
+            <Button href="#contact" type="primary" size="md" iconRight="ph-arrow-right" title='<span data-es="¡Trabajemos Juntos!" data-en="Let&apos;s Work Together!">¡Trabajemos Juntos!</span>' />
           </div>
         </div>
       </div>
@@ -226,24 +221,24 @@
   }
 
   /* Efectos hover para las cards de pasiones */
-  .hover\:bg-blue-100:hover {
+  .hover\:bg-primary-100:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    box-shadow: 0 4px 12px rgba(254, 75, 0, 0.15);
   }
 
-  .hover\:bg-purple-100:hover {
+  .hover\:bg-charcoal-100:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15);
+    box-shadow: 0 4px 12px rgba(123, 123, 138, 0.15);
   }
 
-  .hover\:bg-green-100:hover {
+  .hover\:bg-secondary-100:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 183, 0, 0.15);
   }
 
   .hover\:bg-orange-100:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 4px 12px rgba(254, 75, 0, 0.15);
   }
 
   /* Animación sutil para elementos decorativos */

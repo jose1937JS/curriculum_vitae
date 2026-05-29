@@ -1,54 +1,60 @@
 ---
 import { Image } from "astro:assets";
 import profile from "../assets/file.jpg";
+import Button from "./Button.astro";
+import SocialIcons from "./SocialIcons.astro";
 
 // Hero Section - Página de inicio con información personal principal
 ---
 
-<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 pt-20 relative z-10">
-  <div class="container mx-auto px-4 py-20">
-    <div class="max-w-4xl mx-auto text-center">
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-primary-50 pt-20 relative overflow-hidden z-10">
+  <!-- Canvas de partículas interactivo -->
+  <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0"></canvas>
+  <div class="container mx-auto px-4 py-20 relative z-10 pointer-events-none">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
       <!-- Imagen de perfil -->
       <div class="mb-8">
-        <div class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-1 shadow-2xl">
+        <div class="w-64 h-64 mx-auto rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 p-1 shadow-2xl">
           <div class="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
             <!-- Placeholder para imagen de perfil -->
             <Image
               src={profile}
               alt="Foto de perfil de José López"
               class="w-full h-full object-cover rounded-full"
-              width={160}
-              height={160}
+              width={200}
+              height={200}
               loading="lazy"
             />
           </div>
         </div>
       </div>
 
-      <!-- Saludo y nombre -->
-      <div class="mb-6">
+      <!-- Saludo e info principal -->
+      <div class="space-y-4">
         <p class="text-lg md:text-xl text-gray-600 mb-2">
           <span data-es="¡Hola! Soy" data-en="Hello! I'm">¡Hola! Soy</span>
         </p>
-        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
           José López
         </h1>
         <div class="text-xl md:text-2xl text-gray-700 font-medium">
-          <span class="typing-animation">
+          <span class="typing-animation" id="role-text"
+                data-roles-es='["Desarrollador Full Stack", "Especialista en React Native", "Creador de Soluciones Web/Móviles"]'
+                data-roles-en='["Full Stack Developer", "React Native Specialist", "Creator of Web/Mobile Solutions"]'>
             <span data-es="Desarrollador Full Stack" data-en="Full Stack Developer">Desarrollador Full Stack</span>
           </span>
         </div>
-        <div class="text-lg md:text-xl text-gray-600 mt-2">
+        <!-- <div class="text-lg md:text-xl text-gray-600 mt-2">
           <span data-es="& Desarrollador Móvil Híbrido" data-en="& Hybrid Mobile Developer">& Desarrollador Móvil Híbrido</span>
-        </div>
+        </div> -->
       </div>
 
       <!-- Descripción breve -->
-      <div class="mb-8 max-w-2xl mx-auto">
+      <div class="max-w-2xl mx-auto">
         <p class="text-lg text-gray-600 leading-relaxed">
-          <span data-es="Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Aunque soy completamente autodidacta, me caracterizo por mi compromiso y sentido de la responsabilidad a la hora de crear soluciones informáticas. Poseo una gran curiosidad por aprender y adoptar tecnologías que faciliten el desarrollo de aplicaciones." 
-                data-en="I am a Full-Stack developer with 4 years of professional experience. Although I am completely self-taught, I am characterized by my commitment and sense of responsibility when creating software solutions. I have a great curiosity for learning and adopting technologies that facilitate application development.">
-            Soy un desarrollador Full-Stack con 4 años de experiencia profesional. Aunque soy completamente autodidacta, me caracterizo por mi compromiso y sentido de la responsabilidad a la hora de crear soluciones informáticas. Poseo una gran curiosidad por aprender y adoptar tecnologías que faciliten el desarrollo de aplicaciones.
+          <span data-es="Desarrollador Full Stack con más de 4 años de experiencia creando aplicaciones web y móviles escalables, robustas y de alto rendimiento. Apasionado por las buenas prácticas y el código limpio."
+                data-en="Full Stack Developer with over 4 years of experience building scalable, robust and high performance web and mobile applications. Passionate about best practices and clean code.">
+            Desarrollador Full Stack con más de 4 años de experiencia creando aplicaciones web y móviles escalables, robustas y de alto rendimiento. Apasionado por las buenas prácticas y el código limpio.
           </span>
         </p>
       </div>
@@ -56,7 +62,7 @@ import profile from "../assets/file.jpg";
       <!-- Estadísticas rápidas -->
       <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-10">
         <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div class="text-3xl font-bold text-purple-600 mb-2">+10</div>
+          <div class="text-3xl font-bold text-charcoal-600 mb-2">+10</div>
           <div class="text-sm text-gray-600">
             <span data-es="Proyectos Completados" data-en="Projects Completed">Proyectos Completados</span>
           </div>
@@ -64,44 +70,37 @@ import profile from "../assets/file.jpg";
         <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
           <div class="text-3xl font-bold text-green-600 mb-2">+10</div>
           <div class="text-sm text-gray-600">
-            <span data-es="Tecnologías Dominadas" data-en="Technologies Mastered">Tecnologías Dominadas</span>
+            <span data-es="Proyectos Completados" data-en="Projects Completed">Proyectos Completados</span>
           </div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div class="text-3xl font-bold text-orange-600 mb-2">+10</div>
-          <div class="text-sm text-gray-600">
+          <div class="text-3xl font-bold text-blue-600 mb-2">[X]+</div>
+          <div class="text-gray-600">
             <span data-es="Clientes Satisfechos" data-en="Happy Clients">Clientes Satisfechos</span>
           </div>
         </div>
       </div> -->
 
       <!-- Botones de acción -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#projects" class="btn-primary group">
-          <span data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</span>
-          <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-        </a>
-        <a href="#contact" class="btn-secondary group">
-          <span data-es="Contáctame" data-en="Contact Me">Contáctame</span>
-          <i class="ph ph-chat-circle ml-2 group-hover:scale-110 transition-transform duration-300"></i>
-        </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pointer-events-auto">
+        <Button
+          href="#projects"
+          type="primary"
+          size="lg"
+          iconRight="ph-arrow-right"
+          title='<span data-es="Ver Mis Proyectos" data-en="View My Projects">Ver Mis Proyectos</span>'
+        />
+        <Button
+          href="#contact"
+          type="secondary"
+          size="lg"
+          iconRight="ph-chat-circle"
+          title='<span data-es="Contáctame" data-en="Contact Me">Contáctame</span>'
+        />
       </div>
 
       <!-- Redes sociales -->
-      <div class="mt-10 flex justify-center space-x-6">
-        <a href="https://www.linkedin.com/in/joselopez-dev/" target="_blank" class="social-link group" aria-label="LinkedIn">
-          <i class="ph ph-linkedin-logo text-xl"></i>
-        </a>
-        <a href="https://github.com/jose1937js" target="_blank" class="social-link group" aria-label="GitHub">
-          <i class="ph ph-github-logo text-xl"></i>
-        </a>
-        <!-- <a href="#" class="social-link group" aria-label="Twitter">
-          <i class="ph ph-twitter-logo text-xl"></i>
-        </a> -->
-        <a href="mailto:jflo1937@gmail.com" class="social-link group" aria-label="Email">
-          <i class="ph ph-envelope text-xl"></i>
-        </a>
-      </div>
+      <SocialIcons className="pointer-events-auto" />
     </div>
 
     <!-- Scroll indicator -->
@@ -191,33 +190,163 @@ import profile from "../assets/file.jpg";
     setTimeout(cycleRoles, 1000);
 
     // Escuchar cambios de idioma
-    document.addEventListener('languageChanged', (e: CustomEvent<{ lang: string }>) => {
-      currentLang = e.detail.lang;
+    document.addEventListener('languageChanged', (e: Event) => {
+      const customEvent = e as CustomEvent<{ lang: string }>;
+      currentLang = customEvent.detail.lang;
       currentRoleIndex = 0;
     });
   });
 
-  // Parallax effect para el hero
-  // window.addEventListener('scroll', () => {
-  //   const scrolled = window.pageYOffset;
-  //   const hero = document.getElementById('home') as HTMLElement;
-  //   if (hero) {
-  //     hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-  //   }
-  // });
+  // Animación de partículas interactiva con el mouse
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('particles-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = canvas.width = canvas.offsetWidth;
+    let height = canvas.height = canvas.offsetHeight;
+
+    window.addEventListener('resize', () => {
+      if (!canvas) return;
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+    });
+
+    interface Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+      color: string;
+      originalVx: number;
+      originalVy: number;
+    }
+
+    const particles: Particle[] = [];
+    const particleCount = Math.min(80, Math.floor((width * height) / 12000));
+    const connectionDistance = 110;
+    const mouse = { x: null as number | null, y: null as number | null, radius: 140 };
+
+    for (let i = 0; i < particleCount; i++) {
+      const vx = (Math.random() - 0.5) * 0.5;
+      const vy = (Math.random() - 0.5) * 0.5;
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx,
+        vy,
+        originalVx: vx,
+        originalVy: vy,
+        radius: Math.random() * 2 + 1,
+        color: Math.random() > 0.25 ? '#fe4b00' : '#ffb700', // 75% rojo-naranja, 25% amarillo
+      });
+    }
+
+    const homeSection = document.getElementById('home');
+    homeSection?.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    homeSection?.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function animate() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Dibujar y conectar partículas
+      for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
+
+        // Mover partícula
+        p1.x += p1.vx;
+        p1.y += p1.vy;
+
+        // Limites
+        if (p1.x < 0 || p1.x > width) p1.vx *= -1;
+        if (p1.y < 0 || p1.y > height) p1.vy *= -1;
+
+        // Interacción mouse
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - p1.x;
+          const dy = mouse.y - p1.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            // Atraer levemente hacia el mouse
+            p1.x += (dx / dist) * force * 0.4;
+            p1.y += (dy / dist) * force * 0.4;
+          }
+        }
+
+        // Dibujar partícula
+        ctx.beginPath();
+        ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p1.color;
+        ctx.fill();
+
+        // Conectar con otras partículas
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < connectionDistance) {
+            const alpha = (1 - dist / connectionDistance) * 0.12;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(254, 75, 0, ${alpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+
+        // Conectar con el ratón
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = p1.x - mouse.x;
+          const dy = p1.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            const alpha = (1 - dist / mouse.radius) * 0.22;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(255, 183, 0, ${alpha})`;
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  });
 </script>
 
 <style>
   .btn-primary {
-    @apply inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105;
+    @apply inline-flex items-center px-8 py-3 border-2 border-primary-600 text-primary-600 font-medium rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-300 transform hover:scale-105;
   }
 
   .social-link {
-    @apply w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110;
+    @apply w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110;
   }
 
   .typing-animation {
@@ -226,7 +355,7 @@ import profile from "../assets/file.jpg";
 
   .typing-animation::after {
     content: '|';
-    @apply animate-pulse text-blue-600;
+    @apply animate-pulse text-primary-600;
   }
 
   @keyframes float {

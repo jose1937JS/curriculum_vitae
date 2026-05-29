@@ -1,8 +1,9 @@
 ---
-// Footer Component - Contacto, redes sociales y descarga de CV
+import Button from "./Button.astro";
+import SocialIcons from "./SocialIcons.astro";
 ---
 
-<footer id="contact" class="bg-gray-900 text-white py-20">
+<footer id="contact" class="bg-[var(--bg-secondary)] text-[var(--text-primary)] border-t border-[var(--border-color)] py-20 transition-colors duration-300">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
       
@@ -11,8 +12,8 @@
         <h2 class="text-4xl md:text-5xl font-bold mb-4">
           <span data-es="¡Trabajemos Juntos!" data-en="Let's Work Together!">¡Trabajemos Juntos!</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           <span data-es="¿Tienes un proyecto en mente? Me encantaría conocer tus ideas y ayudarte a hacerlas realidad."
                 data-en="Do you have a project in mind? I'd love to hear your ideas and help you make them reality.">
             ¿Tienes un proyecto en mente? Me encantaría conocer tus ideas y ayudarte a hacerlas realidad.
@@ -32,12 +33,12 @@
             <div class="space-y-6">
               <!-- Email -->
               <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('jflo1937@gmail.com')">
-                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-700 transition-colors duration-300">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:bg-primary-700 transition-colors duration-300">
                   <i class="ph ph-envelope text-xl"></i>
                 </div>
                 <div>
                   <div class="text-gray-400 text-sm">Email</div>
-                  <div class="text-lg font-medium group-hover:text-blue-400 transition-colors duration-300">jflo1937@gmail.com</div>
+                  <div class="text-lg font-medium group-hover:text-primary-400 transition-colors duration-300">jflo1937@gmail.com</div>
                 </div>
                 <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <i class="ph ph-copy text-gray-400"></i>
@@ -62,7 +63,7 @@
 
               <!-- Ubicación -->
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                <div class="w-12 h-12 bg-charcoal-600 rounded-xl flex items-center justify-center">
                   <i class="ph ph-map-pin text-xl"></i>
                 </div>
                 <div>
@@ -94,11 +95,11 @@
           </div>
 
           <!-- Descarga de CV -->
-          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div class="bg-[var(--white-dynamic)] rounded-2xl p-6 border border-[var(--border-color)] transition-colors duration-300">
             <h4 class="text-xl font-bold mb-4">
               <span data-es="Descarga Mi CV" data-en="Download My CV">Descarga Mi CV</span>
             </h4>
-            <p class="text-gray-300 mb-6">
+            <p class="text-gray-600 mb-6">
               <span data-es="Obtén una copia completa de mi experiencia profesional y habilidades técnicas optimizada para sistemas ATS."
                     data-en="Get a complete copy of my professional experience and technical skills optimized for ATS systems.">
                 Obtén una copia completa de mi experiencia profesional y habilidades técnicas optimizada para sistemas ATS.
@@ -106,16 +107,8 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="/CV_JOSELOPEZ_2025_ATS.pdf" download class="cv-download-btn group flex-1">
-                <i class="ph ph-download-simple mr-2 group-hover:animate-bounce"></i>
-                <span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>
-                <span class="ml-auto text-sm opacity-75">136 KB</span>
-              </a>
-              
-              <button onclick="shareCV()" class="share-cv-btn group">
-                <i class="ph ph-share mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
-                <span data-es="Compartir" data-en="Share">Compartir</span>
-              </button>
+              <Button href="/CV_JOSELOPEZ_2025_ATS.pdf" download={true} type="download" className="flex-1" icon="ph-download-simple" title='<span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>' sublabel="136 KB" />
+              <Button onClick="shareCV()" type="share" icon="ph-share" title='<span data-es="Compartir" data-en="Share">Compartir</span>' />
             </div>
           </div>
         </div>
@@ -129,7 +122,7 @@
           <form id="contact-form" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                <label for="name" class="block text-sm font-medium text-gray-600 mb-2">
                   <span data-es="Nombre" data-en="Name">Nombre</span>
                 </label>
                 <input 
@@ -144,7 +137,7 @@
                 >
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <label for="email" class="block text-sm font-medium text-gray-600 mb-2">Email</label>
                 <input 
                   type="email" 
                   id="email" 
@@ -157,7 +150,7 @@
             </div>
             
             <div>
-              <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">
+              <label for="subject" class="block text-sm font-medium text-gray-600 mb-2">
                 <span data-es="Asunto" data-en="Subject">Asunto</span>
               </label>
               <input 
@@ -173,7 +166,7 @@
             </div>
             
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+              <label for="message" class="block text-sm font-medium text-gray-600 mb-2">
                 <span data-es="Mensaje" data-en="Message">Mensaje</span>
               </label>
               <textarea 
@@ -187,8 +180,15 @@
                 data-placeholder-en="Tell me about your project..."
               ></textarea>
             </div>
-            
-            <button type="submit" class="submit-btn group w-full">
+
+            <Button
+              type="submit"
+              className="w-full"
+              icon="ph-paper-plane-right"
+              title='<span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>'
+            />
+
+            <!-- <Button type="submit" className="submit-btn w-full">
               <span class="submit-text">
                 <span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
               </span>
@@ -197,7 +197,7 @@
                 <span data-es="Enviando..." data-en="Sending...">Enviando...</span>
               </span>
               <i class="ph ph-paper-plane-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-            </button>
+            </Button> -->
           </form>
         </div>
       </div>
@@ -208,26 +208,16 @@
           <span data-es="Sígueme en Redes Sociales" data-en="Follow Me on Social Media">Sígueme en Redes Sociales</span>
         </h3>
         
-        <div class="flex justify-center space-x-6 mb-8">
-          <a href="https://www.linkedin.com/in/joselopez-dev/" target="_blank" rel="noopener noreferrer" class="social-icon group" aria-label="LinkedIn">
-            <i class="ph ph-linkedin-logo text-2xl group-hover:scale-110 transition-transform duration-300"></i>
-          </a>
-          <a href="https://github.com/jose1937js" target="_blank" rel="noopener noreferrer" class="social-icon group" aria-label="GitHub">
-            <i class="ph ph-github-logo text-2xl group-hover:scale-110 transition-transform duration-300"></i>
-          </a>
-          <a href="mailto:jflo1937@gmail.com" class="social-icon group" aria-label="Email">
-            <i class="ph ph-envelope text-2xl group-hover:scale-110 transition-transform duration-300"></i>
-          </a>
-        </div>
+        <SocialIcons className="mb-8" />
 
         <!-- Copyright -->
         <div class="text-gray-400 text-sm">
-          <p>&copy; 2025 José López. 
+          <p>&copy; 2026 José López. 
             <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span>
           </p>
           <p class="mt-2">
-            <span data-es="Hecho con cursor" data-en="Made with cursor">Hecho con cursor</span> 
-            <span data-es="y mucho café" data-en="and lots of coffee">y mucho café</span> ☕
+            <span data-es="Hecho con cursor" data-en="Made with cursor">Hecho con cursor, antigravity</span> 
+            <span data-es="y mucho café" data-en="and lots of coffee">y mucho café </span> ☕
           </p>
         </div>
       </div>
@@ -235,7 +225,7 @@
   </div>
 
   <!-- Toast notification -->
-  <div id="toast" class="fixed top-4 right-0 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+  <div id="toast" class="fixed top-4 right-0 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50" style="background-color: #16a34a;">
     <div class="flex items-center space-x-2">
       <i class="ph ph-check-circle"></i>
       <span id="toast-message"></span>
@@ -260,12 +250,18 @@
     (submitBtn as HTMLButtonElement).disabled = true;
     
     try {
+      const form = e.target as HTMLFormElement;
+      const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+      const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+      const subject = (form.elements.namedItem('subject') as HTMLInputElement).value;
+      const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
       emailjs.send('service_8jqxbwj', 'template_f7kpqnk', {
-        name: (e.target as HTMLFormElement).name.value,
-        email: (e.target as HTMLFormElement).email.value,
+        name,
+        email,
         time: new Date().toLocaleString('es-ES', { timeZone: 'America/Caracas' }),
-        subject: (e.target as HTMLFormElement).subject.value,
-        message: (e.target as HTMLFormElement).message.value,
+        subject,
+        message,
       }).then(
         (response: any) => {
           console.log('SUCCESS!', response);
@@ -279,7 +275,7 @@
         },
       );
     
-      (e.target as HTMLFormElement).reset();
+      form.reset();
       
     } catch (error) {
       console.log('FAILED...', error);
@@ -332,27 +328,15 @@
 
 <style>
   .contact-input {
-    @apply w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
+    @apply w-full px-4 py-3 bg-[var(--white-dynamic)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all duration-300;
   }
 
   .contact-input:focus {
-    @apply bg-gray-700 border-blue-500;
+    @apply bg-[var(--white-dynamic)] border-primary-600;
   }
 
   .submit-btn {
-    @apply flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
-  }
-
-  .cv-download-btn {
-    @apply inline-flex items-center justify-between px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-medium rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-  }
-
-  .share-cv-btn {
-    @apply inline-flex items-center px-4 py-3 border-2 border-blue-600 text-blue-400 font-medium rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105;
-  }
-
-  .social-icon {
-    @apply w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl;
+    @apply flex items-center justify-center px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
   }
 
   /* Efectos de hover mejorados */

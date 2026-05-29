@@ -1,0 +1,88 @@
+---
+export interface Props {
+  icon?: string;
+  iconRight?: string;
+  title?: string;
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'primary' | 'secondary' | 'download' | 'share' | 'submit';
+  href?: string;
+  download?: any;
+  onClick?: string;
+  className?: string;
+  id?: string;
+  disabled?: boolean;
+  sublabel?: string;
+}
+
+const {
+  icon,
+  iconRight,
+  title,
+  size = 'md',
+  type = 'primary',
+  href,
+  download,
+  onClick,
+  className = '',
+  id,
+  disabled = false,
+  sublabel
+} = Astro.props;
+
+// Size classes
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-3 text-lg'
+};
+
+// Type classes
+const typeClasses = {
+  primary: 'bg-gradient-to-r from-secondary-600 to-primary-600 text-white hover:from-primary-700 hover:to-secondary-700 shadow-lg hover:shadow-xl',
+  secondary: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white',
+  download: 'justify-between bg-gradient-to-r from-secondary-600 to-primary-600 text-white hover:from-secondary-700 hover:to-primary-700 shadow-lg hover:shadow-xl',
+  share: 'border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white',
+  submit: 'justify-center bg-gradient-to-r from-secondary-600 to-primary-600 text-white hover:from-primary-700 hover:to-secondary-700 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none'
+};
+
+const baseClass = 'inline-flex items-center font-medium rounded-lg transition-all duration-300 transform hover:scale-105 group';
+const finalClass = `${baseClass} ${sizeClasses[size]} ${typeClasses[type]} ${className}`;
+
+// Left icon animation
+let leftIconAnim = 'transition-transform duration-300';
+if (icon) {
+  if (icon.includes('download')) {
+    leftIconAnim += ' group-hover:animate-bounce';
+  } else if (icon.includes('share')) {
+    leftIconAnim += ' group-hover:rotate-12';
+  } else if (icon.includes('arrow') || icon.includes('paper-plane') || icon.includes('envelope')) {
+    leftIconAnim += ' group-hover:translate-x-1';
+  }
+}
+
+// Right icon animation
+let rightIconAnim = 'transition-transform duration-300';
+if (iconRight) {
+  if (iconRight.includes('arrow') || iconRight.includes('envelope')) {
+    rightIconAnim += ' group-hover:translate-x-1';
+  } else if (iconRight.includes('paper-plane')) {
+    rightIconAnim += ' group-hover:translate-x-1 group-hover:-translate-y-1';
+  }
+}
+---
+
+{href ? (
+  <a href={href} download={download} class={finalClass} id={id} onclick={onClick}>
+    {icon && <i class={`ph ${icon} mr-2 ${leftIconAnim}`} />}
+    {title ? <span set:html={title}></span> : <slot />}
+    {sublabel && <span class="ml-auto text-sm opacity-75">{sublabel}</span>}
+    {iconRight && <i class={`ph ${iconRight} ml-2 ${rightIconAnim}`} />}
+  </a>
+) : (
+  <button type={type === 'submit' ? 'submit' : 'button'} class={finalClass} id={id} onclick={onClick} disabled={disabled}>
+    {icon && <i class={`ph ${icon} mr-2 ${leftIconAnim}`} />}
+    {title ? <span set:html={title}></span> : <slot />}
+    {sublabel && <span class="ml-auto text-sm opacity-75">{sublabel}</span>}
+    {iconRight && <i class={`ph ${iconRight} ml-2 ${rightIconAnim}`} />}
+  </button>
+)}

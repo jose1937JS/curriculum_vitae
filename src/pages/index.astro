@@ -11,8 +11,8 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout
-	title="Desarrollador Full Stack & Móvil | [Tu Nombre] - Portafolio Profesional"
-	description="Portafolio profesional de [Tu Nombre], desarrollador full stack especializado en aplicaciones web y móviles híbridas. Experiencia en React, Node.js, React Native, Vue.js, Python y más tecnologías modernas."
+	title="Jose Lopez - Portafolio Profesional"
+	description="Portafolio profesional de Jose Lopez, desarrollador full stack especializado en aplicaciones web y móviles híbridas. Experiencia en React, Node.js, React Native, Vue.js y más tecnologías modernas."
 >
 	<!-- Loader de página (opcional) -->
 	<div id="page-loader" class="page-loader">
@@ -320,7 +320,7 @@ import Footer from "../components/Footer.astro";
 	/* Estilos para navegación activa */
 	.nav-link.active,
 	.mobile-nav-link.active {
-		color: #3b82f6 !important;
+		color: var(--brand-orange-600) !important;
 		font-weight: 600;
 	}
 
@@ -331,7 +331,7 @@ import Footer from "../components/Footer.astro";
 		left: 0;
 		right: 0;
 		height: 2px;
-		background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+		background: linear-gradient(90deg, var(--brand-orange-600), var(--brand-yellow-600));
 		border-radius: 1px;
 	}
 
@@ -349,21 +349,21 @@ import Footer from "../components/Footer.astro";
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
-		background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+		background: linear-gradient(45deg, var(--brand-orange-600), var(--brand-yellow-600));
 		color: white;
 		border: none;
 		padding: 12px 24px;
 		border-radius: 50px;
 		font-weight: 600;
 		cursor: pointer;
-		box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+		box-shadow: 0 4px 15px rgba(254, 75, 0, 0.4);
 		z-index: 1000;
 		transition: all 0.3s ease;
 	}
 
 	.install-btn:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+		box-shadow: 0 6px 20px rgba(254, 75, 0, 0.5);
 	}
 
 	/* Optimizaciones para rendimiento */

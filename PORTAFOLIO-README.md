@@ -113,9 +113,9 @@ Hay 6 proyectos de ejemplo. Para personalizar cada uno:
 <!-- Ejemplo de proyecto personalizado -->
 <div class="project-card group" data-category="web" data-aos="fade-up">
   <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-    <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100">
+    <div class="relative h-48 bg-gradient-to-br from-primary-100 to-secondary-100">
       <div class="absolute inset-0 flex items-center justify-center">
-        <i class="ph ph-tu-icono text-6xl text-blue-600"></i>
+        <i class="ph ph-tu-icono text-6xl text-primary-600"></i>
       </div>
       <!-- Enlaces de acción -->
       <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -142,19 +142,19 @@ Hay 6 proyectos de ejemplo. Para personalizar cada uno:
       
       <!-- Tecnologías -->
       <div class="flex flex-wrap gap-2 mb-4">
-        <span class="tech-tag bg-blue-100 text-blue-700">React</span>
-        <span class="tech-tag bg-green-100 text-green-700">Node.js</span>
+        <Badge type="react" title="React" />
+        <Badge type="nodejs" title="Node.js" />
         <!-- Agregar más tecnologías -->
       </div>
       
       <!-- Métricas -->
       <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
         <div class="text-center">
-          <div class="font-bold text-blue-600">1000+</div>
+          <div class="font-bold text-primary-600">1000+</div>
           <div class="text-xs text-gray-500">Usuarios</div>
         </div>
         <div class="text-center">
-          <div class="font-bold text-green-600">5⭐</div>
+          <div class="font-bold text-secondary-600">5⭐</div>
           <div class="text-xs text-gray-500">Rating</div>
         </div>
       </div>
@@ -183,12 +183,12 @@ Para personalizar:
 ```astro
 <!-- Ejemplo de habilidad personalizada -->
 <div class="skill-card group">
-  <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-    <i class="ph ph-atom text-2xl text-blue-600"></i>
+  <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors duration-300">
+    <i class="ph ph-atom text-2xl text-primary-600"></i>
   </div>
   <h4 class="font-semibold text-gray-900 mb-2">React</h4>
   <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-    <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full" style="width: 95%"></div>
+    <div class="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style="width: 95%"></div>
   </div>
   <span class="text-sm text-gray-600">95%</span>
 </div>
@@ -215,10 +215,9 @@ Para personalizar:
 ### 🎨 Personalización de Colores
 
 Los colores principales están definidos en Tailwind CSS:
-- **Azul**: `blue-600` (#3b82f6)
-- **Púrpura**: `purple-600` (#8b5cf6)
-- **Verde**: `green-600` (#10b981)
-- **Naranja**: `orange-600` (#ea580c)
+- **Primario (Naranja)**: `primary-600` (#fe4b00)
+- **Secundario (Amarillo)**: `secondary-600` (#ffb700)
+- **Charcoal (Gris carbón)**: `charcoal-600` (#ffffff / #313131)
 
 Para cambiar la paleta de colores, buscar y reemplazar estas clases en todos los archivos.
 

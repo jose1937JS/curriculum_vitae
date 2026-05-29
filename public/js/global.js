@@ -33,7 +33,7 @@ function showToast(message, type = 'success') {
     toast.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50';
     toast.innerHTML = `
       <div class="flex items-center space-x-2">
-        <i class="ph ph-check-circle"></i>
+        <i class="ph ph-check-circle text-xl"></i>
         <span id="toast-message"></span>
       </div>
     `;
@@ -41,18 +41,25 @@ function showToast(message, type = 'success') {
   }
   
   const toastMessage = document.getElementById('toast-message');
+  const toastIcon = toast.querySelector('.ph');
   
-  toastMessage.textContent = message;
+  if (toastMessage) {
+    toastMessage.textContent = message;
+  }
+  if (toastIcon) {
+    toastIcon.className = type === 'success' ? 'ph ph-check-circle text-xl' : 'ph ph-x-circle text-xl';
+  }
   
   // Cambiar color según el tipo
-  toast.className = toast.className.replace(/bg-\w+-600/, type === 'success' ? 'bg-green-600' : 'bg-red-600');
+  toast.className = toast.className.replace(/bg-[a-z0-9\-]+/i, type === 'success' ? 'bg-green-600' : 'bg-red-600');
+  toast.style.backgroundColor = type === 'success' ? '#16a34a' : '#dc2626';
   
   // Mostrar toast
   toast.style.transform = 'translateX(0)';
   
   // Ocultar después de 3 segundos
   setTimeout(() => {
-    toast.style.transform = 'translateX(100%)';
+    toast.style.transform = 'translateX(120%)';
   }, 3000);
 }
 

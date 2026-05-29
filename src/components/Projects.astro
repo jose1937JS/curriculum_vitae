@@ -1,4 +1,6 @@
 ---
+import Badge from "./Badge.astro";
+
 // Projects Section - Galería de proyectos del desarrollador
 import { Image } from 'astro:assets';
 ---
@@ -11,7 +13,7 @@ import { Image } from 'astro:assets';
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           <span data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</span>
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded-full"></div>
         <p class="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
           <span data-es="Una selección de proyectos que demuestran mis habilidades y experiencia" 
                 data-en="A selection of projects that demonstrate my skills and experience">
@@ -44,9 +46,9 @@ import { Image } from 'astro:assets';
 
         <!-- Rates app -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-yellow-300 to-red-300 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
               </div>
@@ -78,12 +80,12 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-cyan-500 text-white">React.js</span>
-                <span class="tech-tag bg-[#8e586f] text-white">React Query</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="react" title="React.js" />
+                <Badge type="reactquery" title="React Query" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
               </div>
             </div>
           </div>
@@ -91,9 +93,9 @@ import { Image } from 'astro:assets';
 
         <!-- Rates backend -->
         <div class="project-card group" data-category="backend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-yellow-100 to-red-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
               </div>
@@ -118,11 +120,11 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-700 text-green-100">Node.js</span>
-                <span class="tech-tag bg-gray-200 text-gray-700">Express</span>
-                <span class="tech-tag bg-green-400 text-green-100">MongoDB</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="node.js" title="Node.js" />
+                <Badge type="expressjs" title="Express" />
+                <Badge type="mongodb" title="MongoDB" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -130,9 +132,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.1: Imago -->
         <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-100 to-red-50 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/imago_logo.png" alt="Imago logo" width={200} height={70} />
               </div>
@@ -164,11 +166,11 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-orange-500 text-white">Svelte</span>
-                <span class="tech-tag bg-orange-500 text-white">SvelteKit</span>
-                <span class="tech-tag bg-green-600 text-white">Supabase</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="svelte" title="Svelte" />
+                <Badge type="sveltekit" title="SvelteKit" />
+                <Badge type="supabase" title="Supabase" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -176,9 +178,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.2: ACP -->
         <div class="project-card group" data-category="fullstack" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-green-100 to-orange-50 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/acp_logo.png" alt="ACP logo" width={270} height={80} />
               </div>
@@ -210,10 +212,10 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-purple-600 text-white">Bootstrapcss</span>
-                <span class="tech-tag bg-indigo-400 text-indigo-100">PHP</span>
-                <span class="tech-tag bg-sky-700 text-sky-100">MySQL</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="bootstrapcss" title="Bootstrapcss" />
+                <Badge type="php" title="PHP" />
+                <Badge type="mysql" title="MySQL" />
               </div>
             </div>
           </div>
@@ -221,9 +223,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.3: Lelevier -->
         <div class="project-card group" data-category="fullstack" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/lelevier_logo.png" alt="Lelevier logo" width={200} height={70} />
               </div>
@@ -255,13 +257,13 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-700 text-green-100">Node.js</span>
-                <span class="tech-tag bg-gray-200 text-gray-700">Express</span>
-                <span class="tech-tag bg-green-400 text-green-100">MongoDB</span>
-                <span class="tech-tag bg-sky-400 text-sky-100">Tailwindcss</span>
-                <span class="tech-tag bg-orange-500 text-orange-100">SvelteKit</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="node.js" title="Node.js" />
+                <Badge type="expressjs" title="Express" />
+                <Badge type="mongodb" title="MongoDB" />
+                <Badge type="tailwindcss" title="Tailwindcss" />
+                <Badge type="sveltekit" title="SvelteKit" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -269,9 +271,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.4: Lelevier landing Page -->
         <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/lelevier_logo.png" alt="Lelevier logo" width={200} height={70} />
               </div>
@@ -303,11 +305,11 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-orange-500 text-white">HTML</span>
-                <span class="tech-tag bg-sky-500 text-white">CSS</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-sky-400 text-sky-100">Tailwindcss</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="html" title="HTML" />
+                <Badge type="css" title="CSS" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="tailwindcss" title="Tailwindcss" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -315,9 +317,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.5: akronym landing page -->
         <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-400 to-slate-700 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/akronym_logo.png" alt="Lelevier logo" width={200} height={80} />
               </div>
@@ -349,12 +351,12 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-orange-500 text-white">HTML</span>
-                <span class="tech-tag bg-sky-500 text-white">CSS</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-700 text-green-100">Astro</span>
-                <span class="tech-tag bg-sky-400 text-sky-100">Tailwindcss</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="html" title="HTML" />
+                <Badge type="css" title="CSS" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="astro" title="Astro" />
+                <Badge type="tailwindcss" title="Tailwindcss" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -362,11 +364,11 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 0.6: Bela API -->
         <div class="project-card group" data-category="backend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
-                <i class="ph ph-database text-6xl text-blue-600"></i>
+                <i class="ph ph-database text-6xl text-primary-600"></i>
               </div>
             </div>
             <!-- Contenido del proyecto -->
@@ -387,11 +389,11 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-700 text-green-100">Node.js</span>
-                <span class="tech-tag bg-gray-200 text-gray-700">Express</span>
-                <span class="tech-tag bg-green-400 text-green-100">MongoDB</span>
-                <span class="tech-tag bg-slate-950 text-white">Vercel</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="node.js" title="Node.js" />
+                <Badge type="expressjs" title="Express" />
+                <Badge type="mongodb" title="MongoDB" />
+                <Badge type="vercel" title="Vercel" />
               </div>
             </div>
           </div>
@@ -399,9 +401,9 @@ import { Image } from 'astro:assets';
         
         <!-- Proyecto 1: Metrovacesa app -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-sky-100 to-orange-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/malaga_towers_metrovacesa.png" alt="Málaga Towers logo" width={270} height={80} />
               </div>
@@ -430,10 +432,10 @@ import { Image } from 'astro:assets';
               </p>
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-slate-950 text-slate-100">GlueStack UI</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="gluestack" title="GlueStack UI" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
               </div>
             </div>
           </div>
@@ -441,9 +443,9 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 1.2: metrovacesa web admin -->
         <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-sky-100 to-orange-100 overflow-hidden">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/malaga_towers_metrovacesa.png" alt="Málaga Towers logo" width={270} height={80} />
               </div>
@@ -473,10 +475,10 @@ import { Image } from 'astro:assets';
               
               <!-- Tecnologías utilizadas -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-cyan-500 text-white">React.js</span>
-                <span class="tech-tag bg-slate-950 text-slate-100">Next.js</span>
-                <span class="tech-tag bg-green-100 text-green-700">Tailwindcss</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">Javascript</span>
+                <Badge type="react" title="React.js" />
+                <Badge type="next.js" title="Next.js" />
+                <Badge type="tailwindcss" title="Tailwindcss" />
+                <Badge type="javascript" title="Javascript" />
               </div>
             
             </div>
@@ -485,8 +487,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 2: Resevatum -->
         <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="200">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/reservatum_logo.png" alt="Reservatum logo" width={200} height={70} />
               </div>
@@ -511,11 +513,11 @@ import { Image } from 'astro:assets';
               </p>
               
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-blue-500 text-white">Vuetify</span>
-                <span class="tech-tag bg-green-500 text-green-100">Vue.js</span>
-                <span class="tech-tag bg-red-500 text-white">Laravel</span>
-                <span class="tech-tag bg-indigo-400 text-white">PHP</span>
-                <span class="tech-tag bg-yellow-400 text-white">JavaScript</span>
+                <Badge type="vuetify" title="Vuetify" />
+                <Badge type="vue" title="Vue.js" />
+                <Badge type="laravel" title="Laravel" />
+                <Badge type="php" title="PHP" />
+                <Badge type="javascript" title="JavaScript" />
               </div>
             
             </div>
@@ -524,8 +526,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 3: m2m app -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="400">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-blue-300 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/m2m_logo.webp" alt="Lelevier logo" width={50} height={50} />
               </div>
@@ -537,7 +539,7 @@ import { Image } from 'astro:assets';
                   </button>
                 </div>
               </div>
-            </div>=
+            </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-3">
                 <span 
@@ -552,12 +554,12 @@ import { Image } from 'astro:assets';
               </p>
               
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-emerald-100 text-emerald-700">React.js</span>
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-amber-100 text-amber-700">Firebase Push Notifications</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="react" title="React.js" />
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="firebase" title="Firebase Push Notifications" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
 
               </div>
             </div>
@@ -566,8 +568,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 3.1: m2m backend -->
         <div class="project-card group" data-category="backend" data-aos="fade-up" data-aos-delay="400">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-purple-100 to-pink-100 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/m2m_logo.webp" alt="Lelevier logo" width={50} height={50} />
               </div>
@@ -585,11 +587,11 @@ import { Image } from 'astro:assets';
                 </span>
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-green-700 text-white">Node.js</span>
-                <span class="tech-tag bg-red-500 text-white">Laravel</span>
-                <span class="tech-tag bg-indigo-400 text-white">PHP</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-sky-700 text-white">MySQL</span>
+                <Badge type="nodejs" title="Node.js" />
+                <Badge type="laravel" title="Laravel" />
+                <Badge type="php" title="PHP" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="mysql" title="MySQL" />
               </div>
             </div>
           </div>
@@ -597,8 +599,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 4: halaken -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="600">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-green-200 to-purple-200 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/halakenlogo.webp" alt="Halaken logo" width={50} height={50} />
               </div>
@@ -622,12 +624,12 @@ import { Image } from 'astro:assets';
                 </span>
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-emerald-100 text-emerald-700">React.js</span>
-                <span class="tech-tag bg-amber-100 text-amber-700">Firebase Push Notifications</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="react" title="React.js" />
+                <Badge type="firebase" title="Firebase Push Notifications" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
               </div>
             </div>
           </div>
@@ -635,8 +637,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 5: Miekipo -->
         <div class="project-card group" data-category="backend mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-orange-100 to-yellow-100 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <i class="ph ph-database text-6xl text-orange-600"></i>
               </div>
@@ -660,13 +662,13 @@ import { Image } from 'astro:assets';
                 </span>
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-red-500 text-white">Laravel</span>
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-emerald-100 text-emerald-700">React.js</span>
-                <span class="tech-tag bg-indigo-400 text-white">PHP</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-sky-700 text-white">MySQL</span>
-                <span class="tech-tag bg-pink-500 text-white">Transbank</span>
+                <Badge type="laravel" title="Laravel" />
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="react" title="React.js" />
+                <Badge type="php" title="PHP" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="mysql" title="MySQL" />
+                <Badge type="transbank" title="Transbank" />
               </div>
             </div>
           </div>
@@ -674,8 +676,8 @@ import { Image } from 'astro:assets';
         
         <!-- Proyecto 6: promarTV -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-blue-100 to-red-100 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/promartv_logo.png" alt="Promar TV logo" width={100} height={100} />
               </div>
@@ -699,11 +701,11 @@ import { Image } from 'astro:assets';
                 </span>
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-emerald-100 text-emerald-700">React.js</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="react" title="React.js" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
               </div>
             </div>
           </div>
@@ -711,8 +713,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 7: Tierra por tierra -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-green-100 to-green-200 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <Image src="/assets/icons/projects/tierraxtierra_logo.jpg" alt="Lelevier logo" width={70} height={70} />
               </div>
@@ -736,11 +738,11 @@ import { Image } from 'astro:assets';
                 </span>
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-100 text-indigo-700">React Native</span>
-                <span class="tech-tag bg-emerald-100 text-emerald-700">React.js</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-green-100 text-green-700">Android</span>
-                <span class="tech-tag bg-slate-200 text-slate-950">iOS</span>
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="react" title="React.js" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
               </div>
             </div>
           </div>
@@ -748,8 +750,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 8: Software Educativo -->
         <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="1000">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-teal-100 to-cyan-100 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <i class="ph ph-book-open-text text-6xl text-teal-600"></i>
               </div>
@@ -778,12 +780,12 @@ import { Image } from 'astro:assets';
               </p>
               
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-400 text-white">PHP</span>
-                <span class="tech-tag bg-orange-600 text-white">CodeIgniter 3</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-blue-600 text-white">jQuery</span>
-                <span class="tech-tag bg-sky-700 text-white">MySQL</span>
-                <span class="tech-tag bg-purple-600 text-white">Bootstrap CSS</span>
+                <Badge type="php" title="PHP" />
+                <Badge type="codeigniter" title="CodeIgniter 3" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="jquery" title="jQuery" />
+                <Badge type="mysql" title="MySQL" />
+                <Badge type="bootstrapcss" title="Bootstrap CSS" />
               </div>
             </div>
           </div>
@@ -791,8 +793,8 @@ import { Image } from 'astro:assets';
 
         <!-- Proyecto 9: Rosas de America -->
         <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="1200">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-teal-100 to-cyan-100 overflow-hidden">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <i class="ph ph-shopping-cart text-6xl text-teal-600"></i>
               </div>
@@ -821,12 +823,12 @@ import { Image } from 'astro:assets';
               </p>
               
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="tech-tag bg-indigo-400 text-white">PHP</span>
-                <span class="tech-tag bg-red-500 text-white">Laravel</span>
-                <span class="tech-tag bg-yellow-400 text-white">Javascript</span>
-                <span class="tech-tag bg-blue-600 text-white">jQuery</span>
-                <span class="tech-tag bg-sky-700 text-white">MySQL</span>
-                <span class="tech-tag bg-purple-600 text-white">Bootstrap CSS</span>
+                <Badge type="php" title="PHP" />
+                <Badge type="laravel" title="Laravel" />
+                <Badge type="javascript" title="Javascript" />
+                <Badge type="jquery" title="jQuery" />
+                <Badge type="mysql" title="MySQL" />
+                <Badge type="bootstrapcss" title="Bootstrap CSS" />
               </div>
             </div>
           </div>
@@ -838,7 +840,7 @@ import { Image } from 'astro:assets';
         <div class="inline-flex items-center space-x-2 text-gray-600 mb-6">
           <span data-es="¿Interesado en colaborar?" data-en="Interested in collaborating?">¿Interesado en colaborar?</span>
         </div>
-        <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
+        <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
           <span data-es="Hablemos de tu Proyecto" data-en="Let's Talk About Your Project">Hablemos de tu Proyecto</span>
           <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
         </a>
@@ -850,7 +852,7 @@ import { Image } from 'astro:assets';
 <!-- Modal para galería de imágenes -->
 <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex justify-center">
   <div class="flex items-center justify-center min-h-screen p-4">
-    <div class="relative w-[70vw] max-w-7xl max-h-[90vh] bg-white rounded-2xl shadow-2xl flex flex-col">
+    <div class="relative w-[70vw] max-w-7xl max-h-[90vh] bg-gray-200 rounded-2xl shadow-2xl flex flex-col">
       <!-- Header del modal -->
       <div class="flex items-center justify-between p-6 bg-gray-50 border-b flex-shrink-0">
         <h3 class="text-2xl font-bold text-gray-900" id="modalTitle">
@@ -1220,9 +1222,9 @@ import { Image } from 'astro:assets';
     indicators.forEach((indicator, index) => {
       if (index === currentImageIndex) {
         indicator.classList.remove('bg-gray-300');
-        indicator.classList.add('bg-blue-600');
+        indicator.classList.add('bg-primary-600');
       } else {
-        indicator.classList.remove('bg-blue-600');
+        indicator.classList.remove('bg-primary-600');
         indicator.classList.add('bg-gray-300');
       }
     });
@@ -1363,7 +1365,7 @@ import { Image } from 'astro:assets';
   }
 
   .filter-btn.active {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white transform scale-105;
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 text-white transform scale-105;
   }
 
   .project-btn {

@@ -1,0 +1,64 @@
+---
+export interface Props {
+  type: string;
+  title?: string;
+}
+
+const { type, title } = Astro.props;
+
+const displayTitle = title || type;
+
+// Normalize type name for mapping lookup
+const normalizedType = type.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+const techMap: Record<string, { bg: string, text: string }> = {
+  javascript: { bg: '#ffe42c', text: '#000000' },
+  js: { bg: '#ffe42c', text: '#000000' },
+  bootstrapcss: { bg: '#8017f6', text: '#ffffff' },
+  bootstrap: { bg: '#8017f6', text: '#ffffff' },
+  boostrapcss: { bg: '#8017f6', text: '#ffffff' },
+  boostrap: { bg: '#8017f6', text: '#ffffff' },
+  jquery: { bg: '#79cff5', text: '#000000' },
+  vuetify: { bg: '#1967c0', text: '#ffffff' },
+  android: { bg: '#50b063', text: '#ffffff' },
+  firebase: { bg: '#ff9101', text: '#ffffff' },
+  vuejs: { bg: '#41d392', text: '#000000' },
+  vue: { bg: '#41d392', text: '#000000' },
+  reactjs: { bg: '#59c4dc', text: '#000000' },
+  react: { bg: '#59c4dc', text: '#000000' },
+  supabase: { bg: '#3ecf8e', text: '#000000' },
+  svelte: { bg: '#ff3e00', text: '#ffffff' },
+  sveltekit: { bg: '#ff3e00', text: '#ffffff' },
+  reactnative: { bg: '#097ea4', text: '#ffffff' },
+  reactquery: { bg: '#ff8904', text: '#ffffff' },
+  astro: { bg: '#5917a2', text: '#ffffff' },
+  typescript: { bg: '#2977c0', text: '#ffffff' },
+  nextjs: { bg: '#000000', text: '#ffffff' },
+  nodejs: { bg: '#339933', text: '#ffffff' },
+  expressjs: { bg: '#191919', text: '#ffffff' },
+  mongodb: { bg: '#47a248', text: '#ffffff' },
+  postgresql: { bg: '#336791', text: '#ffffff' },
+  nestjs: { bg: '#ea284e', text: '#ffffff' },
+  php: { bg: '#474796', text: '#ffffff' },
+  laravel: { bg: '#ff2d20', text: '#ffffff' },
+  codeigniter: { bg: '#ee5322', text: '#ffffff' },
+  tailwindcss: { bg: '#06b6d4', text: '#0f172a' },
+  html: { bg: '#e34c26', text: '#ffffff' },
+  css: { bg: '#264de4', text: '#ffffff' },
+  mysql: { bg: '#4479a1', text: '#ffffff' },
+  vercel: { bg: '#000000', text: '#ffffff' },
+  ios: { bg: '#4479a1', text: '#ffffff' },
+  transbank: { bg: '#d5026c', text: '#ffffff' },
+  gluestack: { bg: '#e6e6e6', text: '#0f172a' },
+
+};
+
+const matched = techMap[normalizedType];
+const style = matched ? `background-color: ${matched.bg}; color: ${matched.text};` : '';
+const className = matched
+  ? 'px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 inline-block shadow-sm'
+  : 'px-3 py-1 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium transition-all duration-300 inline-block shadow-sm';
+---
+<span class={className} style={style}>
+  {displayTitle}
+</span>

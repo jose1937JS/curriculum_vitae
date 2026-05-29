@@ -1,0 +1,47 @@
+---
+export interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+
+const socialLinks = [
+  {
+    href: "https://www.linkedin.com/in/joselopez-dev/",
+    label: "LinkedIn",
+    icon: "ph-linkedin-logo",
+    target: "_blank"
+  },
+  {
+    href: "https://github.com/jose1937js",
+    label: "GitHub",
+    icon: "ph-github-logo",
+    target: "_blank"
+  },
+  {
+    href: "mailto:jflo1937@gmail.com",
+    label: "Email",
+    icon: "ph-envelope"
+  }
+];
+---
+
+<div class={`flex justify-center space-x-6 ${className}`}>
+  {socialLinks.map((link) => (
+    <a
+      href={link.href}
+      target={link.target}
+      rel={link.target ? "noopener noreferrer" : undefined}
+      class="social-icon group"
+      aria-label={link.label}
+    >
+      <i class={`ph ${link.icon} text-2xl group-hover:scale-110 transition-transform duration-300`} />
+    </a>
+  ))}
+</div>
+
+<style>
+  .social-icon {
+    @apply w-14 h-14 bg-[var(--white-dynamic)] border border-[var(--border-color)] rounded-full flex items-center justify-center text-[var(--text-secondary)] hover:text-white hover:bg-gradient-to-r hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl;
+  }
+</style>
