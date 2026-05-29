@@ -19,17 +19,21 @@
   --gray-900: #ffffff;
 
   /* Brand Red-Orange (#fe4b00) */
-  --brand-orange-50: #240a00;
-  --brand-orange-100: #3b1100;
-  --brand-orange-200: #571900;
+  --brand-orange-50: #391202;
+  --brand-orange-100: #4a1500;
+  --brand-orange-200: #671d00;
+  --brand-orange-300: #fe854d;
   --brand-orange-400: #ff854f;
   --brand-orange-500: #ff6b26;
   --brand-orange-600: #fe4b00; /* Main red-orange */
   --brand-orange-700: #d43e00;
 
   /* Brand Yellow (#ffb700) */
-  --brand-yellow-50: #241a00;
-  --brand-yellow-100: #3b2c00;
+  --brand-yellow-50: #7f5b00;
+  --brand-yellow-100: #9c6c02;
+  --brand-yellow-200: #ba881d;
+  --brand-yellow-300: #cd9110;
+  --brand-yellow-400: #ba7f00;
   --brand-yellow-500: #e6a400;
   --brand-yellow-600: #ffb700;
   --brand-yellow-700: #d49800;

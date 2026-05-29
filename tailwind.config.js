@@ -27,6 +27,7 @@ export default {
           50: 'var(--brand-orange-50)',
           100: 'var(--brand-orange-100)',
           200: 'var(--brand-orange-200)',
+          300: 'var(--brand-orange-300)',
           400: 'var(--brand-orange-400)',
           500: 'var(--brand-orange-500)',
           600: 'var(--brand-orange-600)',
@@ -36,6 +37,9 @@ export default {
         secondary: {
           50: 'var(--brand-yellow-50)',
           100: 'var(--brand-yellow-100)',
+          200: 'var(--brand-yellow-200)',
+          300: 'var(--brand-yellow-300)',
+          400: 'var(--brand-yellow-400)',
           500: 'var(--brand-yellow-500)',
           600: 'var(--brand-yellow-600)',
           700: 'var(--brand-yellow-700)',

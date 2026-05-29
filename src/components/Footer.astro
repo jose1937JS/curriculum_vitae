@@ -47,14 +47,14 @@ import SocialIcons from "./SocialIcons.astro";
 
               <!-- Teléfono -->
               <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('https://wa.me/584120345008')">
-                <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center group-hover:bg-green-700 transition-colors duration-300">
-                  <i class="ph ph-phone text-xl"></i>
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:bg-primary-700 transition-colors duration-300">
+                  <i class="ph ph-whatsapp-logo text-xl"></i>
                 </div>
                 <div>
                   <div class="text-gray-400 text-sm">
                     <span data-es="Teléfono" data-en="Phone">Teléfono</span>
                   </div>
-                  <div class="text-lg font-medium group-hover:text-green-400 transition-colors duration-300">WhatsApp</div>
+                  <div class="text-lg font-medium group-hover:text-primary-400 transition-colors duration-300">WhatsApp</div>
                 </div>
                 <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <i class="ph ph-copy text-gray-400"></i>
@@ -63,7 +63,7 @@ import SocialIcons from "./SocialIcons.astro";
 
               <!-- Ubicación -->
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-charcoal-600 rounded-xl flex items-center justify-center">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
                   <i class="ph ph-map-pin text-xl"></i>
                 </div>
                 <div>
@@ -76,7 +76,7 @@ import SocialIcons from "./SocialIcons.astro";
 
               <!-- Disponibilidad -->
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-orange-600 rounded-xl flex items-center justify-center">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center">
                   <i class="ph ph-clock text-xl"></i>
                 </div>
                 <div>
@@ -107,8 +107,21 @@ import SocialIcons from "./SocialIcons.astro";
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
-              <Button href="/CV_JOSELOPEZ_2025_ATS.pdf" download={true} type="download" className="flex-1" icon="ph-download-simple" title='<span data-es="Descargar CV (PDF)" data-en="Download CV (PDF)">Descargar CV (PDF)</span>' sublabel="136 KB" />
-              <Button onClick="shareCV()" type="share" icon="ph-share" title='<span data-es="Compartir" data-en="Share">Compartir</span>' />
+              <Button
+                href="/CV_JOSELOPEZ_2026_ATS.pdf"
+                download={true}
+                type="download"
+                className="flex-1"
+                icon="ph-download-simple"
+                title='<span data-es="Descargar CV (PDF)" data-en="Download Resume (PDF)">Descargar Resume (PDF)</span>'
+                sublabel="115 KB"
+              />
+              <Button
+                onClick="shareCV()"
+                type="share"
+                icon="ph-share"
+                title='<span data-es="Compartir" data-en="Share">Compartir</span>'
+              />
             </div>
           </div>
         </div>
@@ -183,21 +196,17 @@ import SocialIcons from "./SocialIcons.astro";
 
             <Button
               type="submit"
-              className="w-full"
-              icon="ph-paper-plane-right"
-              title='<span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>'
-            />
-
-            <!-- <Button type="submit" className="submit-btn w-full">
+              className="submit-btn w-full"
+            >
               <span class="submit-text">
                 <span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+                <i class="ph ph-paper-plane-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
               </span>
               <span class="submit-loading hidden">
                 <i class="ph ph-spinner animate-spin mr-2"></i>
                 <span data-es="Enviando..." data-en="Sending...">Enviando...</span>
               </span>
-              <i class="ph ph-paper-plane-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-            </Button> -->
+            </Button>
           </form>
         </div>
       </div>
@@ -240,14 +249,16 @@ import SocialIcons from "./SocialIcons.astro";
   document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const submitBtn = (e.target as HTMLElement).querySelector('.submit-btn');
+    const submitBtn = (e.target as HTMLElement).querySelector('.submit-btn') as HTMLButtonElement | null;
     const submitText = submitBtn?.querySelector('.submit-text');
     const submitLoading = submitBtn?.querySelector('.submit-loading');
     
     // Mostrar estado de carga
     submitText?.classList.add('hidden');
     submitLoading?.classList.remove('hidden');
-    (submitBtn as HTMLButtonElement).disabled = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
     
     try {
       const form = e.target as HTMLFormElement;
@@ -271,7 +282,7 @@ import SocialIcons from "./SocialIcons.astro";
         },
         (error: any) => {
           // @ts-ignore
-          showToast('Error al enviar el mensaje', 'error');
+          showToast('Esta función aún está en desarrollo!!', 'error');
         },
       );
     
@@ -283,7 +294,9 @@ import SocialIcons from "./SocialIcons.astro";
       // Restaurar estado del botón
       submitText?.classList.remove('hidden');
       submitLoading?.classList.add('hidden');
-      (submitBtn as HTMLButtonElement).disabled = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+      }
     }
   });
 
