@@ -44,6 +44,59 @@ import { Image } from 'astro:assets';
       <!-- Grid de proyectos -->
       <div class="container-masonry" id="projects-grid">
 
+        <!-- SalesForceV2 app -->
+        <div class="project-card group" data-category="mobile" data-aos="fade-up">
+          <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <!-- Imagen del proyecto -->
+            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <!-- <Image src="/assets/icons/projects/salesforcev2.png" alt="Rates app logo" width={200} height={70} /> -->
+                <i class="ph ph-device-mobile-camera text-6xl text-primary-600"></i>
+              </div>
+              <!-- Overlay con botones de acción -->
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div class="flex space-x-4">
+                  <button class="gallery-button project-btn" data-project-index="17">
+                    <i class="ph ph-eye"></i>
+                    <span data-es="Galería" data-en="Galery">Galería</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Contenido del proyecto -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900">
+                <span 
+                  data-es="Sales Force V2" 
+                  data-en="Sales Force V2"
+                >
+                  Sales Force V2
+                </span>
+              </h3>
+              <p class="text-sm text-secondary-300 font-semibold mb-3" data-es="Nextti Solutions"  data-en="Nextti Solutions">
+                Nextti Solutions
+              </p>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                <span data-es="Aplicación móvil para la gestión de negocios basados en el ERP Odoo, permite la gestión de ventas, compras, pagos, clientes, visitas, y mucho más."
+                      data-en="Mobile application for managing businesses based on the Odoo ERP. It allows the management of sales, purchases, payments, clients, visits, and much more.">
+                  Aplicación móvil para la gestión de negocios basados en el ERP Odoo, permite la gestión de ventas, compras, pagos, clientes, visitas, y mucho más.
+                </span>
+              </p>
+              <!-- Tecnologías utilizadas -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <Badge type="typescript" title="TypeScript" />
+                <Badge type="reactnative" title="React Native" />
+                <Badge type="expo" title="Expo" />
+                <Badge type="tailwindcss" title="Tailwindcss" />
+                <Badge type="nativewind" title="NativeWind" />
+                <Badge type="react" title="React.js" />
+                <Badge type="android" title="Android" />
+                <Badge type="ios" title="iOS" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Rates app -->
         <div class="project-card group" data-category="mobile" data-aos="fade-up">
           <div class="bg-gray-200 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
@@ -952,7 +1005,6 @@ import { Image } from 'astro:assets';
 </div>
 
 <script is:inline>
-  // Variables globales para el modal
   let currentProjectIndex = 0;
   let currentImageIndex = 0;
   let currentImages = [];
@@ -974,6 +1026,8 @@ import { Image } from 'astro:assets';
   // images[13] = imago
   // images[14] = lelevier
   // images[15] = lelevierLanding
+  // images[16] = ratesapp
+  // images[17] = SalesForceV2
   
   const images = [
     {
@@ -1178,6 +1232,28 @@ import { Image } from 'astro:assets';
         '/assets/ratesapp/4.png',
         '/assets/ratesapp/5.png',
         '/assets/ratesapp/6.png',
+      ]
+    },
+    {
+      src: [
+        '/assets/SalesForceV2/0.png',
+        '/assets/SalesForceV2/1.png',
+        '/assets/SalesForceV2/2.png',
+        '/assets/SalesForceV2/3.png',
+        '/assets/SalesForceV2/4.png',
+        '/assets/SalesForceV2/5.png',
+        '/assets/SalesForceV2/6.png',
+        '/assets/SalesForceV2/7.png',
+        '/assets/SalesForceV2/8.png',
+        '/assets/SalesForceV2/9.png',
+        '/assets/SalesForceV2/10.png',
+        '/assets/SalesForceV2/11.png',
+        '/assets/SalesForceV2/12.png',
+        '/assets/SalesForceV2/13.png',
+        '/assets/SalesForceV2/14.png',
+        '/assets/SalesForceV2/15.png',
+        '/assets/SalesForceV2/16.png',
+        '/assets/SalesForceV2/17.png',
       ]
     }
   ];
