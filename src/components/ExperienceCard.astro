@@ -1,0 +1,101 @@
+---
+import Badge from "./Badge.astro";
+
+export interface Props {
+  dateEs: string;
+  dateEn: string;
+  roleEs: string;
+  roleEn: string;
+  company: string;
+  descriptionEs: string;
+  descriptionEn: string;
+  achievementsTitleEs?: string;
+  achievementsTitleEn?: string;
+  achievementsEs: string[];
+  achievementsEn: string[];
+  badges: Array<{ type: string; title?: string }>;
+  markerBg?: string;
+  isLeft: boolean;
+  aosDelay?: string;
+}
+
+const {
+  dateEs,
+  dateEn,
+  roleEs,
+  roleEn,
+  company,
+  descriptionEs,
+  descriptionEn,
+  achievementsTitleEs = "Logros Clave:",
+  achievementsTitleEn = "Key Achievements:",
+  achievementsEs,
+  achievementsEn,
+  badges,
+  markerBg = "bg-primary-600",
+  isLeft,
+  aosDelay
+} = Astro.props;
+
+const containerClass = isLeft 
+  ? "md:w-1/2 md:mr-auto pl-20 md:pl-0 md:pr-8" 
+  : "md:w-1/2 md:ml-auto pl-20 md:pl-8";
+---
+
+<div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay={aosDelay}>
+  <!-- Marcador del timeline -->
+  <div class={`absolute left-6 md:left-1/2 w-4 h-4 ${markerBg} rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10`}></div>
+  
+  <!-- Contenido -->
+  <div class={containerClass}>
+    <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+      <!-- Fecha -->
+      <div class="text-sm text-primary-600 font-semibold mb-2">
+        <span data-es={dateEs} data-en={dateEn}>{dateEs}</span>
+      </div>
+      
+      <!-- Puesto y empresa -->
+      <h3 class="text-xl font-bold text-gray-900 mb-2">
+        <span data-es={roleEs} data-en={roleEn}>{roleEs}</span>
+      </h3>
+      <div class="text-lg text-gray-700 mb-4 font-medium">{company}</div>
+      
+      <!-- Descripción -->
+      <div class="text-gray-600 mb-6 space-y-3">
+        <p>
+          <span data-es={descriptionEs} data-en={descriptionEn}>
+            {descriptionEs}
+          </span>
+        </p>
+      </div>
+      
+      <!-- Logros clave / Responsabilidades -->
+      {achievementsEs && achievementsEs.length > 0 && (
+        <div class="mb-6">
+          <h4 class="font-semibold text-gray-900 mb-3">
+            <span data-es={achievementsTitleEs} data-en={achievementsTitleEn}>{achievementsTitleEs}</span>
+          </h4>
+          <ul class="space-y-2">
+            {achievementsEs.map((achievementEs, index) => (
+              <li class="flex items-start space-x-2">
+                <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
+                <span class="text-gray-600 text-sm">
+                  <span data-es={achievementEs} data-en={achievementsEn[index]}>
+                    {achievementEs}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-2">
+        {badges.map((badge) => (
+          <Badge type={badge.type} title={badge.title} />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

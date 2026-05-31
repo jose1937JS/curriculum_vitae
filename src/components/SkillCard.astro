@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  name: string;
+  iconSrc?: string;
+  phIcon?: string;
+  iconClass?: string;
+  iconWidth?: number;
+  iconHeight?: number;
+}
+
+const {
+  name,
+  iconSrc,
+  phIcon,
+  iconClass = "rounded-xl",
+  iconWidth = 70,
+  iconHeight = 70
+} = Astro.props;
+---
+
+<div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto w-28 sm:w-32 md:w-36 flex flex-col justify-between items-center">
+  <div class="flex items-center justify-center mb-4 min-h-[70px]">
+    {iconSrc ? (
+      <Image src={iconSrc} alt={`${name} logo`} width={iconWidth} height={iconHeight} class={iconClass} />
+    ) : phIcon ? (
+      <i class={`${phIcon} text-4xl text-primary-600`}></i>
+    ) : null}
+  </div>
+  <h4 class="font-semibold text-gray-900 text-sm sm:text-base">{name}</h4>
+</div>
+
+<style>
+  .skill-card {
+    @apply rounded-xl p-4 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform;
+  }
+
+  .certification-card {
+    @apply bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors duration-300;
+  }
+
+  /* Animaciones de entrada */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skill-category[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .skill-category[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Efectos hover mejorados */
+  /* .skill-card:hover .w-16.h-16 {
+    transform: rotate(10deg) scale(1.1);
+    transition: transform 0.3s ease;
+  } */
+
+  /* Gradientes animados para las barras de progreso */
+  .bg-gradient-to-r {
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .skill-card {
+      padding: 1rem;
+    }
+    
+    /* .skill-card .w-16.h-16 {
+      width: 3rem;
+      height: 1rem;
+    } */
+    
+    .skill-card h4 {
+      font-size: 0.875rem;
+    }
+  }
+</style>

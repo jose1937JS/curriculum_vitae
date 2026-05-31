@@ -1,6 +1,96 @@
 ---
 // Skills Section - Habilidades técnicas y herramientas del desarrollador
-import { Image } from 'astro:assets';
+import SkillCategory from "./SkillCategory.astro";
+
+const categoriasHabilidades = [
+  {
+    titleEs: "Desarrollo Frontend",
+    titleEn: "Frontend Development",
+    descriptionEs: "Interfaces de usuario modernas y responsivas con las últimas tecnologías",
+    descriptionEn: "Modern and responsive user interfaces with the latest technologies",
+    icon: "ph ph-browser",
+    skills: [
+      { name: "HTML", iconSrc: "/assets/icons/skills/html.png", iconWidth: 70, iconHeight: 70 },
+      { name: "CSS", iconSrc: "/assets/icons/skills/css.png", iconWidth: 70, iconHeight: 70 },
+      { name: "Javascript", iconSrc: "/assets/icons/skills/js.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "React", iconSrc: "/assets/icons/skills/react.webp", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Vue.js", iconSrc: "/assets/icons/skills/vuejs.png", iconWidth: 70, iconHeight: 70 },
+      { name: "Svelte", iconSrc: "/assets/icons/skills/svelte.png", iconWidth: 60, iconHeight: 60, iconClass: "rounded-xl" },
+      { name: "TypeScript", iconSrc: "/assets/icons/skills/ts.png", iconWidth: 70, iconHeight: 70 },
+      { name: "Next.js", iconSrc: "/assets/icons/skills/nextjs.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Tailwind", iconSrc: "/assets/icons/skills/tailwindcss.png", iconWidth: 80, iconHeight: 90, iconClass: "rounded-xl" },
+      { name: "Bootstrap", iconSrc: "/assets/icons/skills/bootstrap.png", iconWidth: 60, iconHeight: 60, iconClass: "rounded-xl" },
+      { name: "Vuetify", iconSrc: "/assets/icons/skills/vuetify.png", iconWidth: 60, iconHeight: 60, iconClass: "rounded-xl" },
+      { name: "Astro", iconSrc: "/assets/icons/skills/astro.png", iconWidth: 65, iconHeight: 65, iconClass: "rounded-xl" }
+    ]
+  },
+  {
+    titleEs: "Desarrollo Backend",
+    titleEn: "Backend Development",
+    descriptionEs: "APIs robustas y escalables con arquitecturas bien diseñadas",
+    descriptionEn: "Robust and scalable APIs with well-designed architectures",
+    icon: "ph ph-hard-drives",
+    aosDelay: "500",
+    skills: [
+      { name: "Node.js", iconSrc: "/assets/icons/skills/nodejs.png", iconWidth: 60, iconHeight: 60, iconClass: "rounded-xl" },
+      { name: "PHP", iconSrc: "/assets/icons/skills/php.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "Express.js", iconSrc: "/assets/icons/skills/express.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "NestJS", iconSrc: "/assets/icons/skills/nestjs.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "Laravel", iconSrc: "/assets/icons/skills/laravel.jpg", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "Codeigniter", iconSrc: "/assets/icons/skills/codeigniter.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "REST APIs", phIcon: "ph ph-arrows-split" }
+    ]
+  },
+  {
+    titleEs: "Desarrollo Móvil",
+    titleEn: "Mobile Development",
+    descriptionEs: "Aplicaciones móviles híbridas y nativas para iOS y Android",
+    descriptionEn: "Hybrid and native mobile applications for iOS and Android",
+    icon: "ph ph-device-mobile",
+    aosDelay: "1000",
+    skills: [
+      { name: "React Native", iconSrc: "/assets/icons/skills/reactnative.webp", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "Expo", iconSrc: "/assets/icons/skills/expo.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "Gluestack-UI", iconSrc: "/assets/icons/skills/gluestack.jpg", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "React Native Paper", iconSrc: "/assets/icons/skills/rnpaper.jpg", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" }
+    ]
+  },
+  {
+    titleEs: "Bases de Datos y Cloud",
+    titleEn: "Databases & Cloud",
+    descriptionEs: "Gestión de datos y servicios en la nube para aplicaciones escalables",
+    descriptionEn: "Data management and cloud services for scalable applications",
+    icon: "ph ph-database",
+    aosDelay: "1500",
+    skills: [
+      { name: "MySQL", iconSrc: "/assets/icons/skills/mysql.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "PostgreSQL", iconSrc: "/assets/icons/skills/postgre.jpg", iconWidth: 70, iconHeight: 70, iconClass: "rounded-full" },
+      { name: "MongoDB", iconSrc: "/assets/icons/skills/mongodb.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Firebase", iconSrc: "/assets/icons/skills/firebase.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Supabase", iconSrc: "/assets/icons/skills/supabase.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" }
+    ]
+  },
+  {
+    titleEs: "Herramientas y DevOps",
+    titleEn: "Tools & DevOps",
+    descriptionEs: "Herramientas de desarrollo y metodologías para equipos productivos",
+    descriptionEn: "Development tools and methodologies for productive teams",
+    icon: "ph ph-gear",
+    aosDelay: "2000",
+    skills: [
+      { name: "Git", iconSrc: "/assets/icons/skills/git.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Docker", iconSrc: "/assets/icons/skills/docker.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Cursor", iconSrc: "/assets/icons/skills/cursor.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Antigravity", iconSrc: "/assets/icons/skills/antigravity.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Hoppscotch", iconSrc: "/assets/icons/skills/hoppscotch.jpeg", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Postman", iconSrc: "/assets/icons/skills/postman.webp", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Stitch", iconSrc: "/assets/icons/skills/google-stitch.avif", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "DBeaver", iconSrc: "/assets/icons/skills/dbeaver.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Kanban", iconSrc: "/assets/icons/skills/kanban.png", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" },
+      { name: "Scrum", iconSrc: "/assets/icons/skills/scrum.webp", iconWidth: 70, iconHeight: 70, iconClass: "rounded-xl" }
+    ]
+  }
+];
 ---
 
 <section id="skills" class="py-20 bg-gray-50">
@@ -22,413 +112,9 @@ import { Image } from 'astro:assets';
 
       <!-- Categorías de habilidades -->
       <div class="space-y-16">
-        
-        <!-- Frontend Development -->
-        <div class="skill-category" data-aos="fade-up">
-          <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-xl mb-4">
-              <i class="ph ph-browser text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-700 mb-2">
-              <span data-es="Desarrollo Frontend" data-en="Frontend Development">Desarrollo Frontend</span>
-            </h3>
-            <p class="text-gray-600 max-w-lg mx-auto">
-              <span data-es="Interfaces de usuario modernas y responsivas con las últimas tecnologías"
-                    data-en="Modern and responsive user interfaces with the latest technologies">
-                Interfaces de usuario modernas y responsivas con las últimas tecnologías
-              </span>
-            </p>
-          </div>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <!-- HTML -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/html.png" alt="html logo" width={70} height={70} />
-              </div>
-              <h4 class="font-semibold text-gray-900">HTML</h4>
-            </div>
-
-            <!-- css -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/css.png" alt="css logo" width={70} height={70} />
-              </div>
-              <h4 class="font-semibold text-gray-900">CSS</h4>
-            </div>
-
-            <!-- Javascript -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/js.png" alt="js logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Javascript</h4>
-            </div>
-
-            <!-- React -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/react.webp" alt="react logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900">React</h4>
-            </div>
-
-            <!-- Vue.js -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/vuejs.png" alt="react logo" width={70} height={70}  />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Vue.js</h4>
-            </div>
-
-            <!-- Svelte -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/svelte.png" alt="svelte logo" width={60} height={60} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900">Svelte</h4>
-            </div>
-
-            <!-- TypeScript -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/ts.png" alt="react logo" width={70} height={70} />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">TypeScript</h4>
-            </div>
-
-            <!-- Next.js -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/nextjs.png" alt="Nextjs logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Next.js</h4>
-            </div>
-
-            <!-- Tailwind CSS -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/tailwindcss.png" alt="Tailwindcss logo" width={80} height={90} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Tailwind</h4>
-            </div>
-
-            <!-- Bootstrap -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/bootstrap.png" alt="bootstrap logo" width={60} height={60} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900">Bootstrap</h4>
-            </div>
-
-            <!-- Vuetify -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/vuetify.png" alt="vuetify logo" width={60} height={60} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900">Vuetify</h4>
-            </div>
-
-            <!-- Astro -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/astro.png" alt="astro logo" width={65} height={65} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900">Astro</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend Development -->
-        <div class="skill-category" data-aos="fade-up" data-aos-delay=500">
-          <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-xl mb-4">
-              <i class="ph ph-hard-drives text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-700 mb-2">
-              <span data-es="Desarrollo Backend" data-en="Backend Development">Desarrollo Backend</span>
-            </h3>
-            <p class="text-gray-600 max-w-lg mx-auto">
-              <span data-es="APIs robustas y escalables con arquitecturas bien diseñadas"
-                    data-en="Robust and scalable APIs with well-designed architectures">
-                APIs robustas y escalables con arquitecturas bien diseñadas
-              </span>
-            </p>
-          </div>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <!-- Node.js -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/nodejs.png" alt="nodejs logo" width={60} height={60} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Node.js</h4>
-            </div>
-
-            <!-- PHP -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/php.png" alt="php logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">PHP</h4>
-            </div>
-
-            <!-- Express.js -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/express.png" alt="express logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Express.js</h4>
-            </div>
-
-            <!-- Nestjs -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/nestjs.png" alt="nest logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">NestJS</h4>
-            </div>
-
-            <!-- Laravel -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/laravel.jpg" alt="Laravel logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Laravel</h4>
-            </div>
-
-            <!-- Codeigniter -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/codeigniter.png" alt="Codeigniter logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Codeigniter</h4>
-            </div>
-
-            <!-- REST APIs -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <i class="ph ph-arrows-split text-4xl text-primary-600"></i>
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">REST APIs</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Development -->
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="1000">
-          <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-xl mb-4">
-              <i class="ph ph-device-mobile text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-700 mb-2">
-              <span data-es="Desarrollo Móvil" data-en="Mobile Development">Desarrollo Móvil</span>
-            </h3>
-            <p class="text-gray-600 max-w-lg mx-auto">
-              <span data-es="Aplicaciones móviles híbridas y nativas para iOS y Android"
-                    data-en="Hybrid and native mobile applications for iOS and Android">
-                Aplicaciones móviles híbridas y nativas para iOS y Android
-              </span>
-            </p>
-          </div>
-          
-          <!-- <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 flex justify-center"> -->
-          <div class="flex justify-center">
-            <!-- React Native -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <Image src="/assets/icons/skills/reactnative.webp" alt="reactnative logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">React Native</h4>
-            </div>
-
-            <!-- Expo -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <Image src="/assets/icons/skills/expo.png" alt="expo logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Expo</h4>
-            </div>
-
-            <!-- GLue Stack UI -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <Image src="/assets/icons/skills/gluestack.jpg" alt="gluestackui logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Gluestack-UI</h4>
-            </div>
-
-            <!-- RN Paper -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex items-center justify-center mb-4">
-                <Image src="/assets/icons/skills/rnpaper.jpg" alt="rn paper logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">React Native Paper</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Databases & Cloud -->
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="1500">
-          <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-xl mb-4">
-              <i class="ph ph-database text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-700 mb-2">
-              <span data-es="Bases de Datos y Cloud" data-en="Databases & Cloud">Bases de Datos y Cloud</span>
-            </h3>
-            <p class="text-gray-600 max-w-lg mx-auto">
-              <span data-es="Gestión de datos y servicios en la nube para aplicaciones escalables"
-                    data-en="Data management and cloud services for scalable applications">
-                Gestión de datos y servicios en la nube para aplicaciones escalables
-              </span>
-            </p>
-          </div>
-          
-          <!-- <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"> -->
-          <div class="flex justify-center">
-            <!-- MySQL -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/mysql.png" alt="mysql logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">MySQL</h4>
-            </div>
-
-            <!-- PostgreSQL -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/postgre.jpg" alt="postgre logo" width={70} height={70} class="rounded-full" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">PostgreSQL</h4>
-            </div>
-
-            <!-- MongoDB -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/mongodb.png" alt="mongodb logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">MongoDB</h4>
-            </div>
-
-            <!-- Firebase -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/firebase.png" alt="Firebase logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Firebase</h4>
-            </div>
-
-            <!-- Supabase -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/supabase.png" alt="Supabase logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Supabase</h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tools & DevOps -->
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="2000">
-          <div class="text-center mb-12">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-xl mb-4">
-              <i class="ph ph-gear text-2xl text-white"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-700 mb-2">
-              <span data-es="Herramientas y DevOps" data-en="Tools & DevOps">Herramientas y DevOps</span>
-            </h3>
-            <p class="text-gray-600 max-w-lg mx-auto">
-              <span data-es="Herramientas de desarrollo y metodologías para equipos productivos"
-                    data-en="Development tools and methodologies for productive teams">
-                Herramientas de desarrollo y metodologías para equipos productivos
-              </span>
-            </p>
-          </div>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <!-- Git -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/git.png" alt="Git logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Git</h4>
-            </div>
-
-            <!-- Docker -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/docker.png" alt="Docker logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Docker</h4>
-            </div>
-
-            <!-- Cursor -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/cursor.png" alt="Cursor logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Cursor</h4>
-            </div>
-
-            <!-- Antigravity -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/antigravity.png" alt="Antigravity logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Antigravity</h4>
-            </div>
-
-            <!-- Hoppscotch -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/hoppscotch.jpeg" alt="Hoppscotch logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Hoppscotch</h4>
-            </div>
-
-            <!-- Postman -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/postman.webp" alt="Postman logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Postman</h4>
-            </div>
-            
-            <!-- Stitch -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/google-stitch.avif" alt="Google Stitch logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Stitch</h4>
-            </div>
-
-            <!-- Dbeaver -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/dbeaver.png" alt="Dbeaver logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">DBeaver</h4>
-            </div>
-            
-
-            <!-- Kanban -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/kanban.png" alt="Kanban logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Kanban</h4>
-            </div>
-
-            <!-- Scrum -->
-            <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto">
-              <div class="flex justify-center mb-4">
-                <Image src="/assets/icons/skills/scrum.webp" alt="Scrum logo" width={70} height={70} class="rounded-xl" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Scrum</h4>
-            </div>
-          </div>
-        </div>
+        {categoriasHabilidades.map((categoria) => (
+          <SkillCategory {...categoria} />
+        ))}
       </div>
 
       <!-- Certificaciones -->
@@ -536,68 +222,3 @@ import { Image } from 'astro:assets';
   });
 </script>
 
-<style>
-  .skill-card {
-    @apply rounded-xl p-4 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform;
-  }
-
-  .certification-card {
-    @apply bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-colors duration-300;
-  }
-
-  /* Animaciones de entrada */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .skill-category[data-aos="fade-up"] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-
-  .skill-category[data-aos="fade-up"].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Efectos hover mejorados */
-  /* .skill-card:hover .w-16.h-16 {
-    transform: rotate(10deg) scale(1.1);
-    transition: transform 0.3s ease;
-  } */
-
-  /* Gradientes animados para las barras de progreso */
-  .bg-gradient-to-r {
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-
-  /* Responsive improvements */
-  @media (max-width: 768px) {
-    .skill-card {
-      padding: 1rem;
-    }
-    
-    /* .skill-card .w-16.h-16 {
-      width: 3rem;
-      height: 1rem;
-    } */
-    
-    .skill-card h4 {
-      font-size: 0.875rem;
-    }
-  }
-</style>

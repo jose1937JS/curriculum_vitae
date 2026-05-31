@@ -1,6 +1,169 @@
 ---
 // Experience Section - Historial profesional y experiencia laboral
-import Badge from "./Badge.astro";
+import ExperienceCard from "./ExperienceCard.astro";
+
+const experiencias = [
+  {
+    dateEs: "09/2025 - Presente",
+    dateEn: "09/2025 - Present",
+    roleEs: "Desarrollador Móvil",
+    roleEn: "Mobile Developer",
+    company: "Nextti Solutions",
+    descriptionEs: "Diseño y desarrollo de aplicaciones móviles para Android e IOS, integradas con API REST, con el objetivo de mejorar la experiencia del usuario y accesibilidad de la información de su negocio administrado por Odoo.",
+    descriptionEn: "Design and development of mobile applications for Android and IOS, integrated with REST API, with the objective of improving user experience and accessibility of the information of their business managed by Odoo.",
+    achievementsTitleEs: "Logros Clave:",
+    achievementsTitleEn: "Key Achievements:",
+    achievementsEs: [
+      "Adaptarme y conocer las tecnologias de la empresa, entendiendo la logica de negocio para integrar las funciones requeridas de la mejor forma.",
+      "Trabajar de la mano con el quipo de backend para el testeo e integracion de los endpoints en la app.",
+      "Llevar a la realidad las ideas y propuestas de diseno del gerente de la empresa en las diferentes aplicaciones.",
+      "Desplegar las aplicaciones en las tiendas de aplicaciones (Google Play Store y App Store)."
+    ],
+    achievementsEn: [
+      "Adapted and learned company technologies to integrate the required features in the best way.",
+      "Collaborate with the backend team for testing and integration of endpoints in the app.",
+      "Bring to reality the design ideas and proposals of the company manager in the different applications.",
+      "Deploy applications to app stores (Google Play Store and App Store)."
+    ],
+    badges: [
+      { type: "typescript", title: "Typescript" },
+      { type: "reactnative", title: "React Native" },
+      { type: "nativewind", title: "NativeWind" },
+      { type: "antigravity", title: "Antigravity" },
+      { type: "stitch", title: "Stitch" }
+    ],
+    markerBg: "bg-primary-600"
+  },
+  {
+    dateEs: "09/2024 - 07/2025",
+    dateEn: "09/2024 - 07/2025",
+    roleEs: "Senior Full Stack Developer",
+    roleEn: "Senior Full Stack Developer",
+    company: "AKRONYM",
+    descriptionEs: "Desarrollo de aplicaciones web y API rest usando tecnologías como Node.js, Express, MongoDB y Svelte Kit.",
+    descriptionEn: "Development of web applications and API rest using technologies like Node.js, Express, MongoDB and Svelte Kit.",
+    achievementsTitleEs: "Logros Clave:",
+    achievementsTitleEn: "Key Achievements:",
+    achievementsEs: [
+      "Adaptarme y aprender las tecnologías de la empresa para solucionar los problemas de los proyectos e integrar nuevas funcionalidades",
+      "Integrar modelos de mongoose, haciendo el proyecto más robusto, y fácil de mantener.",
+      "Reescribir código antiguo usando buenas prácticas de programación haciendo el código más legible y escalable.",
+      "Utilizar modelos de lenguaje natural (LLM) para aumentar la eficiencia y rapidez del desarrollo de proyectos enteros."
+    ],
+    achievementsEn: [
+      "Adapted and learned company technologies to solve problems of projects and integrate new features",
+      "Integrate mongoose models, making the project more robust and easy to maintain.",
+      "Rewrite old code using best programming practices, making the code more readable and scalable.",
+      "Use natural language models (LLM) to increase efficiency and speed of project development."
+    ],
+    badges: [
+      { type: "svelte", title: "Svelte" },
+      { type: "nodejs", title: "Node.js" },
+      { type: "expressjs", title: "Express.js" },
+      { type: "javascript", title: "Javascript" },
+      { type: "php", title: "PHP" },
+      { type: "supabase", title: "Supabase" },
+      { type: "mongodb", title: "MongoDB" },
+      { type: "mysql", title: "MySQL" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "astro", title: "Astro" }
+    ],
+    markerBg: "bg-primary-600"
+  },
+  {
+    dateEs: "08/2023 - 06/2024",
+    dateEn: "08/2023 - 06/2024",
+    roleEs: "Full Stack Developer",
+    roleEn: "Full Stack Developer",
+    company: "10 Code Software Design",
+    descriptionEs: "Desarrollo de sistemas web, frontend, backend y aplicaciones móviles.",
+    descriptionEn: "Development of web applications, frontend, backend and mobile applications.",
+    achievementsTitleEs: "Responsabilidades:",
+    achievementsTitleEn: "Responsibilities:",
+    achievementsEs: [
+      "Colaboré con el equipo de backend para integrar endpoints y bibliotecas a las aplicaciones web y móviles, lo que permitió agregar funcionalidades clave a la plataforma y entregar el proyecto un 20% más rápido",
+      "Desarrollé interfaces de usuario responsivas y accesibles para aplicaciones web utilizando Tailwind CSS y Vuetify, mejorando la experiencia del usuario.",
+      "Lideré el diseño de la interfaz de usuario de una aplicación de gestión de apartamentos de lujo en Málaga España, cumpliendo con los altos estándares y requerimientos solicitados por el cliente."
+    ],
+    achievementsEn: [
+      "Collaborated with the backend team to integrate endpoints and libraries to the web and mobile applications, which allowed adding key features to the platform and delivering the project 20% faster",
+      "Developed responsive and accessible user interfaces for web applications using Tailwind CSS and Vuetify, improving the user experience.",
+      "Led the design of the user interface of a luxury apartment management application in Malaga, Spain, meeting the high standards and requirements requested by the client."
+    ],
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "vuetify", title: "Vuetify" },
+      { type: "vue", title: "Vue.js" },
+      { type: "nextjs", title: "Next.js" }
+    ],
+    markerBg: "bg-charcoal-600"
+  },
+  {
+    dateEs: "09/2020 - 07/2023",
+    dateEn: "09/2020 - 07/2023",
+    roleEs: "Full Stack Developer",
+    roleEn: "Full Stack Developer",
+    company: "NextStation",
+    descriptionEs: "Me dediqué al desarrollo de APIs con php y laravel y aplicaciones móviles con react native.",
+    descriptionEn: "I dedicated myself to the development of APIs with php and laravel and mobile applications with react native.",
+    achievementsTitleEs: "Logros clave:",
+    achievementsTitleEn: "Key Achievements:",
+    achievementsEs: [
+      "Lideré el desarrollo a nivel de backed y móvil de una app innovadora para el mercado suizo, pudiendo así conseguir inversionistas minoritarios.",
+      "Integré métodos de pago en línea, incluyendo procesadores de pago y pasarelas en una app móvil",
+      "Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces."
+    ],
+    achievementsEn: [
+      "Led the development at the backend and mobile level of an innovative app for the Swiss market, thus being able to attract minority investors.",
+      "Integrated online payment methods, including payment processors and payment gateways in a mobile app",
+      "Designed and developed a mobile application for the management of prescribed medications, preventing the patient from forgetting to take them in 90% of the cases."
+    ],
+    badges: [
+      { type: "react", title: "React.js" },
+      { type: "reactnative", title: "React Native" },
+      { type: "javascript", title: "Javascript" },
+      { type: "nodejs", title: "Node.js" },
+      { type: "expressjs", title: "Express.js" },
+      { type: "php", title: "PHP" },
+      { type: "laravel", title: "Laravel" },
+      { type: "mysql", title: "MySQL" }
+    ],
+    markerBg: "bg-secondary-600"
+  },
+  {
+    dateEs: "2017 - 2020",
+    dateEn: "2017 - 2020",
+    roleEs: "Full Stack Developer",
+    roleEn: "Full Stack Developer",
+    company: "Freelancer",
+    descriptionEs: "Desarrollo de aplicaciones web responsivas y APIs REST, implementando mejores prácticas de desarrollo y metodologías ágiles.",
+    descriptionEn: "Development of responsive web applications and REST APIs, implementing development best practices and agile methodologies.",
+    achievementsTitleEs: "Responsabilidades:",
+    achievementsTitleEn: "Responsibilities:",
+    achievementsEs: [
+      "Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces.",
+      "Participé activamente en la capacitación y transferencia de conocimientos al cliente, asegurando la autonomía en el uso de los sistemas.",
+      "Mantuve una excelente comunicación y gestión de expectativas con los clientes, logrando una tasa de recomendación del 100% y la obtención de nuevos proyectos por referencia"
+    ],
+    achievementsEn: [
+      "Designed and developed a mobile application for the management of prescribed medications, preventing the patient from forgetting to take them in 90% of the cases.",
+      "Actively participated in client training and knowledge transfer, ensuring autonomy in system usage.",
+      "Maintained excellent communication and expectation management with clients, achieving a recommendation rate of 100% and the acquisition of new projects by reference"
+    ],
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "boostrapcss", title: "Boostrapcss" },
+      { type: "php", title: "PHP" },
+      { type: "codeigniter", title: "CodeIgniter 3" },
+      { type: "mysql", title: "MySQL" },
+      { type: "laravel", title: "Laravel" }
+    ],
+    markerBg: "bg-charcoal-600"
+  }
+];
 ---
 
 <section id="experience" class="py-20 bg-gray-50">
@@ -27,398 +190,13 @@ import Badge from "./Badge.astro";
 
         <!-- Experiencias -->
         <div class="space-y-12">
-
-          <!-- Experiencia 1 - Más reciente -->
-          <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
-            <!-- Marcador del timeline -->
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-primary-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
-            
-            <!-- Contenido (lado izquierdo en desktop) -->
-            <div class="md:w-1/2 md:mr-auto pl-20 md:pr-8">
-              <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                <!-- Fecha -->
-                <div class="text-sm text-primary-600 font-semibold mb-2">
-                  <span data-es="09/2025 - Presente" data-en="09/2025 - Present">09/2025 - Presente</span>
-                </div>
-                
-                <!-- Puesto y empresa -->
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
-                  <span data-es="Desarrollador Móvil" data-en="Mobile Developer">Desarrollador Móvil</span>
-                </h3>
-                <div class="text-lg text-gray-700 mb-4 font-medium">Nextti Solutions</div>
-                
-                <!-- Descripción -->
-                <div class="text-gray-600 mb-6 space-y-3">
-                  <p>
-                    <span data-es="Diseño y desarrollo de aplicaciones móviles para Android e IOS, integradas con API REST, con el objetivo de mejorar la experiencia del usuario y accesibilidad de la información de su negocio administrado por Odoo." 
-                          data-en="Design and development of mobile applications for Android and IOS, integrated with REST API, with the objective of improving user experience and accessibility of the information of their business managed by Odoo.">
-                      Diseño y desarrollo de aplicaciones móviles para Android e IOS, integradas con API REST, con el objetivo de mejorar la experiencia del usuario y accesibilidad de la información de su negocio administrado por Odoo.
-                    </span>
-                  </p>
-                </div>
-                
-                <!-- Logros clave -->
-                <div class="mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-3">
-                    <span data-es="Logros Clave:" data-en="Key Achievements:">Logros Clave:</span>
-                  </h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Adaptarme y conocer las tecnologias de la empresa, entendiendo la logica de negocio para integrar las funciones requeridas de la mejor forma." 
-                              data-en="Adapted and learned company technologies to integrate the required features in the best way.">
-                          Adaptarme y conocer las tecnologias de la empresa, entendiendo la logica de negocio para integrar las funciones requeridas de la mejor forma.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Trabajar de la mano con el quipo de backend para el testeo e integracion de los endpoints en la app."
-                              data-en="Collaborate with the backend team for testing and integration of endpoints in the app.">
-                          Trabajar de la mano con el quipo de backend para el testeo e integracion de los endpoints en la app.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Llevar a la realidad las ideas y propuestas de diseno del gerente de la empresa en las diferentes aplicaciones."
-                              data-en="Bring to reality the design ideas and proposals of the company manager in the different applications.">
-                          Llevar a la realidad las ideas y propuestas de diseno del gerente de la empresa en las diferentes aplicaciones.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Desplegar las aplicaciones en las tiendas de aplicaciones (Google Play Store y App Store)."
-                              data-en="Deploy applications to app stores (Google Play Store and App Store).">
-                          Desplegar las aplicaciones en las tiendas de aplicaciones (Google Play Store y App Store).
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                  <Badge type="typescript" title="Typescript" />
-                  <Badge type="reactnative" title="React Native" />
-                  <Badge type="nativewind" title="NativeWind" />
-                  <Badge type="antigravity" title="Antigravity" />
-                  <Badge type="stitch" title="Stitch" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experiencia 2 -->
-          <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up">
-            <!-- Marcador del timeline -->
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-primary-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
-            
-            <!-- Contenido (lado derecho en desktop) -->
-            <div class="md:w-1/2 md:ml-auto pl-20 md:pl-8">
-              <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                <!-- Fecha -->
-                <div class="text-sm text-primary-600 font-semibold mb-2">
-                  <span data-es="2023 - Presente" data-en="2023 - Present">09/2024 - 07/2025</span>
-                </div>
-                
-                <!-- Puesto y empresa -->
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
-                  <span data-es="Senior Full Stack Developer" data-en="Senior Full Stack Developer">Full Stack Developer</span>
-                </h3>
-                <div class="text-lg text-gray-700 mb-4 font-medium">AKRONYM</div>
-                
-                <!-- Descripción -->
-                <div class="text-gray-600 mb-6 space-y-3">
-                  <p>
-                    <span data-es="Desarrollo de aplicaciones web y API rest usando tecnologías como Node.js, Express, MongoDB y Svelte Kit."
-                          data-en="Development of web applications and API rest using technologies like Node.js, Express, MongoDB and Svelte Kit.">
-                      Desarrollo de aplicaciones web y API rest usando tecnologías como Node.js, Express, MongoDB y Svelte Kit.
-                    </span>
-                  </p>
-                </div>
-                
-                <!-- Logros clave -->
-                <div class="mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-3">
-                    <span data-es="Logros Clave:" data-en="Key Achievements:">Logros Clave:</span>
-                  </h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Adaptarme y aprender las tecnologías de la empresa para solucionar los problemas de los proyectos e integrar nuevas funcionalidades" 
-                              data-en="Adapted and learned company technologies to solve problems of projects and integrate new features">
-                          Adaptarme y aprender las tecnologías de la empresa para solucionar los problemas de los proyectos e integrar nuevas funcionalidades
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Integrar modelos de mongoose, haciendo el proyecto más robusto, y fácil de mantener."
-                              data-en="Integrate mongoose models, making the project more robust and easy to maintain.">
-                          Integrar modelos de mongoose, haciendo el proyecto más robusto, y fácil de mantener.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Reescribir código antiguo usando buenas prácticas de programación haciendo el código más legible y escalable."
-                              data-en="Rewrite old code using best programming practices, making the code more readable and scalable.">
-                          Reescribir código antiguo usando buenas prácticas de programación haciendo el código más legible y escalable.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600 text-sm">
-                        <span data-es="Utilizar modelos de lenguaje natural (LLM) para aumentar la eficiencia y rapidez del desarrollo de proyectos enteros."
-                              data-en="Use natural language models (LLM) to increase efficiency and speed of project development.">
-                          Utilizar modelos de lenguaje natural (LLM) para aumentar la eficiencia y rapidez del desarrollo de proyectos enteros.
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                  <Badge type="svelte" title="Svelte" />
-                  <Badge type="nodejs" title="Node.js" />
-                  <Badge type="expressjs" title="Express.js" />
-                  <Badge type="javascript" title="Javascript" />
-                  <Badge type="php" title="PHP" />
-                  <Badge type="supabase" title="Supabase" />
-                  <Badge type="mongodb" title="MongoDB" />
-                  <Badge type="mysql" title="MySQL" />
-                  <Badge type="tailwindcss" title="Tailwindcss" />
-                  <Badge type="astro" title="Astro" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experiencia 3 -->
-          <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-charcoal-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
-            
-            <!-- Contenido (lado izquierdo en desktop) -->
-            <div class="md:w-1/2 md:mr-auto pl-20 md:pl-0 md:pr-8">
-              <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-primary-600 font-semibold mb-2">
-                  <span data-es="2021 - 2023" data-en="2021 - 2023">08/2023 - 06/2024</span>
-                </div>
-                
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
-                  <span data-es="Full Stack Developer" data-en="Full Stack Developer">Full Stack Developer</span>
-                </h3>
-                <div class="text-lg text-gray-700 mb-4 font-medium">10 Code Software Design</div>
-                
-                <div class="text-gray-600 mb-6 space-y-3">
-                  <p>
-                    <span data-es="Desarrollo de sistemas web, frontend, backend y aplicaciones móviles"
-                          data-en="Development of web applications, frontend, backend and mobile applications">
-                      Desarrollo de sistemas web, frontend, backend y aplicaciones móviles.
-                    </span>
-                  </p>
-                </div>
-                
-                <div class="mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-3">
-                    <span data-es="Responsabilidades:" data-en="Responsibilities:">Responsabilidades:</span>
-                  </h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Colaboré con el equipo de backend para integrar endpoints y bibliotecas a las aplicaciones web y móviles, lo que permitió agregar funcionalidades clave a la plataforma y entregar el proyecto un 20% más rápido"
-                              data-en="Collaborated with the backend team to integrate endpoints and libraries to the web and mobile applications, which allowed adding key features to the platform and delivering the project 20% faster">
-                          Colaboré con el equipo de backend para integrar endpoints y bibliotecas a las aplicaciones web y móviles, lo que permitió agregar funcionalidades clave a la plataforma y entregar el proyecto un 20% más rápido
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Desarrollé interfaces de usuario responsivas y accesibles para aplicaciones web utilizando Tailwind CSS y Vuetify, mejorando la experiencia del usuario."
-                              data-en="Developed responsive and accessible user interfaces for web applications using Tailwind CSS and Vuetify, improving the user experience.">
-                          Desarrollé interfaces de usuario responsivas y accesibles para aplicaciones web utilizando Tailwind CSS y Vuetify, mejorando la experiencia del usuario.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Lideré el diseño de la interfaz de usuario de una aplicación de gestión de apartamentos de lujo en Málaga España, cumpliendo con los altos estándares y requerimientos solicitados por el cliente."
-                              data-en="Led the design of the user interface of a luxury apartment management application in Malaga, Spain, meeting the high standards and requirements requested by the client.">
-                          Lideré el diseño de la interfaz de usuario de una aplicación de gestión de apartamentos de lujo en Málaga España, cumpliendo con los altos estándares y requerimientos solicitados por el cliente.
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                  <Badge type="javascript" title="Javascript" />
-                  <Badge type="tailwindcss" title="Tailwindcss" />
-                  <Badge type="reactnative" title="React Native" />
-                  <Badge type="react" title="React.js" />
-                  <Badge type="vuetify" title="Vuetify" />
-                  <Badge type="vue" title="Vue.js" />
-                  <Badge type="nextjs" title="Next.js" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experiencia 4 -->
-          <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="400">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-secondary-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
-            
-            <div class="md:w-1/2 md:ml-auto pl-20 md:pl-8">
-              <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-primary-600 font-semibold mb-2">
-                  <span data-es="09/2020 - 07/2023" data-en="09/2020 - 07/2023">09/2020 - 07/2023</span>
-                </div>
-                
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
-                  <span data-es="Full Stack Developer" data-en="Full Stack Developer">Full Stack Developer</span>
-                </h3>
-                <div class="text-lg text-gray-700 mb-4 font-medium">NextStation</div>
-                
-                <div class="text-gray-600 mb-6 space-y-3">
-                  <p>
-                    <span data-es="Me dediqué al desarrollo de APIs con php y laravel y aplicaciones móviles con react native."
-                          data-en="I dedicated myself to the development of APIs with php and laravel and mobile applications with react native.">
-                      Me dediqué al desarrollo de APIs con php y laravel y aplicaciones móviles con react native.
-                    </span>
-                  </p>
-                </div>
-                
-                <div class="mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-3">
-                    <span data-es="Logros clave:" data-en="Key Achievements:">Logros clave:</span>
-                  </h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Lideré el desarrollo a nivel de backed y móvil de una app innovadora para el mercado suizo, pudiendo así conseguir inversionistas minoritarios."
-                              data-en="Led the development at the backend and mobile level of an innovative app for the Swiss market, thus being able to attract minority investors.">
-                          Lideré el desarrollo a nivel de backed y móvil de una app innovadora para el mercado suizo, pudiendo así conseguir inversionistas minoritarios.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Integré métodos de pago en línea, incluyendo procesadores de pago y pasarelas en una app móvil"
-                              data-en="Integrated online payment methods, including payment processors and payment gateways in a mobile app">
-                          Integré métodos de pago en línea, incluyendo procesadores de pago y pasarelas en una app móvil
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces."
-                              data-en="Designed and developed a mobile application for the management of prescribed medications, preventing the patient from forgetting to take them in 90% of the cases.">
-                          Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces.
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                  <Badge type="react" title="React.js" />
-                  <Badge type="reactnative" title="React Native" />
-                  <Badge type="javascript" title="Javascript" />
-                  <Badge type="nodejs" title="Node.js" />
-                  <Badge type="expressjs" title="Express.js" />
-                  <Badge type="php" title="PHP" />
-                  <Badge type="laravel" title="Laravel" />
-                  <Badge type="mysql" title="MySQL" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experiencia 5 -->
-          <div class="experience-item relative flex flex-col md:flex-row md:items-center" data-aos="fade-up" data-aos-delay="600">
-            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-charcoal-600 rounded-full transform md:-translate-x-1/2 border-4 border-white shadow-lg z-10"></div>
-            
-            <!-- Contenido (lado izquierdo en desktop) -->
-            <div class="md:w-1/2 md:mr-auto pl-20 md:pl-0 md:pr-8">
-              <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                <div class="text-sm text-primary-600 font-semibold mb-2">
-                  <span data-es="2021 - 2023" data-en="2021 - 2023">2017 - 2020</span>
-                </div>
-                
-                <h3 class="text-xl font-bold text-gray-900 mb-2">
-                  <span data-es="Full Stack Developer" data-en="Full Stack Developer">Full Stack Developer</span>
-                </h3>
-                <div class="text-lg text-gray-700 mb-4 font-medium">Freelancer</div>
-                
-                <div class="text-gray-600 mb-6 space-y-3">
-                  <p>
-                    <span data-es="Desarrollo de aplicaciones web responsivas y APIs REST, implementando mejores prácticas de desarrollo y metodologías ágiles."
-                          data-en="Development of responsive web applications and REST APIs, implementing development best practices and agile methodologies.">
-                      Desarrollo de aplicaciones web responsivas y APIs REST, implementando mejores prácticas de desarrollo y metodologías ágiles.
-                    </span>
-                  </p>
-                </div>
-                
-                <div class="mb-6">
-                  <h4 class="font-semibold text-gray-900 mb-3">
-                    <span data-es="Responsabilidades:" data-en="Responsibilities:">Responsabilidades:</span>
-                  </h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces."
-                              data-en="Designed and developed a mobile application for the management of prescribed medications, preventing the patient from forgetting to take them in 90% of the cases.">
-                          Diseñé y desarrollé una aplicación móvil para la gestión de medicamentos recetados, evitando que el paciente olvide tomarlas en un 90% de las veces.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Participé activamente en la capacitación y transferencia de conocimientos al cliente, asegurando la autonomía en el uso de los"
-                          data-en="APIs with Express.js and SQL databases">
-                          sistemas.
-                        </span>
-                      </span>
-                    </li>
-                    <li class="flex items-start space-x-2">
-                      <i class="ph ph-check-circle text-green-500 mt-1 flex-shrink-0"></i>
-                      <span class="text-gray-600">
-                        <span data-es="Mantuve una excelente comunicación y gestión de expectativas con los clientes, logrando una tasa de recomendación del 100% y la obtención de nuevos proyectos por referencia"
-                              data-en="Maintained excellent communication and expectation management with clients, achieving a recommendation rate of 100% and the acquisition of new projects by reference">
-                          Mantuve una excelente comunicación y gestión de expectativas con los clientes, logrando una tasa de recomendación del 100% y la obtención de nuevos proyectos por referencia
-                        </span>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <Badge type="javascript" title="Javascript" />
-                  <Badge type="boostrapcss" title="Boostrapcss" />
-                  <Badge type="php" title="PHP" />
-                  <Badge type="codeigniter" title="CodeIgniter 3" />
-                  <Badge type="mysql" title="MySQL" />
-                  <Badge type="laravel" title="Laravel" />
-                </div>
-              </div>
-            </div>
-          </div>
+          {experiencias.map((exp, index) => (
+            <ExperienceCard
+              {...exp}
+              isLeft={index % 2 === 0}
+              aosDelay={index >= 2 ? String((index - 1) * 200) : undefined}
+            />
+          ))}
         </div>
       </div>
 

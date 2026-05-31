@@ -32,13 +32,13 @@ import SocialIcons from "./SocialIcons.astro";
             
             <div class="space-y-6">
               <!-- Email -->
-              <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('jflo1937@gmail.com')">
+              <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('dev.lopezjose@gmail.com')">
                 <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:bg-primary-700 transition-colors duration-300">
                   <i class="ph ph-envelope text-xl"></i>
                 </div>
                 <div>
                   <div class="text-gray-400 text-sm">Email</div>
-                  <div class="text-lg font-medium group-hover:text-primary-400 transition-colors duration-300">jflo1937@gmail.com</div>
+                  <div class="text-lg font-medium group-hover:text-primary-400 transition-colors duration-300">dev.lopezjose@gmail.com</div>
                 </div>
                 <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <i class="ph ph-copy text-gray-400"></i>
@@ -46,7 +46,7 @@ import SocialIcons from "./SocialIcons.astro";
               </div>
 
               <!-- Teléfono -->
-              <div class="flex items-center space-x-4 group cursor-pointer" onclick="copyToClipboard('https://wa.me/584120345008')">
+              <div class="flex items-center space-x-4 group cursor-pointer" onclick="window.open('https://wa.me/584120345008', '_blank')">
                 <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center group-hover:bg-primary-700 transition-colors duration-300">
                   <i class="ph ph-whatsapp-logo text-xl"></i>
                 </div>
@@ -282,7 +282,8 @@ import SocialIcons from "./SocialIcons.astro";
         },
         (error: any) => {
           // @ts-ignore
-          showToast('Esta función aún está en desarrollo!!', 'error');
+          showToast('Los servidores estan saturados, contáctame a través del número de WhatsApp.', 'error');
+          console.log(error);
         },
       );
     
@@ -341,7 +342,7 @@ import SocialIcons from "./SocialIcons.astro";
 
 <style>
   .contact-input {
-    @apply w-full px-4 py-3 bg-[var(--white-dynamic)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all duration-300;
+    @apply w-full px-4 py-3 bg-[var(--white-dynamic)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all duration-300;
   }
 
   .contact-input:focus {

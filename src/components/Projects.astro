@@ -1,8 +1,619 @@
 ---
-import Badge from "./Badge.astro";
-
 // Projects Section - Galería de proyectos del desarrollador
-import { Image } from 'astro:assets';
+import ProjectCard from "./ProjectCard.astro";
+
+const proyectos = [
+  {
+    category: "mobile",
+    titleEs: "Tienda Nextti",
+    titleEn: "Tienda Nextti",
+    subtitleEs: "Nextti Solutions",
+    subtitleEn: "Nextti Solutions",
+    descriptionEs: "Es una aplicación white-label cuyo propósito es ofrecer a las empresas retail de nuestro ecosistema Odoo una solución para lanzar su propia aplicación de e-commerce móvil de forma rápida, eficiente y personalizable a su marca.",
+    descriptionEn: "It is a white-label application whose purpose is to offer retail companies within our Odoo ecosystem a solution to launch their own mobile e-commerce application quickly, efficiently, and customizable to their brand.",
+    logoIcon: "ph ph-device-mobile-camera text-6xl text-primary-600",
+    badges: [
+      { type: "typescript", title: "TypeScript" },
+      { type: "reactnative", title: "React Native" },
+      { type: "expo", title: "Expo" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "nativewind", title: "NativeWind" },
+      { type: "react", title: "React.js" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/TiendaNextti/1.png",
+      "/assets/TiendaNextti/2.png",
+      "/assets/TiendaNextti/3.png",
+      "/assets/TiendaNextti/4.0.png",
+      "/assets/TiendaNextti/4.1.png",
+      "/assets/TiendaNextti/5.png",
+      "/assets/TiendaNextti/6.png",
+      "/assets/TiendaNextti/7.png",
+      "/assets/TiendaNextti/8.png",
+      "/assets/TiendaNextti/9.png",
+      "/assets/TiendaNextti/10.png",
+      "/assets/TiendaNextti/11.png",
+      "/assets/TiendaNextti/12.png",
+      "/assets/TiendaNextti/13.png",
+      "/assets/TiendaNextti/14.png",
+      "/assets/TiendaNextti/15.png",
+      "/assets/TiendaNextti/16.png",
+      "/assets/TiendaNextti/17.png",
+      "/assets/TiendaNextti/18.png",
+      "/assets/TiendaNextti/19.png"
+    ]
+  },
+  {
+    category: "mobile",
+    titleEs: "Sales Force V2",
+    titleEn: "Sales Force V2",
+    subtitleEs: "Nextti Solutions",
+    subtitleEn: "Nextti Solutions",
+    descriptionEs: "Aplicación móvil para la gestión de negocios basados en el ERP Odoo, permite la gestión de ventas, compras, pagos, clientes, visitas, y mucho más.",
+    descriptionEn: "Mobile application for managing businesses based on the Odoo ERP. It allows the management of sales, purchases, payments, clients, visits, and much more.",
+    logoIcon: "ph ph-device-mobile-camera text-6xl text-primary-600",
+    badges: [
+      { type: "typescript", title: "TypeScript" },
+      { type: "reactnative", title: "React Native" },
+      { type: "expo", title: "Expo" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "nativewind", title: "NativeWind" },
+      { type: "react", title: "React.js" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/SalesForceV2/0.png",
+      "/assets/SalesForceV2/1.png",
+      "/assets/SalesForceV2/2.png",
+      "/assets/SalesForceV2/3.png",
+      "/assets/SalesForceV2/4.png",
+      "/assets/SalesForceV2/5.png",
+      "/assets/SalesForceV2/6.png",
+      "/assets/SalesForceV2/7.png",
+      "/assets/SalesForceV2/8.png",
+      "/assets/SalesForceV2/9.png",
+      "/assets/SalesForceV2/10.png",
+      "/assets/SalesForceV2/11.png",
+      "/assets/SalesForceV2/12.png",
+      "/assets/SalesForceV2/13.png",
+      "/assets/SalesForceV2/14.png",
+      "/assets/SalesForceV2/15.png",
+      "/assets/SalesForceV2/16.png",
+      "/assets/SalesForceV2/17.png"
+    ]
+  },
+  {
+    category: "mobile",
+    titleEs: "Rates App",
+    titleEn: "Rates App",
+    subtitleEs: "Proyecto Personal",
+    subtitleEn: "Personal Project",
+    descriptionEs: "Aplicación que sirve como referencia para ver el precio oficial del Dólar, del Euro y del USDT.",
+    descriptionEn: "An application that serves as a reference for viewing the official prices of the Dollar, the Euro, and USDT.",
+    logoSrc: "/assets/icons/projects/rates_logo.png",
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "reactquery", title: "React Query" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/ratesapp/1.png",
+      "/assets/ratesapp/2.png",
+      "/assets/ratesapp/3.png",
+      "/assets/ratesapp/4.png",
+      "/assets/ratesapp/5.png",
+      "/assets/ratesapp/6.png"
+    ]
+  },
+  {
+    category: "backend",
+    titleEs: "Rates API",
+    titleEn: "Rates API",
+    subtitleEs: "Proyecto Personal",
+    subtitleEn: "Personal Project",
+    descriptionEs: "Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API, cuenta también con un limitador de peticiones por IP del cliente para que no excedan los recursos del servidor.",
+    descriptionEn: "Backend developed in Node.js to obtain the official rate of the most used currencies in Venezuela (Dollar, Euro, and USDT). The rates are obtained through web scraping from the Central Bank of Venezuela's website and via a third-party API in the case of USDT. The values are automatically updated daily through a cron job and stored in a MongoDB database to avoid congesting the BCV website or the API, it also has a request limiter per client IP so that they do not exceed the server's resources.",
+    logoSrc: "/assets/icons/projects/rates_logo.png",
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "node.js", title: "Node.js" },
+      { type: "expressjs", title: "Express" },
+      { type: "mongodb", title: "MongoDB" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: []
+  },
+  {
+    category: "frontend",
+    titleEs: "Imago",
+    titleEn: "Imago",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "Sistema de gestión de ordenes e inventario de una empresa de alquiler de equipos para eventos, con el cual se puede gestionar los equipos, las ordenes, los clientes, los proveedores, entre otros.",
+    descriptionEn: "Inventory and order management system for a company that rents equipment for events, with which you can manage the equipment, the orders, the customers, the suppliers, among other.",
+    logoSrc: "/assets/icons/projects/imago_logo.png",
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "svelte", title: "Svelte" },
+      { type: "sveltekit", title: "SvelteKit" },
+      { type: "supabase", title: "Supabase" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: [
+      "/assets/imago/1.png",
+      "/assets/imago/2.png",
+      "/assets/imago/3.png",
+      "/assets/imago/3.1.png",
+      "/assets/imago/3.2.png",
+      "/assets/imago/4.png",
+      "/assets/imago/5.png",
+      "/assets/imago/6.png",
+      "/assets/imago/6.1.png",
+      "/assets/imago/7.png"
+    ]
+  },
+  {
+    category: "fullstack",
+    titleEs: "ACPublishing",
+    titleEn: "ACPublishing",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "Sistema de ventas de libros online y sistema administrativo para la gestión de ventas, clientes, inventario, entre otros. Me dediqué a la corrección de bugs y mejora del sistema de inventario agregando mas funcionalidades.",
+    descriptionEn: "Online book sales system and administrative system for managing sales, customers, inventory, among other. I dedicated myself to fixing bugs and improving the inventory system by adding more features.",
+    logoSrc: "/assets/icons/projects/acp_logo.png",
+    logoWidth: 270,
+    logoHeight: 80,
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "bootstrapcss", title: "Bootstrapcss" },
+      { type: "php", title: "PHP" },
+      { type: "mysql", title: "MySQL" }
+    ],
+    images: [
+      "/assets/acp/1.png",
+      "/assets/acp/2.png",
+      "/assets/acp/3.png",
+      "/assets/acp/4.png",
+      "/assets/acp/5.png",
+      "/assets/acp/6.png",
+      "/assets/acp/7.png",
+      "/assets/acp/7.1.png",
+      "/assets/acp/8.png",
+      "/assets/acp/8.1.png",
+      "/assets/acp/8.2.png"
+    ]
+  },
+  {
+    category: "fullstack",
+    titleEs: "Sistema administrativo de Lelevier Plastic",
+    titleEn: "Lelevier Plastic Administration System",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "Sistema administrativo para la clínica de cirugía plástica Lelevier Plastic, con el cual se puede gestionar los pacientes, los procedimientos, los seguimintos post operatorios, las citas, los pagos, entre otros.",
+    descriptionEn: "Administrative system for Lelevier Plastic, with which you can manage the patients, the procedures, the postoperative follow-ups, the appointments, the payments, among other.",
+    logoSrc: "/assets/icons/projects/lelevier_logo.png",
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "node.js", title: "Node.js" },
+      { type: "expressjs", title: "Express" },
+      { type: "mongodb", title: "MongoDB" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "sveltekit", title: "SvelteKit" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: [
+      "/assets/lelevier/1.png",
+      "/assets/lelevier/2.png",
+      "/assets/lelevier/3.png",
+      "/assets/lelevier/4.png",
+      "/assets/lelevier/5.png",
+      "/assets/lelevier/6.png",
+      "/assets/lelevier/7.png"
+    ]
+  },
+  {
+    category: "frontend",
+    titleEs: "Landing Page de Lelevier Plastic",
+    titleEn: "Lelevier Plastic Landing Page",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "Página web informativa para la clínica de cirugias plásticas Lelevier Plastic.",
+    descriptionEn: "Informative web page for Lelevier Plastic clinic.",
+    logoSrc: "/assets/icons/projects/lelevier_logo.png",
+    badges: [
+      { type: "html", title: "HTML" },
+      { type: "css", title: "CSS" },
+      { type: "javascript", title: "Javascript" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: [
+      "/assets/lelevierLanding/1.png",
+      "/assets/lelevierLanding/2.png",
+      "/assets/lelevierLanding/3.png",
+      "/assets/lelevierLanding/4.png",
+      "/assets/lelevierLanding/5.png",
+      "/assets/lelevierLanding/6.png",
+      "/assets/lelevierLanding/7.png",
+      "/assets/lelevierLanding/8.png",
+      "/assets/lelevierLanding/9.png"
+    ]
+  },
+  {
+    category: "frontend",
+    titleEs: "Landing page de Akronym",
+    titleEn: "Akronym Landing Page",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "Landing page para la empresa de desarrollo de software Akronym, con el cual se puede conocer más sobre la empresa y sus servicios.",
+    descriptionEn: "Landing page for the Akronym software development company, with which you can know more about the company and its services.",
+    logoSrc: "/assets/icons/projects/akronym_logo.png",
+    logoWidth: 200,
+    logoHeight: 80,
+    badges: [
+      { type: "html", title: "HTML" },
+      { type: "css", title: "CSS" },
+      { type: "javascript", title: "Javascript" },
+      { type: "astro", title: "Astro" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: [
+      "/assets/akronymLanding/1.png",
+      "/assets/akronymLanding/2.png",
+      "/assets/akronymLanding/3.png",
+      "/assets/akronymLanding/4.png",
+      "/assets/akronymLanding/5.png",
+      "/assets/akronymLanding/6.png",
+      "/assets/akronymLanding/7.png",
+      "/assets/akronymLanding/8.png"
+    ]
+  },
+  {
+    category: "backend",
+    titleEs: "Bela API",
+    titleEn: "Bela API",
+    subtitleEs: "Akronym",
+    subtitleEn: "Akronym",
+    descriptionEs: "API para la app Bela y su sistema de gestión administrativo. En este proyecto me dediqué a finalizar la API y a corregir bugs y agregar nuevas características.",
+    descriptionEn: "API for the Bela app and its administrative system. In this project I dedicated myself to finishing the API and fixing bugs and adding new features.",
+    logoIcon: "ph ph-database text-6xl text-primary-600",
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "node.js", title: "Node.js" },
+      { type: "expressjs", title: "Express" },
+      { type: "mongodb", title: "MongoDB" },
+      { type: "vercel", title: "Vercel" }
+    ],
+    images: []
+  },
+  {
+    category: "mobile",
+    titleEs: "Aplicación de reservas de servicios de una torre de viviendas",
+    titleEn: "Application for booking services of a tower of apartments",
+    subtitleEs: "10 Code Software Design",
+    subtitleEn: "10 Code Software Design",
+    descriptionEs: "App móvil destinada a ser usada por los propietarios de viviendas para hacer reservas de servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en Málaga España.",
+    descriptionEn: "Mobile app for apartment owners to book services offered by Málaga Towers, a luxury apartment project in Málaga, Spain.",
+    logoSrc: "/assets/icons/projects/malaga_towers_metrovacesa.png",
+    logoWidth: 270,
+    logoHeight: 80,
+    badges: [
+      { type: "reactnative", title: "React Native" },
+      { type: "gluestack", title: "GlueStack UI" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/metrovacesa/app/1.png",
+      "/assets/metrovacesa/app/2.png",
+      "/assets/metrovacesa/app/3.png",
+      "/assets/metrovacesa/app/4.png",
+      "/assets/metrovacesa/app/5.png",
+      "/assets/metrovacesa/app/6.png",
+      "/assets/metrovacesa/app/7.png",
+      "/assets/metrovacesa/app/8.png",
+      "/assets/metrovacesa/app/9.png",
+      "/assets/metrovacesa/app/10.png",
+      "/assets/metrovacesa/app/11.png",
+      "/assets/metrovacesa/app/12.png",
+      "/assets/metrovacesa/app/13.png"
+    ]
+  },
+  {
+    category: "frontend",
+    titleEs: "Sistema Administrativo de Metrovacesa",
+    titleEn: "Metrovacesa Administration System",
+    subtitleEs: "10 Code Software Design",
+    subtitleEn: "10 Code Software Design",
+    descriptionEs: "Sistema web administrativo para gestionar las viviendas, los propietarios y los servicios que se proporcionan en la app móvil Metrovacesa.",
+    descriptionEn: "Web admin system for managing the apartments, the owners and the services provided in the mobile app Metrovacesa.",
+    logoSrc: "/assets/icons/projects/malaga_towers_metrovacesa.png",
+    logoWidth: 270,
+    logoHeight: 80,
+    badges: [
+      { type: "react", title: "React.js" },
+      { type: "next.js", title: "Next.js" },
+      { type: "tailwindcss", title: "Tailwindcss" },
+      { type: "javascript", title: "Javascript" }
+    ],
+    images: [
+      "/assets/metrovacesa/web/1.png",
+      "/assets/metrovacesa/web/2.png",
+      "/assets/metrovacesa/web/3.png",
+      "/assets/metrovacesa/web/4.png",
+      "/assets/metrovacesa/web/5.png",
+      "/assets/metrovacesa/web/6.png",
+      "/assets/metrovacesa/web/7.png",
+      "/assets/metrovacesa/web/8.png",
+      "/assets/metrovacesa/web/9.png"
+    ]
+  },
+  {
+    category: "fullstack",
+    titleEs: "Reservatum",
+    titleEn: "Reservatum",
+    subtitleEs: "10 Code Software Design",
+    subtitleEn: "10 Code Software Design",
+    descriptionEs: "Es una herramienta para reservar propiedades como casas vacacionales, villas de lujo y apartamentos en Mayorca, España. Tuve la responsabilidad de diseñar el landing page, mejorar el módulo de blogs, terminar la interfaz para editar reservas, buscar y corregir bugs y agregar validaciones a nivel de frontend en los formularios faltantes.",
+    descriptionEn: "It is a tool to reserve properties such as vacation homes, luxury villas and apartments in Mallorca, Spain. I was responsible for designing the landing page, improving the blogs module, finishing the interface for editing reservations, searching and correcting bugs and adding validations at frontend level in the missing forms.",
+    logoSrc: "/assets/icons/projects/reservatum_logo.png",
+    badges: [
+      { type: "vuetify", title: "Vuetify" },
+      { type: "vue", title: "Vue.js" },
+      { type: "laravel", title: "Laravel" },
+      { type: "php", title: "PHP" },
+      { type: "javascript", title: "JavaScript" }
+    ],
+    images: [
+      "/assets/reservatum/1.png",
+      "/assets/reservatum/2.png",
+      "/assets/reservatum/3.png",
+      "/assets/reservatum/4.png",
+      "/assets/reservatum/5.png",
+      "/assets/reservatum/6.png",
+      "/assets/reservatum/7.png",
+      "/assets/reservatum/8.png",
+      "/assets/reservatum/9.png",
+      "/assets/reservatum/10.png",
+      "/assets/reservatum/11.png",
+      "/assets/reservatum/12.png",
+      "/assets/reservatum/13.png",
+      "/assets/reservatum/14.png"
+    ],
+    aosDelay: "200"
+  },
+  {
+    category: "mobile",
+    titleEs: "Mouth 2 Mouth App",
+    titleEn: "Mouth 2 Mouth App",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Aplicación que permite al usuario encontrar tiendas afines a sus intereses personales dándole la posibilidad de ganar puntos si hace match con otros usuarios de la app en base a sus intereses.",
+    descriptionEn: "App that allows the user to find stores with the interests of the personales of the user giving them the possibility of winning points if they match with other users of the app in base to their interests.",
+    logoSrc: "/assets/icons/projects/m2m_logo.webp",
+    logoWidth: 50,
+    logoHeight: 50,
+    badges: [
+      { type: "javascript", title: "Javascript" },
+      { type: "react", title: "React.js" },
+      { type: "reactnative", title: "React Native" },
+      { type: "firebase", title: "Firebase Push Notifications" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/m2m/Screenshot_1677978167.png",
+      "/assets/m2m/m2mapp_2.png",
+      "/assets/m2m/Screenshot_1677978173.png",
+      "/assets/m2m/Screenshot_1677978404.png",
+      "/assets/m2m/m2mapp_3.png",
+      "/assets/m2m/m2mapp_8.png",
+      "/assets/m2m/m2mapp_9.png",
+      "/assets/m2m/Screenshot_1677978449.png",
+      "/assets/m2m/Screenshot_1677978495.png",
+      "/assets/m2m/m2mapp_10.png",
+      "/assets/m2m/m2mapp_4.png",
+      "/assets/m2m/m2mapp_5.png",
+      "/assets/m2m/m2mapp_6.png",
+      "/assets/m2m/m2mapp_7.png",
+      "/assets/m2m/Screenshot_1677978429.png"
+    ],
+    aosDelay: "400"
+  },
+  {
+    category: "backend",
+    titleEs: "Mouth 2 Mouth API",
+    titleEn: "Mouth 2 Mouth API",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Logica de negocios para la app M2M y para el sistema web administrativo desarrollado en PHP con Laravel, y un microservicio en Node.js.",
+    descriptionEn: "Business logic for the M2M app and the web admin system developed in PHP with Laravel, and a microservice in Node.js.",
+    logoSrc: "/assets/icons/projects/m2m_logo.webp",
+    logoWidth: 50,
+    logoHeight: 50,
+    badges: [
+      { type: "nodejs", title: "Node.js" },
+      { type: "laravel", title: "Laravel" },
+      { type: "php", title: "PHP" },
+      { type: "javascript", title: "Javascript" },
+      { type: "mysql", title: "MySQL" }
+    ],
+    images: [],
+    aosDelay: "400"
+  },
+  {
+    category: "mobile",
+    titleEs: "Halaken",
+    titleEn: "Halaken",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Aplicación móvil para clientes de una clinica que gestiona la toma de medicamentos y actividades recetadas por su doctor para que estos sean menos propensos a olvidarlos.",
+    descriptionEn: "App for clients of a clinic that manages the taking of medications and activities prescribed by their doctor so that these are less likely to be forgotten.",
+    logoSrc: "/assets/icons/projects/halakenlogo.webp",
+    logoWidth: 50,
+    logoHeight: 50,
+    badges: [
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "firebase", title: "Firebase Push Notifications" },
+      { type: "javascript", title: "Javascript" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/halaken/Screenshot_1677955415.png",
+      "/assets/halaken/Screenshot_1677955411.png",
+      "/assets/halaken/Screenshot_1677953899.png",
+      "/assets/halaken/Screenshot_1677953903.png",
+      "/assets/halaken/Screenshot_1677953936.png",
+      "/assets/halaken/Screenshot_1677953942.png",
+      "/assets/halaken/Screenshot_1677955298.png",
+      "/assets/halaken/Screenshot_1677955305.png",
+      "/assets/halaken/Screenshot_1677955318.png",
+      "/assets/halaken/Screenshot_1677955344.png",
+      "/assets/halaken/Screenshot_1677955388.png"
+    ],
+    aosDelay: "600"
+  },
+  {
+    category: "backend mobile",
+    titleEs: "Miekipo",
+    titleEn: "Miekipo",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Sistema web y aplicación móvil con el cual se gestionan los jugadores, membresias, entrenamientos, miembros, etc, de un equipo de futbol. Mi rol durante mi estancia en el proyecto ha sido apoyar en el desarrollo del backend y hacer una integración del método de pago Transbank para la app móvil.",
+    descriptionEn: "Web and mobile app for managing players, memberships, trainings, members, etc, of a football team. My role during my stay in the project was to support in the development of the backend and make an integration of the Transbank payment method for the mobile app.",
+    logoIcon: "ph ph-database text-6xl text-orange-600",
+    badges: [
+      { type: "laravel", title: "Laravel" },
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "php", title: "PHP" },
+      { type: "javascript", title: "Javascript" },
+      { type: "mysql", title: "MySQL" },
+      { type: "transbank", title: "Transbank" }
+    ],
+    images: [
+      "/assets/miekipo/Screenshot_1677974901.png",
+      "/assets/miekipo/Screenshot_1677974972.png"
+    ],
+    aosDelay: "800"
+  },
+  {
+    category: "mobile",
+    titleEs: "Promar TV",
+    titleEn: "Promar TV",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Aplicación móvil minimalista que integra un componente webview para mostrar la transmisión en vivo del canal de noticias venezolano Promar TV.",
+    descriptionEn: "Minimalist mobile app that integrates a webview component to display the live broadcast of the Venezuelan news channel Promar TV.",
+    logoSrc: "/assets/icons/projects/promartv_logo.png",
+    logoWidth: 100,
+    logoHeight: 100,
+    badges: [
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "javascript", title: "Javascript" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/promartv/promartv.png"
+    ],
+    aosDelay: "800"
+  },
+  {
+    category: "mobile",
+    titleEs: "Tierra por tierra",
+    titleEn: "Tierra por tierra",
+    subtitleEs: "NextStation",
+    subtitleEn: "NextStation",
+    descriptionEs: "Aplicación móvil netamente informativa que muestra el contenido de su web, con un diseño minimalista y un estilo visual atractivo basado en su pagina web.",
+    descriptionEn: "Minimalist mobile app that displays the content of its web, with a minimalist design and an attractive visual style based on its web page.",
+    logoSrc: "/assets/icons/projects/tierraxtierra_logo.jpg",
+    logoWidth: 70,
+    logoHeight: 70,
+    badges: [
+      { type: "reactnative", title: "React Native" },
+      { type: "react", title: "React.js" },
+      { type: "javascript", title: "Javascript" },
+      { type: "android", title: "Android" },
+      { type: "ios", title: "iOS" }
+    ],
+    images: [
+      "/assets/tierraXtierra/Screenshot_1677958523.png",
+      "/assets/tierraXtierra/Screenshot_1677958526.png",
+      "/assets/tierraXtierra/Screenshot_1677958598.png",
+      "/assets/tierraXtierra/Screenshot_1677958609.png",
+      "/assets/tierraXtierra/Screenshot_1677958613.png",
+      "/assets/tierraXtierra/Screenshot_1677958668.png"
+    ],
+    aosDelay: "800"
+  },
+  {
+    category: "fullstack",
+    titleEs: "Software Educativo",
+    titleEn: "Educational Software",
+    subtitleEs: "Proyecto Freelance",
+    subtitleEn: "Freelance Project",
+    descriptionEs: "Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones.",
+    descriptionEn: "Tool created for the professor of a subject and his students, with the objective of uploading relevant information from the face-to-face classes to the platform so that the students can view it, take tests, have access to tools used by the teacher, interact with the teacher and other students in a group chat, respond to assignments that the teacher sends them, among other functions.",
+    logoIcon: "ph ph-book-open-text text-6xl text-teal-600",
+    badges: [
+      { type: "php", title: "PHP" },
+      { type: "codeigniter", title: "CodeIgniter 3" },
+      { type: "javascript", title: "Javascript" },
+      { type: "jquery", title: "jQuery" },
+      { type: "mysql", title: "MySQL" },
+      { type: "bootstrapcss", title: "Bootstrap CSS" }
+    ],
+    images: [
+      "/assets/SistemaEducativo/SE_Login.png",
+      "/assets/SistemaEducativo/SE_Inicio.png",
+      "/assets/SistemaEducativo/SE_Profesor_Contenido.png",
+      "/assets/SistemaEducativo/SE_Profesor_Crear_Evaluacion.png",
+      "/assets/SistemaEducativo/SE_Estudiante_Evaluacion.png",
+      "/assets/SistemaEducativo/SE_Estudiante_Evaluacion_Resultado.png",
+      "/assets/SistemaEducativo/SE_Profesor_Asignaciones.png",
+      "/assets/SistemaEducativo/SE_Chat.png",
+      "/assets/SistemaEducativo/SE_Perfil.png"
+    ],
+    codeUrl: "https://github.com/jose1937JS/hipermedia",
+    aosDelay: "1000"
+  },
+  {
+    category: "fullstack",
+    titleEs: "Sistema Administrativo - E-Commerce Simple",
+    titleEn: "Administrative System - Simple Ecommerce",
+    subtitleEs: "Proyecto Freelance",
+    subtitleEn: "Freelance Project",
+    descriptionEs: "Sistema de administración de ventas y productos para una floristeria.",
+    descriptionEn: "Administrative system for sales and products for a flower shop.",
+    logoIcon: "ph ph-shopping-cart text-6xl text-teal-600",
+    badges: [
+      { type: "php", title: "PHP" },
+      { type: "laravel", title: "Laravel" },
+      { type: "javascript", title: "Javascript" },
+      { type: "jquery", title: "jQuery" },
+      { type: "mysql", title: "MySQL" },
+      { type: "bootstrapcss", title: "Bootstrap CSS" }
+    ],
+    images: [
+      "/assets/RosasDeAmerica/Rosas_De_America_Inicio.jpg",
+      "/assets/RosasDeAmerica/Rosas_De_America_Productos.png",
+      "/assets/RosasDeAmerica/Rosas_De_America_Carrito_de_Compra.png"
+    ],
+    codeUrl: "https://github.com/jose1937JS/RosasDeAmerica",
+    aosDelay: "1200"
+  }
+];
 ---
 
 <section id="projects" class="py-20 bg-white">
@@ -43,918 +654,10 @@ import { Image } from 'astro:assets';
 
       <!-- Grid de proyectos -->
       <div class="container-masonry" id="projects-grid">
-
-        <!-- SalesForceV2 app -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <!-- <Image src="/assets/icons/projects/salesforcev2.png" alt="Rates app logo" width={200} height={70} /> -->
-                <i class="ph ph-device-mobile-camera text-6xl text-primary-600"></i>
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="17">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Sales Force V2" 
-                  data-en="Sales Force V2"
-                >
-                  Sales Force V2
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Nextti Solutions"  data-en="Nextti Solutions">
-                Nextti Solutions
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación móvil para la gestión de negocios basados en el ERP Odoo, permite la gestión de ventas, compras, pagos, clientes, visitas, y mucho más."
-                      data-en="Mobile application for managing businesses based on the Odoo ERP. It allows the management of sales, purchases, payments, clients, visits, and much more.">
-                  Aplicación móvil para la gestión de negocios basados en el ERP Odoo, permite la gestión de ventas, compras, pagos, clientes, visitas, y mucho más.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="typescript" title="TypeScript" />
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="expo" title="Expo" />
-                <Badge type="tailwindcss" title="Tailwindcss" />
-                <Badge type="nativewind" title="NativeWind" />
-                <Badge type="react" title="React.js" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rates app -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="16">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Rates App" 
-                  data-en="Rates App"
-                >
-                  Rates App
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Proyecto Personal"  data-en="Personal Project">
-                Proyecto Personal
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación que sirve como referencia para ver el precio oficial del Dólar, del Euro y del USDT."
-                      data-en="An application that serves as a reference for viewing the official prices of the Dollar, the Euro, and USDT.">
-                  Aplicación que sirve como referencia para ver el precio oficial del Dólar, del Euro y del USDT.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="react" title="React.js" />
-                <Badge type="reactquery" title="React Query" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rates backend -->
-        <div class="project-card group" data-category="backend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/rates_logo.png" alt="Rates app logo" width={200} height={70} />
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Rates API" 
-                  data-en="Rates API"
-                >
-                  Rates API
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Proyecto Personal"  data-en="Personal Project">
-                Proyecto Personal
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span 
-                  data-es="Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API, cuenta también con un limitador de peticiones por IP del cliente para que no excedan los recursos del servidor." 
-                  data-en="Backend developed in Node.js to obtain the official rate of the most used currencies in Venezuela (Dollar, Euro, and USDT). The rates are obtained through web scraping from the Central Bank of Venezuela's website and via a third-party API in the case of USDT. The values are automatically updated daily through a cron job and stored in a MongoDB database to avoid congesting the BCV website or the API, it also has a request limiter per client IP so that they do not exceed the server's resources."
-                >
-                  Backend realizado en nodejs para obtener la tasa oficial de las monedas más usadas en Venezuela (Dólar, Euro y USDT). Se obtienen mediante web scraping de la página del Banco Central de Venezuela y por medio de una API de terceros en el caso del USDT. Los valores se van actualizando automaticamente cada día por medio de un cron job y se guardan en una Base de datos MongoDB para no congestionar la página del BCV ni la API, cuenta también con un limitador de peticiones por IP del cliente para que no excedan los recursos del servidor.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="node.js" title="Node.js" />
-                <Badge type="expressjs" title="Express" />
-                <Badge type="mongodb" title="MongoDB" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.1: Imago -->
-        <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/imago_logo.png" alt="Imago logo" width={200} height={70} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="13">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Imago" 
-                  data-en="Imago"
-                >
-                  Imago
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema de gestión de ordenes e inventario de una empresa de alquiler de equipos para eventos, con el cual se puede gestionar los equipos, las ordenes, los clientes, los proveedores, entre otros."
-                      data-en="Inventory and order management system for a company that rents equipment for events, with which you can manage the equipment, the orders, the customers, the suppliers, among other.">
-                  Sistema de gestión de ordenes e inventario de una empresa de alquiler de equipos para eventos, con el cual se puede gestionar los equipos, las ordenes, los clientes, los proveedores, entre otros.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="svelte" title="Svelte" />
-                <Badge type="sveltekit" title="SvelteKit" />
-                <Badge type="supabase" title="Supabase" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.2: ACP -->
-        <div class="project-card group" data-category="fullstack" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/acp_logo.png" alt="ACP logo" width={270} height={80} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="11">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="ACPublishing" 
-                  data-en="ACPublishing"
-                >
-                  ACPublishing
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema de ventas de libros online y sistema administrativo para la gestión de ventas, clientes, inventario, entre otros. Me dediqué a la corrección de bugs y mejora del sistema de inventario agregando mas funcionalidades."
-                      data-en="Online book sales system and administrative system for managing sales, customers, inventory, among other. I dedicated myself to fixing bugs and improving the inventory system by adding more features.">
-                  Sistema de ventas de libros online y sistema administrativo para la gestión de ventas, clientes, inventario, entre otros. Me dediqué a la corrección de bugs y mejora del sistema de inventario agregando mas funcionalidades.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="bootstrapcss" title="Bootstrapcss" />
-                <Badge type="php" title="PHP" />
-                <Badge type="mysql" title="MySQL" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.3: Lelevier -->
-        <div class="project-card group" data-category="fullstack" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/lelevier_logo.png" alt="Lelevier logo" width={200} height={70} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="14">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Sistema administrativo de Lelevier Plastic" 
-                  data-en="Lelevier Plastic Administration System"
-                >
-                  Sistema administrativo de Lelevier Plastic
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema administrativo para la clínica de cirugía plástica Lelevier Plastic, con el cual se puede gestionar los pacientes, los procedimientos, los seguimintos post operatorios, las citas, los pagos, entre otros."
-                      data-en="Administrative system for Lelevier Plastic, with which you can manage the patients, the procedures, the postoperative follow-ups, the appointments, the payments, among other.">
-                  Sistema administrativo para la clínica de cirugía plástica Lelevier Plastic, con el cual se puede gestionar los pacientes, los procedimientos, los seguimintos post operatorios, las citas, los pagos, entre otros.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="node.js" title="Node.js" />
-                <Badge type="expressjs" title="Express" />
-                <Badge type="mongodb" title="MongoDB" />
-                <Badge type="tailwindcss" title="Tailwindcss" />
-                <Badge type="sveltekit" title="SvelteKit" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.4: Lelevier landing Page -->
-        <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/lelevier_logo.png" alt="Lelevier logo" width={200} height={70} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="15">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Landing Page de Lelevier Plastic" 
-                  data-en="Lelevier Plastic Landing Page"
-                >
-                  Landing Page de Lelevier Plastic
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Página web informativa para la clínica de cirugias plásticas Lelevier Plastic."
-                      data-en="Informative web page for Lelevier Plastic clinic.">
-                  Página web informativa para la clínica de cirugias plásticas Lelevier Plastic.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="html" title="HTML" />
-                <Badge type="css" title="CSS" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="tailwindcss" title="Tailwindcss" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.5: akronym landing page -->
-        <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/akronym_logo.png" alt="Lelevier logo" width={200} height={80} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="12">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Landing page de Akronym" 
-                  data-en="Akronym Landing Page"
-                >
-                  Landing page de Akronym
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Landing page para la empresa de desarrollo de software Akronym, con el cual se puede conocer más sobre la empresa y sus servicios."
-                      data-en="Landing page for the Akronym software development company, with which you can know more about the company and its services.">
-                  Landing page para la empresa de desarrollo de software Akronym, con el cual se puede conocer más sobre la empresa y sus servicios.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="html" title="HTML" />
-                <Badge type="css" title="CSS" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="astro" title="Astro" />
-                <Badge type="tailwindcss" title="Tailwindcss" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 0.6: Bela API -->
-        <div class="project-card group" data-category="backend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <i class="ph ph-database text-6xl text-primary-600"></i>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Bela API" 
-                  data-en="Bela API"
-                >
-                  Bela API
-                </span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Akronym"  data-en="Akronym">
-                Akronym
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="API para la app Bela y su sistema de gestión administrativo. En este proyecto me dediqué a finalizar la API y a corregir bugs y agregar nuevas características."
-                      data-en="API for the Bela app and its administrative system. In this project I dedicated myself to finishing the API and fixing bugs and adding new features.">
-                  API para la app Bela y su sistema de gestión administrativo. En este proyecto me dediqué a finalizar la API y a corregir bugs y agregar nuevas características.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="node.js" title="Node.js" />
-                <Badge type="expressjs" title="Express" />
-                <Badge type="mongodb" title="MongoDB" />
-                <Badge type="vercel" title="Vercel" />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto 1: Metrovacesa app -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/malaga_towers_metrovacesa.png" alt="Málaga Towers logo" width={270} height={80} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="8">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Aplicación de reservas de servicios de una torre de viviendas" 
-                  data-en="Application for booking services of a tower of apartments">Málaga Towers</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="10 Code Software Design" data-en="10 Code Software Design">
-                10 Code Software Design
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="App móvil destinada a ser usada por los propietarios de viviendas para hacer reservas de servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en Málaga España."
-                      data-en="Mobile app for apartment owners to book services offered by Málaga Towers, a luxury apartment project in Málaga, Spain.">
-                  App móvil destinada a ser usada por los propietarios de viviendas para hacer reservas de servicios ofrecidos por Málaga Towers que es un proyecto de viviendas de lujo en Málaga España.
-                </span>
-              </p>
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="gluestack" title="GlueStack UI" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 1.2: metrovacesa web admin -->
-        <div class="project-card group" data-category="frontend" data-aos="fade-up">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <!-- Imagen del proyecto -->
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/malaga_towers_metrovacesa.png" alt="Málaga Towers logo" width={270} height={80} />
-              </div>
-              <!-- Overlay con botones de acción -->
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="9">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- Contenido del proyecto -->
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Sistema Administrativo de Metrovacesa" 
-                  data-en="Metrovacesa Administration System">Sistema Administrativo de Metrovacesa</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="10 Code Software Design" data-en="10 Code Software Design">
-                10 Code Software Design
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema web administrativo para gestionar las viviendas, los propietarios y los servicios que se proporcionan en la app móvil Metrovacesa."
-                      data-en="Web admin system for managing the apartments, the owners and the services provided in the mobile app Metrovacesa.">
-                  Sistema web administrativo para gestionar las viviendas, los propietarios y los servicios que se proporcionan en la app móvil Metrovacesa.
-                </span>
-              </p>
-              
-              <!-- Tecnologías utilizadas -->
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="react" title="React.js" />
-                <Badge type="next.js" title="Next.js" />
-                <Badge type="tailwindcss" title="Tailwindcss" />
-                <Badge type="javascript" title="Javascript" />
-              </div>
-            
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 2: Resevatum -->
-        <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="200">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/reservatum_logo.png" alt="Reservatum logo" width={200} height={70} />
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="10">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Reservatum" data-en="Reservatum">Reservatum</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="10 Code Software Design" data-en="10 Code Software Design">
-                10 Code Software Design
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Es una herramienta para reservar propiedades como casas vacacionales, villas de lujo y apartamentos en Mayorca, España. Tuve la responsabilidad de diseñar el landing page, mejorar el módulo de blogs, terminar la interfaz para editar reservas, buscar y corregir bugs y agregar validaciones a nivel de frontend en los formularios faltantes."
-                      data-en="It is a tool to reserve properties such as vacation homes, luxury villas and apartments in Mallorca, Spain. I was responsible for designing the landing page, improving the blogs module, finishing the interface for editing reservations, searching and correcting bugs and adding validations at frontend level in the missing forms.">
-                  Es una herramienta para reservar propiedades como casas vacacionales, villas de lujo y apartamentos en Mayorca, España. Tuve la responsabilidad de diseñar el landing page, mejorar el módulo de blogs, terminar la interfaz para editar reservas, buscar y corregir bugs y agregar validaciones a nivel de frontend en los formularios faltantes.
-                </span>
-              </p>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="vuetify" title="Vuetify" />
-                <Badge type="vue" title="Vue.js" />
-                <Badge type="laravel" title="Laravel" />
-                <Badge type="php" title="PHP" />
-                <Badge type="javascript" title="JavaScript" />
-              </div>
-            
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3: m2m app -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="400">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/m2m_logo.webp" alt="Lelevier logo" width={50} height={50} />
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="0">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Mouth 2 Mouth App" 
-                  data-en="Mouth 2 Mouth App">Mouth 2 Mouth App</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación que permite al usuario encontrar tiendas afines a sus intereses personales dándole la posibilidad de ganar puntos si hace match con otros usuarios de la app en base a sus intereses."
-                      data-en="App that allows the user to find stores with the interests of the personales of the user giving them the possibility of winning points if they match with other users of the app in base to their interests.">
-                  Aplicación que permite al usuario encontrar tiendas afines a sus intereses personales dándole la posibilidad de ganar puntos si hace match con otros usuarios de la app en base a sus intereses.
-                </span>
-              </p>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="react" title="React.js" />
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="firebase" title="Firebase Push Notifications" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3.1: m2m backend -->
-        <div class="project-card group" data-category="backend" data-aos="fade-up" data-aos-delay="400">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/m2m_logo.webp" alt="Lelevier logo" width={50} height={50} />
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span 
-                  data-es="Mouth 2 Mouth API" 
-                  data-en="Mouth 2 Mouth API">Mouth 2 Mouth API</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Logica de negocios para la app M2M y para el sistema web administrativo desarrollado en PHP con Laravel, y un microservicio en Node.js."
-                      data-en="Business logic for the M2M app and the web admin system developed in PHP with Laravel, and a microservice in Node.js.">
-                  Logica de negocios para la app M2M y para el sistema web administrativo desarrollado en PHP con Laravel, y un microservicio en Node.js.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="nodejs" title="Node.js" />
-                <Badge type="laravel" title="Laravel" />
-                <Badge type="php" title="PHP" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="mysql" title="MySQL" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 4: halaken -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="600">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/halakenlogo.webp" alt="Halaken logo" width={50} height={50} />
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="1">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Halaken" data-en="Halaken">Halaken</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación móvil para clientes de una clinica que gestiona la toma de medicamentos y actividades recetadas por su doctor para que estos sean menos propensos a olvidarlos."
-                      data-en="App for clients of a clinic that manages the taking of medications and activities prescribed by their doctor so that these are less likely to be forgotten.">
-                  Aplicación móvil para clientes de una clinica que gestiona la toma de medicamentos y actividades recetadas por su doctor para que estos sean menos propensos a olvidarlos.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="react" title="React.js" />
-                <Badge type="firebase" title="Firebase Push Notifications" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 5: Miekipo -->
-        <div class="project-card group" data-category="backend mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <i class="ph ph-database text-6xl text-orange-600"></i>
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="2">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Miekipo" data-en="Miekipo">Miekipo</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema web y aplicación móvil con el cual se gestionan los jugadores, membresias, entrenamientos, miembros, etc, de un equipo de futbol. Mi rol durante mi estancia en el proyecto ha sido apoyar en el desarrollo del backend y hacer una integración del método de pago Transbank para la app móvil."
-                      data-en="Web and mobile app for managing players, memberships, trainings, members, etc, of a football team. My role during my stay in the project was to support in the development of the backend and make an integration of the Transbank payment method for the mobile app.">
-                  Sistema web y aplicación móvil con el cual se gestionan los jugadores, membresias, entrenamientos, miembros, etc, de un equipo de futbol. Mi rol durante mi estancia en el proyecto ha sido apoyar en el desarrollo del backend y hacer una integración del método de pago Transbank para la app móvil.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="laravel" title="Laravel" />
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="react" title="React.js" />
-                <Badge type="php" title="PHP" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="mysql" title="MySQL" />
-                <Badge type="transbank" title="Transbank" />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto 6: promarTV -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/promartv_logo.png" alt="Promar TV logo" width={100} height={100} />
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="3">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Promar TV" data-en="Promar TV">Promar TV</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación móvil minimalista que integra un componente webview para mostrar la transmisión en vivo del canal de noticias venezolano Promar TV."
-                      data-en="Minimalist mobile app that integrates a webview component to display the live broadcast of the Venezuelan news channel Promar TV.">
-                  Aplicación móvil minimalista que integra un componente webview para mostrar la transmisión en vivo del canal de noticias venezolano Promar TV.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="react" title="React.js" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 7: Tierra por tierra -->
-        <div class="project-card group" data-category="mobile" data-aos="fade-up" data-aos-delay="800">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <Image src="/assets/icons/projects/tierraxtierra_logo.jpg" alt="Lelevier logo" width={70} height={70} />
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="4">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Tierra por tierra" data-en="Tierra por tierra">Tierra por tierra</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="NextStation" data-en="NextStation">
-                NextStation
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Aplicación móvil netamente informativa que muestra el contenido de su web, con un diseño minimalista y un estilo visual atractivo basado en su pagina web."
-                      data-en="Minimalist mobile app that displays the content of its web, with a minimalist design and an attractive visual style based on its web page.">
-                      Aplicación móvil netamente informativa que muestra el contenido de su web, con un diseño minimalista y un estilo visual atractivo basado en su pagina web.
-                </span>
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="reactnative" title="React Native" />
-                <Badge type="react" title="React.js" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="android" title="Android" />
-                <Badge type="ios" title="iOS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 8: Software Educativo -->
-        <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="1000">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <i class="ph ph-book-open-text text-6xl text-teal-600"></i>
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="5">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                  <a href="https://github.com/jose1937JS/hipermedia" target="_blank" class="project-btn">
-                    <i class="ph ph-github-logo"></i>
-                    <span data-es="Código" data-en="Code">Código</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Software Educativo" data-en="Educational Software">Software Educativo</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Proyecto Freelance" data-en="Freelance Project">
-                Proyecto Freelance
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones."
-                      data-en="Tool created for the professor of a subject and his students, with the objective of uploading relevant information from the face-to-face classes to the platform so that the students can view it, take tests, have access to tools used by the teacher, interact with the teacher and other students in a group chat, respond to assignments that the teacher sends them, among other functions.">
-                  Herramienta creada para el profesor de una materia y sus estudiantes, con el objetivo de subir información relevante de las clases presenciales a la plataforma para que los esudiantes puedan visualizarla, hacer pruebas, tener acceso a herramientas usadas por el profesor, interactuar con el docente y los demás estudiantes en un chat grupal, responder asignaciones que el profesor les envie, entre otras funciones.
-                </span>
-              </p>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="php" title="PHP" />
-                <Badge type="codeigniter" title="CodeIgniter 3" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="jquery" title="jQuery" />
-                <Badge type="mysql" title="MySQL" />
-                <Badge type="bootstrapcss" title="Bootstrap CSS" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 9: Rosas de America -->
-        <div class="project-card group" data-category="fullstack" data-aos="fade-up" data-aos-delay="1200">
-          <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <i class="ph ph-shopping-cart text-6xl text-teal-600"></i>
-              </div>
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div class="flex space-x-4">
-                  <button class="gallery-button project-btn" data-project-index="7">
-                    <i class="ph ph-eye"></i>
-                    <span data-es="Galería" data-en="Galery">Galería</span>
-                  </button>
-                  <a href="https://github.com/jose1937JS/RosasDeAmerica" target="_blank" class="project-btn">
-                    <i class="ph ph-github-logo"></i>
-                    <span data-es="Código" data-en="Code">Código</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-900">
-                <span data-es="Sistema Administrativo - E-Commerce Simple" data-en="Administrative System - Simple Ecommerce">Sistema Administrativo - E-Commerce Simple</span>
-              </h3>
-              <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es="Proyecto Freelance" data-en="Freelance Project">
-                Proyecto Freelance
-              </p>
-              <p class="text-gray-600 mb-4 leading-relaxed">
-                <span data-es="Sistema de administración de ventas y productos para una floristeria."
-                      data-en="Administrative system for sales and products for a flower shop.">
-                  Sistema de administración de ventas y productos para una floristeria.
-                </span>
-              </p>
-              
-              <div class="flex flex-wrap gap-2 mb-4">
-                <Badge type="php" title="PHP" />
-                <Badge type="laravel" title="Laravel" />
-                <Badge type="javascript" title="Javascript" />
-                <Badge type="jquery" title="jQuery" />
-                <Badge type="mysql" title="MySQL" />
-                <Badge type="bootstrapcss" title="Bootstrap CSS" />
-              </div>
-            </div>
-          </div>
-        </div>
+        {proyectos.map((proyecto) => (
+          <ProjectCard {...proyecto} />
+        ))}
       </div>
-
-      <!-- CTA final -->
-      <!-- <div class="text-center mt-16">
-        <div class="inline-flex items-center space-x-2 text-gray-600 mb-6">
-          <span data-es="¿Interesado en colaborar?" data-en="Interested in collaborating?">¿Interesado en colaborar?</span>
-        </div>
-        <a href="#contact" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group">
-          <span data-es="Hablemos de tu Proyecto" data-en="Let's Talk About Your Project">Hablemos de tu Proyecto</span>
-          <i class="ph ph-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-        </a>
-      </div> -->
     </div>
   </div>
 </section>
@@ -1005,264 +708,13 @@ import { Image } from 'astro:assets';
 </div>
 
 <script is:inline>
-  let currentProjectIndex = 0;
   let currentImageIndex = 0;
   let currentImages = [];
 
-  // Array de imágenes de los proyectos
-  // images[0] = m2m
-  // images[1] = halaken
-  // images[2] = miekipo
-  // images[3] = promartv
-  // images[4] = tierraXtierra
-  // images[5] = SoftwareEducativo
-  // images[6] = AulaVirtual
-  // images[7] = RosasDeAmerica
-  // images[8] = metrovacesa app
-  // images[9] = metrovacesa web admin
-  // images[10] = reservatum
-  // images[11] = acp
-  // images[12] = akronymLanding
-  // images[13] = imago
-  // images[14] = lelevier
-  // images[15] = lelevierLanding
-  // images[16] = ratesapp
-  // images[17] = SalesForceV2
-  
-  const images = [
-    {
-      src: [
-        '/assets/m2m/Screenshot_1677978167.png',
-        '/assets/m2m/m2mapp_2.png',
-        '/assets/m2m/Screenshot_1677978173.png',
-        '/assets/m2m/Screenshot_1677978404.png',
-        '/assets/m2m/m2mapp_3.png',
-        '/assets/m2m/m2mapp_8.png',
-        '/assets/m2m/m2mapp_9.png',
-        '/assets/m2m/Screenshot_1677978449.png',
-        '/assets/m2m/Screenshot_1677978495.png',
-        '/assets/m2m/m2mapp_10.png',
-        '/assets/m2m/m2mapp_4.png',
-        '/assets/m2m/m2mapp_5.png',
-        '/assets/m2m/m2mapp_6.png',
-        '/assets/m2m/m2mapp_7.png',
-        '/assets/m2m/Screenshot_1677978429.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/halaken/Screenshot_1677955415.png',
-        '/assets/halaken/Screenshot_1677955411.png',
-        '/assets/halaken/Screenshot_1677953899.png',
-        '/assets/halaken/Screenshot_1677953903.png',
-        '/assets/halaken/Screenshot_1677953936.png',
-        '/assets/halaken/Screenshot_1677953942.png',
-        '/assets/halaken/Screenshot_1677955298.png',
-        '/assets/halaken/Screenshot_1677955305.png',
-        '/assets/halaken/Screenshot_1677955318.png',
-        '/assets/halaken/Screenshot_1677955344.png',
-        '/assets/halaken/Screenshot_1677955388.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/miekipo/Screenshot_1677974901.png',
-        '/assets/miekipo/Screenshot_1677974972.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/promartv/promartv.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/tierraXtierra/Screenshot_1677958523.png',
-        '/assets/tierraXtierra/Screenshot_1677958526.png',
-        '/assets/tierraXtierra/Screenshot_1677958598.png',
-        '/assets/tierraXtierra/Screenshot_1677958609.png',
-        '/assets/tierraXtierra/Screenshot_1677958613.png',
-        '/assets/tierraXtierra/Screenshot_1677958668.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/SistemaEducativo/SE_Login.png',
-        '/assets/SistemaEducativo/SE_Inicio.png',
-        '/assets/SistemaEducativo/SE_Profesor_Contenido.png',
-        '/assets/SistemaEducativo/SE_Profesor_Crear_Evaluacion.png',
-        '/assets/SistemaEducativo/SE_Estudiante_Evaluacion.png',
-        '/assets/SistemaEducativo/SE_Estudiante_Evaluacion_Resultado.png',
-        '/assets/SistemaEducativo/SE_Profesor_Asignaciones.png',
-        '/assets/SistemaEducativo/SE_Chat.png',
-        '/assets/SistemaEducativo/SE_Perfil.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/AulaVirtual/Aula_Virtual_Login.png',
-        '/assets/AulaVirtual/Aula_Virtual_Notas.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/RosasDeAmerica/Rosas_De_America_Inicio.jpg',
-        '/assets/RosasDeAmerica/Rosas_De_America_Productos.png',
-        '/assets/RosasDeAmerica/Rosas_De_America_Carrito_de_Compra.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/metrovacesa/app/1.png',
-        '/assets/metrovacesa/app/2.png',
-        '/assets/metrovacesa/app/3.png',
-        '/assets/metrovacesa/app/4.png',
-        '/assets/metrovacesa/app/5.png',
-        '/assets/metrovacesa/app/6.png',
-        '/assets/metrovacesa/app/7.png',
-        '/assets/metrovacesa/app/8.png',
-        '/assets/metrovacesa/app/9.png',
-        '/assets/metrovacesa/app/10.png',
-        '/assets/metrovacesa/app/11.png',
-        '/assets/metrovacesa/app/12.png',
-        '/assets/metrovacesa/app/13.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/metrovacesa/web/1.png',
-        '/assets/metrovacesa/web/2.png',
-        '/assets/metrovacesa/web/3.png',
-        '/assets/metrovacesa/web/4.png',
-        '/assets/metrovacesa/web/5.png',
-        '/assets/metrovacesa/web/6.png',
-        '/assets/metrovacesa/web/7.png',
-        '/assets/metrovacesa/web/8.png',
-        '/assets/metrovacesa/web/9.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/reservatum/1.png',
-        '/assets/reservatum/2.png',
-        '/assets/reservatum/3.png',
-        '/assets/reservatum/4.png',
-        '/assets/reservatum/5.png',
-        '/assets/reservatum/6.png',
-        '/assets/reservatum/7.png',
-        '/assets/reservatum/8.png',
-        '/assets/reservatum/9.png',
-        '/assets/reservatum/10.png',
-        '/assets/reservatum/11.png',
-        '/assets/reservatum/12.png',
-        '/assets/reservatum/13.png',
-        '/assets/reservatum/14.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/acp/1.png',
-        '/assets/acp/2.png',
-        '/assets/acp/3.png',
-        '/assets/acp/4.png',
-        '/assets/acp/5.png',
-        '/assets/acp/6.png',
-        '/assets/acp/7.png',
-        '/assets/acp/7.1.png',
-        '/assets/acp/8.png',
-        '/assets/acp/8.1.png',
-        '/assets/acp/8.2.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/akronymLanding/1.png',
-        '/assets/akronymLanding/2.png',
-        '/assets/akronymLanding/3.png',
-        '/assets/akronymLanding/4.png',
-        '/assets/akronymLanding/5.png',
-        '/assets/akronymLanding/6.png',
-        '/assets/akronymLanding/7.png',
-        '/assets/akronymLanding/8.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/imago/1.png',
-        '/assets/imago/2.png',
-        '/assets/imago/3.png',
-        '/assets/imago/3.1.png',
-        '/assets/imago/3.2.png',
-        '/assets/imago/4.png',
-        '/assets/imago/5.png',
-        '/assets/imago/6.png',
-        '/assets/imago/6.1.png',
-        '/assets/imago/7.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/lelevier/1.png',
-        '/assets/lelevier/2.png',
-        '/assets/lelevier/3.png',
-        '/assets/lelevier/4.png',
-        '/assets/lelevier/5.png',
-        '/assets/lelevier/6.png',
-        '/assets/lelevier/7.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/lelevierLanding/1.png',
-        '/assets/lelevierLanding/2.png',
-        '/assets/lelevierLanding/3.png',
-        '/assets/lelevierLanding/4.png',
-        '/assets/lelevierLanding/5.png',
-        '/assets/lelevierLanding/6.png',
-        '/assets/lelevierLanding/7.png',
-        '/assets/lelevierLanding/8.png',
-        '/assets/lelevierLanding/9.png'
-      ]
-    },
-    {
-      src: [
-        '/assets/ratesapp/1.png',
-        '/assets/ratesapp/2.png',
-        '/assets/ratesapp/3.png',
-        '/assets/ratesapp/4.png',
-        '/assets/ratesapp/5.png',
-        '/assets/ratesapp/6.png',
-      ]
-    },
-    {
-      src: [
-        '/assets/SalesForceV2/0.png',
-        '/assets/SalesForceV2/1.png',
-        '/assets/SalesForceV2/2.png',
-        '/assets/SalesForceV2/3.png',
-        '/assets/SalesForceV2/4.png',
-        '/assets/SalesForceV2/5.png',
-        '/assets/SalesForceV2/6.png',
-        '/assets/SalesForceV2/7.png',
-        '/assets/SalesForceV2/8.png',
-        '/assets/SalesForceV2/9.png',
-        '/assets/SalesForceV2/10.png',
-        '/assets/SalesForceV2/11.png',
-        '/assets/SalesForceV2/12.png',
-        '/assets/SalesForceV2/13.png',
-        '/assets/SalesForceV2/14.png',
-        '/assets/SalesForceV2/15.png',
-        '/assets/SalesForceV2/16.png',
-        '/assets/SalesForceV2/17.png',
-      ]
-    }
-  ];
-
   // Función para abrir el modal
-  function openModal(projectIndex) {
-    currentProjectIndex = projectIndex;
+  function openModal(projectImages) {
     currentImageIndex = 0;
-    currentImages = images[projectIndex].src;
+    currentImages = projectImages;
     
     // Mostrar el modal
     const modal = document.getElementById('imageModal');
@@ -1384,8 +836,9 @@ import { Image } from 'astro:assets';
     const galleryButtons = document.querySelectorAll('.gallery-button');
     galleryButtons.forEach(button => {
       button.addEventListener('click', function(event) {
-        const projectIndex = parseInt(this.getAttribute('data-project-index') || '0');
-        openModal(projectIndex);
+        const imagesData = this.getAttribute('data-images');
+        const projectImages = imagesData ? JSON.parse(imagesData) : [];
+        openModal(projectImages);
       });
     });
 
@@ -1509,10 +962,6 @@ import { Image } from 'astro:assets';
     @apply px-3 py-1 rounded-full text-xs font-medium;
   }
 
-  .project-card {
-    transition: all 0.3s ease;
-  }
-
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -1561,12 +1010,12 @@ import { Image } from 'astro:assets';
   .project-card {
     display: inline-block; /* Importante para que el column-count funcione */
     width: 100%;
-    margin-bottom: 2rem; /* Espacio entre las tarjetas verticalmente */
     border-radius: 1rem;
     box-sizing: border-box;
     -webkit-column-break-inside: avoid; /* Previene que la tarjeta se parta en dos columnas */
     page-break-inside: avoid;
     break-inside: avoid-column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Media queries para un diseño responsivo */
@@ -1580,10 +1029,5 @@ import { Image } from 'astro:assets';
     .container-masonry {
       column-count: 1;
     }
-  }
-
-  /* Transiciones suaves para las cards */
-  .project-card {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 </style>

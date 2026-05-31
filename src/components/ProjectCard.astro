@@ -1,0 +1,99 @@
+---
+import Badge from "./Badge.astro";
+import { Image } from 'astro:assets';
+
+export interface Props {
+  category: string;
+  logoSrc?: string;
+  logoIcon?: string;
+  logoWidth?: number;
+  logoHeight?: number;
+  titleEs: string;
+  titleEn: string;
+  subtitleEs: string;
+  subtitleEn: string;
+  descriptionEs: string;
+  descriptionEn: string;
+  badges: Array<{ type: string; title?: string }>;
+  images?: string[];
+  codeUrl?: string;
+  aosDelay?: string;
+}
+
+const {
+  category,
+  logoSrc,
+  logoIcon,
+  logoWidth = 200,
+  logoHeight = 70,
+  titleEs,
+  titleEn,
+  subtitleEs,
+  subtitleEn,
+  descriptionEs,
+  descriptionEn,
+  badges,
+  images = [],
+  codeUrl,
+  aosDelay
+} = Astro.props;
+
+const hasGallery = images && images.length > 0;
+const serializedImages = JSON.stringify(images);
+---
+
+<div class="project-card group mb-6" data-category={category} data-aos="fade-up" data-aos-delay={aosDelay}>
+  <div class="bg-white dark:bg-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2">
+    <!-- Imagen del proyecto -->
+    <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
+      <div class="absolute inset-0 flex items-center justify-center">
+        {logoSrc ? (
+          <Image src={logoSrc} alt={`${titleEn} logo`} width={logoWidth} height={logoHeight} />
+        ) : (
+          <i class={logoIcon || "ph ph-device-mobile-camera text-6xl text-primary-600"}></i>
+        )}
+      </div>
+      <!-- Overlay con botones de acción -->
+      {(hasGallery || codeUrl) && (
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+          <div class="flex space-x-4">
+            {hasGallery && (
+              <button class="gallery-button project-btn" data-images={serializedImages}>
+                <i class="ph ph-eye"></i>
+                <span data-es="Galería" data-en="Galery">Galería</span>
+              </button>
+            )}
+            {codeUrl && (
+              <a href={codeUrl} target="_blank" class="project-btn">
+                <i class="ph ph-github-logo"></i>
+                <span data-es="Código" data-en="Code">Código</span>
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+    <!-- Contenido del proyecto -->
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-gray-900">
+        <span data-es={titleEs} data-en={titleEn}>
+          {titleEs}
+        </span>
+      </h3>
+      <p class="text-gray-500 text-sm dark:text-secondary-300 font-semibold mb-3" data-es={subtitleEs} data-en={subtitleEn}>
+        {subtitleEs}
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        <span data-es={descriptionEs} data-en={descriptionEn}>
+          {descriptionEs}
+        </span>
+      </p>
+      <!-- Tecnologías utilizadas -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        {badges.map((badge) => (
+          <Badge type={badge.type} title={badge.title} />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
