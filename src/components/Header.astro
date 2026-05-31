@@ -103,14 +103,37 @@
   }
 
   // Inicializar UI de tema
-  const initialTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+  let initialTheme = 'dark';
+  if (document.documentElement.classList.contains('light')) {
+    initialTheme = 'light';
+  } else if (document.documentElement.classList.contains('dark')) {
+    initialTheme = 'dark';
+  }
+
+  if (initialTheme === 'light') {
+    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+  }
+
   updateThemeUI(initialTheme);
 
   themeToggleBtn?.addEventListener('click', () => {
-    const isLight = document.documentElement.classList.toggle('light');
-    const newTheme = isLight ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme);
-    updateThemeUI(newTheme);
+    const isLight = document.documentElement.classList.contains('light');
+
+    if (isLight) {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      updateThemeUI('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+      updateThemeUI('light');
+    }
   });
 
   // Funcionalidad del menú móvil

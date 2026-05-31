@@ -111,7 +111,7 @@ html.light {
 
 /* Card background overrides */
 .bg-white {
-  background-color: var(--white-dynamic) !important;
+  background-color: var(--white-dynamic);
 }
 
 /* Base custom modifications */
