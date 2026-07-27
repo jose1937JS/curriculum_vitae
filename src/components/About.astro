@@ -20,18 +20,32 @@ import Button from "./Button.astro";
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="grid lg:grid-cols-2 gap-16">
         <!-- Imagen y información personal -->
         <div class="space-y-8">
           <!-- Imagen principal -->
-          <div class="relative">
+          <!-- <div class="relative">
             <div class="w-full mx-auto lg:mx-0">
               <div class="aspect-square rounded-2xl bg-gradient-to-br from-primary-200 to-secondary-300 p-8 shadow-2xl">
-                <!-- Placeholder para imagen profesional -->
+                
                 <div class="w-full h-full rounded-xl bg-gray-200 flex items-center justify-center">
                   <i class="ph ph-user text-6xl text-gray-400"></i>
                 </div>
               </div>
+            </div>
+          </div> -->
+
+          <div class="relative">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              <span data-es="Mi Historia" data-en="My Story">Mi Historia</span>
+            </h3>
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+              <p>
+                <span data-es="Soy un desarrollador apasionado por crecer y crear solucions digitales que impacten en la vida de las personas. Con más de 4 años de experiencia profesional, mis inicios en el desarrollo comenzaron en la universidad gracias a amigos y profesores que impartian cursos de programacion. Desde entonces he tenido ese interés por aprender y construir herramientas que faciliten la vida y el trabajo de las personas."
+                      data-en="I am a passionate developer focused on growing and creating digital solutions that impact people's lives. With over 4 years of professional experience, my journey in development began at university thanks to friends and professors who taught programming courses. Since then, I have had a keen interest in learning and building tools that make life and work easier for people.">
+                  Soy un desarrollador apasionado por crecer y crear solucions digitales que impacten en la vida de las personas. Con más de 4 años de experiencia profesional, mis inicios en el desarrollo comenzaron en la universidad gracias a amigos y profesores que impartian cursos de programacion. Desde entonces he tenido ese interés por aprender y construir herramientas que faciliten la vida y el trabajo de las personas.
+                </span>
+              </p>
             </div>
           </div>
 
@@ -68,7 +82,7 @@ import Button from "./Button.astro";
         <!-- Biografía y detalles -->
         <div class="space-y-8">
           <!-- Historia personal -->
-          <div>
+          <!-- <div>
             <h3 class="text-2xl font-bold text-gray-900 mb-6">
               <span data-es="Mi Historia" data-en="My Story">Mi Historia</span>
             </h3>
@@ -80,7 +94,7 @@ import Button from "./Button.astro";
                 </span>
               </p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Pasiones y enfoque -->
           <div>
@@ -172,11 +186,11 @@ import Button from "./Button.astro";
             </div>
           </div>
 
-          <!-- Call to action -->
-          <div class="pt-6">
-            <Button href="#contact" type="primary" size="md" iconRight="ph-arrow-right" title='<span data-es="¡Trabajemos Juntos!" data-en="Let&apos;s Work Together!">¡Trabajemos Juntos!</span>' />
-          </div>
         </div>
+      </div>
+      <!-- Call to action -->
+      <div class="flex justify-center align-center mt-16">
+        <Button href="#contact" type="primary" size="md" iconRight="ph-arrow-right" title='<span data-es="¡Trabajemos Juntos!" data-en="Let&apos;s Work Together!">¡Trabajemos Juntos!</span>' />
       </div>
     </div>
   </div>
