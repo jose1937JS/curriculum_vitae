@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
 export interface Props {
@@ -18,12 +19,20 @@ const {
   iconWidth = 70,
   iconHeight = 70
 } = Astro.props;
+
+const imageGlob = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp,svg,avif}');
+let resolvedIconSrc;
+if (iconSrc && imageGlob[iconSrc]) {
+  resolvedIconSrc = (await imageGlob[iconSrc]()).default;
+}
 ---
 
 <div class="skill-card dark:bg-gray-200 bg-gray-50 group mx-auto w-28 sm:w-32 md:w-36 flex flex-col justify-between items-center">
   <div class="flex items-center justify-center mb-4 min-h-[70px]">
-    {iconSrc ? (
-      <Image src={iconSrc} alt={`${name} logo`} width={iconWidth} height={iconHeight} class={iconClass} />
+    {resolvedIconSrc ? (
+      <Image src={resolvedIconSrc} alt={`${name} logo`} width={iconWidth} height={iconHeight} class={iconClass} />
+    ) : iconSrc ? (
+      <img src={iconSrc} alt={`${name} logo`} width={iconWidth} height={iconHeight} class={iconClass} />
     ) : phIcon ? (
       <i class={`${phIcon} text-4xl text-primary-600`}></i>
     ) : null}

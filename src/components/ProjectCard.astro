@@ -1,5 +1,6 @@
 ---
 import Badge from "./Badge.astro";
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
 export interface Props {
@@ -38,8 +39,26 @@ const {
   aosDelay
 } = Astro.props;
 
-const hasGallery = images && images.length > 0;
-const serializedImages = JSON.stringify(images);
+const imageGlob = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.{jpeg,jpg,png,gif,webp,svg,avif}');
+let logoImage;
+if (logoSrc && imageGlob[logoSrc]) {
+  logoImage = (await imageGlob[logoSrc]()).default;
+}
+
+const resolvedImages = [];
+if (images) {
+  for (const imgPath of images) {
+    if (imageGlob[imgPath]) {
+      const mod = await imageGlob[imgPath]();
+      resolvedImages.push(mod.default.src);
+    } else {
+      resolvedImages.push(imgPath);
+    }
+  }
+}
+
+const hasGallery = resolvedImages.length > 0;
+const serializedImages = JSON.stringify(resolvedImages);
 ---
 
 <div class="project-card group mb-6" data-category={category} data-aos="fade-up" data-aos-delay={aosDelay}>
@@ -47,8 +66,10 @@ const serializedImages = JSON.stringify(images);
     <!-- Imagen del proyecto -->
     <div class="relative h-48 bg-gradient-to-br from-slate-200 to-slate-400 overflow-hidden">
       <div class="absolute inset-0 flex items-center justify-center">
-        {logoSrc ? (
-          <Image src={logoSrc} alt={`${titleEn} logo`} width={logoWidth} height={logoHeight} />
+        {logoImage ? (
+          <Image src={logoImage} alt={`${titleEn} logo`} width={logoWidth} height={logoHeight} />
+        ) : logoSrc ? (
+          <img src={logoSrc} alt={`${titleEn} logo`} width={logoWidth} height={logoHeight} />
         ) : (
           <i class={logoIcon || "ph ph-device-mobile-camera text-6xl text-primary-600"}></i>
         )}
